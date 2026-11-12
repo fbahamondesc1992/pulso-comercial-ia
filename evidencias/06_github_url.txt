@@ -1,1 +1,3 @@
-PENDIENTE: no hay repositorio remoto; requiere AUTORIZO GITHUB.
+https://github.com/fbahamondesc1992/pulso-comercial-ia
+PUBLICO · acceso sin autenticación HTTP 200 verificado el 12-11-2026.
+Evidencia: 12_github_publicado.json.

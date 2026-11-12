@@ -34,4 +34,6 @@ Fuentes oficiales consultadas el 12-11-2026:
 - https://developers.openai.com/api/docs/models/gpt-5.6-terra
 - https://developers.openai.com/api/docs/guides/structured-outputs
 
-Ver `docs/MEJORA_PROMPTS.md`: evaluación real PENDIENTE de G1.
+Ver `docs/MEJORA_PROMPTS.md`: G1 anterior recibido; evaluación real pendiente de
+revisión de presupuesto/migración al nuevo modelo solicitado GPT-6.1 Sol.
+Estas especificaciones corresponden al adaptador actual, todavía sin migrar.

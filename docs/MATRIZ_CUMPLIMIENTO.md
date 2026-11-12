@@ -3,7 +3,7 @@
 Alcance actual: implementación local aprobada G0 y autorización G1 recibida.
 La conexión real fue rechazada: HTTP 401 `invalid_api_key` (10_conexion_ia.json).
 Nueva clave aún no probada: cambio a gpt-6.1-sol en revisión de presupuesto.
-G2 recibido y repositorio público creado; push se documenta al verificarlo. No hay despliegue.
+G2 completado: repositorio público con código y acceso anónimo verificados. No hay despliegue.
 No asigna puntaje ni aprobación comercial/académica.
 VERIFICADO significa evidencia concreta dentro del alcance señalado, no una promesa.
 Se preservan las 27 filas de la sección 14 del prompt.
@@ -19,18 +19,18 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; 11_revision_navegador.json | VERIFICADO | 2 MiB/10.000 filas, filtros, error controlado; no exige API real |
 | SW-04 | KPIs exactos y unidades | tests/test_indicadores.py; datos/DICCIONARIO_DATOS.md | VERIFICADO | Seis oráculos, cobertura, Decimal, ponderación y KG/UN |
 | SW-05 | IA real activa en URL pública | evidencias/10_conexion_ia.json | BLOQUEADO | Clave anterior rechazada; nueva clave/modelo pendientes de prueba y presupuesto. Falta G3 |
-| PE-01 | PROMPT_MAESTRO.md raíz | Archivo íntegro; hash en evidencias/01_plan_aprobado.md y bitácora | EN_PROCESO | Igual al original; G2 recibido, versionado en preparación |
+| PE-01 | PROMPT_MAESTRO.md raíz | Archivo íntegro; hash en evidencias/01_plan_aprobado.md; 12_github_publicado.json | VERIFICADO | Igual al original y versionado en repositorio público |
 | PE-02 | Reglas del agente | AGENTS.md; evidencias/10_autorizacion_g1.md | VERIFICADO | G0/G1/G2 documentados; nuevo modelo requiere revisión de G1; G3 pendiente |
-| PE-03 | Prompts de sistema versionados | prompts/analista_v1.md; analista_v2.md; README.md | EN_PROCESO | Dos versiones físicas y carga literal verificadas; Git en preparación con G2 autorizado |
+| PE-03 | Prompts de sistema versionados | prompts/analista_v1.md; analista_v2.md; 12_github_publicado.json | VERIFICADO | Dos versiones y carga literal comprobadas; ambas versionadas en Git |
 | PE-04 | Golden set 5+, objetivo 8–10 | golden_set/casos_analista.json; tests/test_golden_set.py | VERIFICADO | Diez casos reproducibles; evaluación real es PE-05 |
 | PE-05 | Mejora medida v1/v2 | docs/MEJORA_PROMPTS.md; evidencias/10_conexion_ia.json | BLOQUEADO | Cambio a GPT-6.1 Sol en revisión de presupuesto; nueva clave no probada. Ninguna mejora declarada |
 | PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; verificación semántica no exhaustiva |
 | PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; suite local | EN_PROCESO | Controles locales pasan; comportamiento del modelo real pendiente |
 | DEV-01 | README completo | README.md | EN_PROCESO | Uso, arquitectura, negocio y controles completos; URLs reales pendientes |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/11_docker_build.txt; 11_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 actualizada con python-dotenv; salud/demo 200 y usuario 10001; .env excluido |
-| DEV-03 | Repositorio accesible al profesor | docs/REVISION_PUBLICACION.md | EN_PROCESO | G2 recibido, repositorio público creado; push y acceso al contenido en verificación |
+| DEV-03 | Repositorio accesible al profesor | evidencias/12_github_publicado.json; 06_github_url.txt | VERIFICADO | Público, HTTP 200 sin autenticación, README íntegro y SHA local/remoto iguales |
 | DEV-04 | URL HTTPS pública | NO EJECUTADO | BLOQUEADO | Falta G3; localhost no cuenta |
-| DEV-05 | Secretos fuera repo/historial/imagen | .gitignore; .dockerignore; evidencias/05_secretos_local.json; 03_docker_verificacion.json | EN_PROCESO | Revisión local e imagen; paquete por lista explícita sin clave; historial no existe, repetir antes de push |
+| DEV-05 | Secretos fuera repo/historial/imagen | evidencias/12_github_publicado.json; 12_auditoria_indice.json; 11_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
 | DEV-06 | Secreto en plataforma | docs/DESPLIEGUE.md | BLOQUEADO | Solo diseño; falta configurar referencia a secreto con G3 |
 | DEV-07 | Control de gasto cloud y API | docs/COSTOS_Y_LIMITACIONES.md; tests/test_golden_set.py; test_app.py | EN_PROCESO | Reserva evaluador y límites locales probados; cuotas/alertas cloud sin configurar |
 | DEV-08 | Health y flujo posdespliegue | Salud/dashboard locales comprobados | BLOQUEADO | Prueba pública todavía no ejecutada; requiere G3/G1 |

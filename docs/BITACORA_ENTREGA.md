@@ -170,3 +170,9 @@ explícita con auditoría de índice y todos los objetos Git, incluso huérfanos
 El ZIP de fase 11 y la ficha PDF se conservan como entregables históricos locales,
 con modelo anterior y pendientes de publicación visibles. El README indica el estado
 vigente; no se presenta esa ficha como documento final de entrega.
+
+Publicación verificada: https://github.com/fbahamondesc1992/pulso-comercial-ia, público, rama main,
+SHA inicial 879bfdba8c37da8ae5db0a6bdff6060557af44c4 idéntico local/remoto.
+HTTP 200 sin autenticación y README remoto idéntico. Auditoría completa: 104 objetos
+Git, cero hallazgos. Evidencia 12_github_publicado.json. No hubo llamadas OpenAI
+nuevas, migración del adaptador ni despliegue cloud.

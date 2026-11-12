@@ -1,0 +1,22 @@
+{
+  "fecha_utc": "2026-11-12T20:57:52.825873+00:00",
+  "url": "https://github.com/fbahamondesc1992/pulso-comercial-ia",
+  "visibilidad": "PUBLIC",
+  "rama": "main",
+  "sha_local": "879bfdba8c37da8ae5db0a6bdff6060557af44c4",
+  "sha_remoto": "879bfdba8c37da8ae5db0a6bdff6060557af44c4",
+  "coinciden": true,
+  "http_sin_autenticacion": 200,
+  "readme_anonimo_identico": true,
+  "archivos_versionados": 90,
+  "auditoria_pre_push": {
+    "fecha_utc": "2026-11-12T20:57:10.295376+00:00",
+    "head": "879bfdba8c37da8ae5db0a6bdff6060557af44c4",
+    "archivos_indice": 90,
+    "objetos_git_inspeccionados": 104,
+    "hallazgos": 0,
+    "alcance": "Índice por lista explícita; todos los objetos Git, incluidos huérfanos.",
+    "limitacion": "Patrones y coincidencia de clave local; no garantía universal."
+  },
+  "G3": "NO AUTORIZADO"
+}

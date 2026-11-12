@@ -2,8 +2,8 @@
 
 Copiloto ejecutivo de ventas: **Python calcula y valida; el LLM interpreta; el usuario decide.**
 
-Estado al 12-11-2026: MVP local verificado; publicación GitHub autorizada G2.
-Repositorio creado: https://github.com/fbahamondesc1992/pulso-comercial-ia
+Estado al 12-11-2026: MVP local verificado y publicado en GitHub con autorización G2.
+Repositorio público: https://github.com/fbahamondesc1992/pulso-comercial-ia
 URL de la aplicación: **PENDIENTE**. Evaluación IA y video: **PENDIENTES**.
 La clave anterior devolvió 401; el usuario la reemplazó. La nueva todavía no fue
 probada porque también seleccionó `gpt-6.1-sol` y pidió revisar primero su presupuesto.
@@ -151,7 +151,8 @@ Estado efectivo del build: consultar [bitácora](docs/BITACORA_ENTREGA.md).
 
 Publicación planificada en Cloud Run Santiago, HTTPS sin login, solo después de G3.
 No ejecutar publicación antes de revisar [preparación de despliegue](docs/DESPLIEGUE.md).
-G2 recibido: repositorio público creado. La auditoría de secretos precede a cada push.
+G2 completado: código público y acceso sin autenticación comprobados; SHA local/remoto
+conciliado. Ver evidencias/12_github_publicado.json. Auditoría antes de cada push.
 
 ## Seguridad, actualización y límites
 
