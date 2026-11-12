@@ -1,0 +1,27 @@
+{
+  "fecha": "2026-11-12T05:11:41.781Z",
+  "url": "http://127.0.0.1:8081",
+  "modo": "LOCAL_SIN_IA_REAL",
+  "resultados": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "keyboard_skip_link": true,
+      "fallback_identificado": true,
+      "filtros_consistentes": true,
+      "csv_invalido_controlado": true,
+      "errores_js": [],
+      "filtered": "Facturación real\n$114.251.750\nSuma del período\nMeta de facturación\n$138.936.000\nObjetivo del período\nCumplimiento\n82,2 %\nReal / meta\nBrecha de facturación\n$-24.684.250\nReal − meta\nVariación interanual\n-7,9 %\nMismos meses, año base"
+    },
+    {
+      "width": 375,
+      "overflow": false,
+      "keyboard_skip_link": true,
+      "fallback_identificado": true,
+      "filtros_consistentes": true,
+      "csv_invalido_controlado": true,
+      "errores_js": [],
+      "filtered": "Facturación real\n$114.251.750\nSuma del período\nMeta de facturación\n$138.936.000\nObjetivo del período\nCumplimiento\n82,2 %\nReal / meta\nBrecha de facturación\n$-24.684.250\nReal − meta\nVariación interanual\n-7,9 %\nMismos meses, año base"
+    }
+  ]
+}

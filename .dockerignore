@@ -1,0 +1,16 @@
+*
+!app.py
+!validador_csv.py
+!indicadores.py
+!schemas.py
+!analista_ia.py
+!requirements.txt
+!templates/
+!templates/**
+!static/
+!static/**
+!datos/
+!datos/demo_ventas.csv
+!prompts/
+!prompts/analista_v1.md
+!prompts/analista_v2.md

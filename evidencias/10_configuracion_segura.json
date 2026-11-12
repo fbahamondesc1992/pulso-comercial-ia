@@ -1,0 +1,9 @@
+{
+  "env_permisos": "0600",
+  "clave_presente": true,
+  "ai_enabled_dashboard": false,
+  "gitignore_env": true,
+  "dockerignore_excluye_env": true,
+  "exposiciones_fuera_env": [],
+  "pruebas_locales": "92 passed; red bloqueada"
+}

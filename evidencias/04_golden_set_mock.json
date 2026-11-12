@@ -1,0 +1,1424 @@
+{
+  "modo": "mock",
+  "evidencia_ia_real": false,
+  "modelo_solicitado": "FAKE-SIN-IA",
+  "parametros": {
+    "reasoning_effort": "none",
+    "max_output_tokens": 1800,
+    "timeout_seconds": 20,
+    "max_retries_sdk": 0,
+    "max_reintentos_validacion": 1
+  },
+  "precio_usd_por_millon": {
+    "entrada": "2",
+    "salida": "12",
+    "fuente": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "fecha": "2026-11-12"
+  },
+  "reserva_conservadora_usd": "2.8320",
+  "llamadas": 20,
+  "resultados": [
+    {
+      "caso": "GS-01",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.033785+00:00",
+      "payload_sha256": "ead502a98bde8469b3af9bdbc46860b4b1a83b5bb83cc6d423869b0a9f406fba",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-02",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.034587+00:00",
+      "payload_sha256": "433e9cbf3269ef470811c0bc6fa0be2f99a072eeff6a2ca3afed15fcaef91320",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-03",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.035268+00:00",
+      "payload_sha256": "5248b12c3bc4034ce78cab3dcdb1d600cf37be5eb7fae94be6285ee77dcb4354",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "dimension_prioritaria": false,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-04",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.035843+00:00",
+      "payload_sha256": "cd2337781bf716c65b92a3a454475a587dd2fe42767c21a688034171bfe65663",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-05",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.036392+00:00",
+      "payload_sha256": "016546e34b3e10c57aec801df3aa2235c755f5b8faa1629b62372fec67da242e",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-06",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.037072+00:00",
+      "payload_sha256": "9491a514fec04e5f163714ee024b56a345f0b66f44be6890bb2199370ffac5ce",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "unidades_separadas": false,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-07",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.037666+00:00",
+      "payload_sha256": "05a382f228d6a175c28b8bc1d86451d70d85014e525735a5a9843e873d3cc44c",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-08",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.038313+00:00",
+      "payload_sha256": "ead502a98bde8469b3af9bdbc46860b4b1a83b5bb83cc6d423869b0a9f406fba",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-09",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.039043+00:00",
+      "payload_sha256": "29cad96ad13eab7267816982c441ece823658531e9648144169882a57a8fa35e",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F003}}.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F003}}.\", \"evidencia_ids\": [\"F003\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F003\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-10",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T04:57:46.039484+00:00",
+      "payload_sha256": "160ce79f1d8ba12f9c4c4c19dae1da6a47b745da4ac6949d85bc69d1c47bd763",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La evidencia es insuficiente para un diagnóstico.",
+        "hallazgos": [],
+        "acciones_sugeridas": [],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "abstencion": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"La evidencia es insuficiente para un diagn\\u00f3stico.\", \"hallazgos\": [], \"acciones_sugeridas\": [], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 0,
+          "hallazgos_referencias_validas": 0,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-01",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.040114+00:00",
+      "payload_sha256": "ead502a98bde8469b3af9bdbc46860b4b1a83b5bb83cc6d423869b0a9f406fba",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-02",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.040822+00:00",
+      "payload_sha256": "433e9cbf3269ef470811c0bc6fa0be2f99a072eeff6a2ca3afed15fcaef91320",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-03",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.041597+00:00",
+      "payload_sha256": "5248b12c3bc4034ce78cab3dcdb1d600cf37be5eb7fae94be6285ee77dcb4354",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "dimension_prioritaria": false,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-04",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.042320+00:00",
+      "payload_sha256": "cd2337781bf716c65b92a3a454475a587dd2fe42767c21a688034171bfe65663",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-05",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.043076+00:00",
+      "payload_sha256": "016546e34b3e10c57aec801df3aa2235c755f5b8faa1629b62372fec67da242e",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-06",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.043909+00:00",
+      "payload_sha256": "9491a514fec04e5f163714ee024b56a345f0b66f44be6890bb2199370ffac5ce",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "unidades_separadas": false,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-07",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.044728+00:00",
+      "payload_sha256": "05a382f228d6a175c28b8bc1d86451d70d85014e525735a5a9843e873d3cc44c",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-08",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.045621+00:00",
+      "payload_sha256": "ead502a98bde8469b3af9bdbc46860b4b1a83b5bb83cc6d423869b0a9f406fba",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F001}}.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F001"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F001}}.\", \"evidencia_ids\": [\"F001\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F001\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-09",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.046770+00:00",
+      "payload_sha256": "29cad96ad13eab7267816982c441ece823658531e9648144169882a57a8fa35e",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Los hechos permiten una lectura descriptiva.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado observado",
+            "descripcion": "Conviene revisar este indicador: {{F003}}.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "nivel": "informativo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle del período.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"Los hechos permiten una lectura descriptiva.\", \"hallazgos\": [{\"titulo\": \"Resultado observado\", \"descripcion\": \"Conviene revisar este indicador: {{F003}}.\", \"evidencia_ids\": [\"F003\"], \"nivel\": \"informativo\"}], \"acciones_sugeridas\": [{\"accion\": \"Revisar el detalle del per\\u00edodo.\", \"evidencia_ids\": [\"F003\"], \"categoria\": \"investigacion\"}], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    },
+    {
+      "caso": "GS-10",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T04:57:46.047377+00:00",
+      "payload_sha256": "160ce79f1d8ba12f9c4c4c19dae1da6a47b745da4ac6949d85bc69d1c47bd763",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La evidencia es insuficiente para un diagnóstico.",
+        "hallazgos": [],
+        "acciones_sugeridas": [],
+        "limitaciones": [
+          "No se dispone de información causal."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "abstencion": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "FAKE-SIN-IA",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "request_id": null,
+          "estado": "valido",
+          "latencia_ms": 0,
+          "salida_cruda_sintetica": "{\"resumen_ejecutivo\": \"La evidencia es insuficiente para un diagn\\u00f3stico.\", \"hallazgos\": [], \"acciones_sugeridas\": [], \"limitaciones\": [\"No se dispone de informaci\\u00f3n causal.\"]}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 0,
+          "hallazgos_referencias_validas": 0,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0"
+        }
+      ],
+      "latencia_ms": 0
+    }
+  ],
+  "comparacion": {
+    "v1": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 20.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "v2": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 20.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "delta_puntos_porcentuales": {
+      "pct_JSON_valido_por_intento": 0.0,
+      "pct_schema_valido_por_intento": 0.0,
+      "pct_casos_automaticos": 0.0,
+      "pct_hallazgos_con_referencias_validas": 0.0
+    }
+  }
+}

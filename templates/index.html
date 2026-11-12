@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="De ventas ficticias a una lectura ejecutiva con cifras verificables.">
+  <title>Pulso Comercial IA · Tu negocio, en perspectiva</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+<a class="skip" href="#principal">Ir al contenido</a>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon" aria-hidden="true">⌁</span><span>Pulso Comercial <b>IA</b></span></a><span class="pill"><i></i> Demo educativa</span></header>
+<main id="principal">
+  <section class="hero">
+    <div><p class="eyebrow">INTELIGENCIA COMERCIAL · DATOS VERIFICABLES</p><h1>Entiende tus ventas.<br><span>Decide con perspectiva.</span></h1><p class="intro">Análisis ejecutivo basado en datos, con cifras calculadas y explicación asistida por IA.</p></div>
+    <div class="hero-note"><span class="small-label">EL PRINCIPIO</span><p>Python calcula.<br>La IA interpreta.<br><strong>Tú decides.</strong></p><span class="muted">Sin reemplazar tu criterio comercial.</span></div>
+  </section>
+  <section class="input-panel" aria-labelledby="entrada-titulo">
+    <div><h2 id="entrada-titulo">Una nueva mirada a tus resultados</h2><p>Explora una empresa ficticia o carga un CSV sintético. Máximo 2 MB y 10.000 filas.</p></div>
+    <div class="input-actions"><button id="demo-btn" class="button primary" type="button">Probar con datos de demostración <span aria-hidden="true">↗</span></button><label class="button secondary upload">Cargar CSV<input id="csv-input" type="file" accept=".csv,text/csv" aria-label="Cargar archivo CSV ficticio"></label></div>
+    <details class="schema-guide"><summary>Ver formato de datos y privacidad</summary><p>CSV UTF-8 separado por comas; decimales con punto. Incluye año, mes, canal, línea, familia, oficina, unidad KG/UN, facturación y volumen real/meta. El grano debe ser único. No uses datos personales ni información comercial real.</p><p>El archivo se procesa en memoria, sin almacenamiento. Al solicitar IA solo se envían métricas y alias de dimensiones. No es una garantía de anonimización de datos sensibles.</p><a href="/demo.csv">Descargar CSV de ejemplo</a></details>
+  </section>
+  <div id="status" class="status" role="status" aria-live="polite">Comienza con los datos de demostración para explorar el dashboard.</div>
+  <section id="dashboard" hidden>
+    <div class="section-heading"><div><p class="eyebrow">PANORAMA COMERCIAL</p><h2>Los resultados, en contexto</h2></div><span id="dataset-label" class="pill"></span></div>
+    <form id="filters" class="filters" aria-label="Filtros comerciales">
+      <label>Año actual<select id="ano_actual" name="ano_actual"></select></label>
+      <label>Año base<select id="ano_base" name="ano_base"></select></label>
+      <label>Canal<select id="canal" name="canal"></select></label>
+      <label>Línea<select id="linea" name="linea"></select></label>
+      <label>Familia<select id="familia" name="familia"></select></label>
+      <label>Oficina<select id="oficina" name="oficina"></select></label>
+      <fieldset id="months"><legend>Meses del período actual · mismos meses para la base</legend><div id="month-options"></div></fieldset>
+      <button type="submit" class="button secondary">Aplicar filtros</button><span id="period-label" class="muted"></span>
+    </form>
+    <div id="warnings" class="warnings" role="status"></div>
+    <div id="kpis" class="kpi-grid"></div>
+    <div class="charts-grid">
+      <section class="panel chart-panel"><div class="panel-heading"><div><p class="eyebrow">EVOLUCIÓN MENSUAL</p><h3>Facturación y referencia</h3></div><span class="small-label">CLP</span></div><div class="legend"><span><i class="legend-real"></i>Real</span><span><i class="legend-meta"></i>Meta</span><span><i class="legend-base"></i>Base</span></div><div id="chart" class="chart" role="img" aria-label="Evolución mensual de facturación en CLP"></div><details><summary>Ver cifras mensuales y cobertura</summary><div class="table-scroll"><table><caption class="sr-only">Facturación mensual en CLP</caption><thead><tr><th>Mes</th><th>Real</th><th>Meta</th><th>Base</th></tr></thead><tbody id="monthly-table"></tbody></table></div></details></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">DÓNDE MIRAR</p><h3>Principales brechas negativas</h3></div></div><label class="ranking-label">Agrupar por<select id="ranking-dimension"><option value="canal">Canal</option><option value="linea">Línea</option><option value="familia">Familia</option><option value="oficina">Oficina</option><option value="canal_linea_oficina">Canal · línea · oficina</option></select></label><p class="muted">Hasta cinco grupos. Participación sobre brechas negativas brutas de esta dimensión.</p><div class="table-scroll"><table><caption class="sr-only">Ranking de brechas en CLP</caption><thead><tr><th>Grupo</th><th>Brecha CLP</th><th>Part.</th></tr></thead><tbody id="ranking-table"></tbody></table></div><p id="ranking-note" class="muted"></p></section>
+    </div>
+    <section class="volume-section"><div><p class="eyebrow">VOLUMEN CON UNIDAD</p><h3>Cada medida en su lugar</h3><p class="muted">Kilogramos y unidades se presentan por separado.</p></div><div id="volumes" class="volume-cards"></div></section>
+    <section class="panel ai-panel" aria-labelledby="ai-title"><div class="ai-heading"><div><p class="eyebrow">DEL DATO A LA LECTURA EJECUTIVA</p><h2 id="ai-title">Una explicación, con respaldo.</h2><p>La IA interpreta los indicadores de este período. Cada hallazgo permite revisar sus cifras.</p></div><button id="ai-btn" type="button" class="button primary">Generar análisis ejecutivo con IA <span aria-hidden="true">✦</span></button></div><div id="ai-status" role="status" aria-live="polite" class="muted">El análisis se genera solo cuando lo solicitas.</div><div id="ai-result"></div></section>
+    <details class="panel facts-panel"><summary>Explorar los hechos calculados y sus fórmulas</summary><p class="muted">Los IDs corresponden al período y filtros aplicados. Los alias protegen las etiquetas enviadas al proveedor.</p><div id="facts"></div></details>
+  </section>
+  <section id="empty-state" class="empty-state"><div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><h2>De una planilla a una conversación mejor informada.</h2><p>Facturación, metas y brechas en un mismo lugar.<br>Dos años ficticios. Tres canales. Ningún dato confidencial.</p></section>
+</main>
+<footer><span>PULSO COMERCIAL IA <span class="muted">/ Proyecto académico UAI</span></span><p>Análisis educativo y de gestión. No es una auditoría ni un pronóstico. Las hipótesis requieren corroboración.</p></footer>
+</body></html>

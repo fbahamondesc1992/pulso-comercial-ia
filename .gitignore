@@ -1,0 +1,23 @@
+.venv/
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+tmp/
+private/
+uploads/
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+node_modules/
+entrega/
+
+# Originales preservados fuera de la publicación
+/Proyecto_Final_Advanced_Prompt_Engineering.pdf
+/PROMPT_MAESTRO_PULSO_COMERCIAL_IA.md

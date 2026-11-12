@@ -1,0 +1,53 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.04kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 267B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 10.51kB done
+#4 DONE 0.0s
+
+#5 [1/9] FROM docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#5 resolve docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704 done
+#5 DONE 0.0s
+
+#6 [3/9] COPY requirements.txt .
+#6 CACHED
+
+#7 [2/9] WORKDIR /app
+#7 CACHED
+
+#8 [4/9] RUN pip install --no-cache-dir -r requirements.txt && useradd --uid 10001 --create-home pulso
+#8 CACHED
+
+#9 [5/9] COPY app.py validador_csv.py indicadores.py schemas.py analista_ia.py ./
+#9 DONE 0.0s
+
+#10 [6/9] COPY templates/ templates/
+#10 DONE 0.0s
+
+#11 [7/9] COPY static/ static/
+#11 DONE 0.0s
+
+#12 [8/9] COPY datos/demo_ventas.csv datos/demo_ventas.csv
+#12 DONE 0.0s
+
+#13 [9/9] COPY prompts/analista_v1.md prompts/analista_v2.md prompts/
+#13 DONE 0.0s
+
+#14 exporting to image
+#14 exporting layers 0.0s done
+#14 exporting manifest sha256:57bb590a00fa024a652f42d8769e5385329c7ce4b264a18583570e5285f5266e done
+#14 exporting config sha256:fabb3ccea52942f6da74689e631b73972b135390f4ab63f5754fa9cde9d54c36 done
+#14 exporting attestation manifest sha256:56c6738bd4f2e4d76906e1979c39994bdf251758e5a2aa1326089423d505db26 done
+#14 exporting manifest list sha256:cb6102e55f1f445f7262dbbac4358480751b43b0ecf337c83629ed1096959a89 done
+#14 naming to docker.io/library/pulso-comercial-ia:local done
+#14 DONE 0.1s

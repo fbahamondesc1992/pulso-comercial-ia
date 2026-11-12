@@ -1,0 +1,1 @@
+NO EJECUTADO. Sin evaluación IA real ni despliegue. Los mocks/fallback no son IA real.

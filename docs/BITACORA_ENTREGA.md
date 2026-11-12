@@ -1,0 +1,172 @@
+# Bitácora verificable
+
+Fecha del trabajo: 12-11-2026, America/Santiago. Los registros técnicos pueden usar UTC.
+Objetivo académico: entrega 13-11-2026, 23:59 Chile. Estado general: **MVP LOCAL**.
+
+## F0 · lectura y autorización
+
+Leído íntegramente el prompt de 657 líneas y PDF de una página. Directorio inicial:
+solo ambos documentos, sin código, Git ni dependencias. Se presentó plan completo y
+se detuvo. Usuario respondió `APROBADO PLAN`; transcripción en 01_plan_aprobado.md.
+No se recibió G1, G2 ni G3. No se han realizado llamadas pagadas, commits ni despliegue.
+PROMPT_MAESTRO.md es copia exacta del original, SHA256:
+`03a85687663a728e5d7ab75fa841a28c5ce868bb613d78b75083f9b53c6156a8`.
+
+## F1 · datos y cálculos
+
+Creado entorno .venv con Python 3.12.15. Dependencias locales directas/transitivas
+fijadas. Dataset sintético de 360 filas y diccionario. Motor Decimal/cobertura.
+Primera ejecución: 51 pruebas pasaron y dos fallaron por un fixture que intentaba
+reasignar un atributo de dataclass frozen; corregido el fixture, 53 pasaron.
+Los seis oráculos numéricos, cobertura y unidades están probados.
+
+## F2 · aplicación local
+
+Flask, frontend responsive, filtros, gráfico, rankings, volúmenes y salud. La subida
+multipart usa BytesIO; no se persiste el archivo. Pruebas reales de navegador a 375
+y 1440 px: sin desbordes ni excepciones JS, filtros coherentes, CSV inválido controlado,
+link de salto por teclado y respaldo sin IA claramente identificado.
+Evidencias 02_demo_local_*.png y 02_revision_navegador.json. Capturas revisadas visualmente.
+Chromium instalado exclusivamente bajo .venv para la verificación local.
+
+Docker inicialmente inactivo. Se inició Docker Desktop, se construyó para Linux amd64
+y se comprobó Gunicorn en 127.0.0.1:8081. Base fijada a digest después de resolverla.
+Registro de build en 03_docker_build.txt y comprobaciones en 03_docker_verificacion.json.
+El contenedor utiliza UID 10001 y AI_ENABLED=false; no contiene clave de API.
+No se publicaron puertos fuera de loopback ni recursos cloud.
+
+## F3 · integración IA sin gasto
+
+SDK oficial, Responses API, Pydantic, prompts físicos v1/v2, referencias y cifras
+mediante marcadores. Sin tools, almacenamiento del proveedor desactivado y reintento
+acotado. Etiquetas externas pasan a alias antes del proveedor.
+Tras añadir el paquete tests se detectaron imports de fixtures incompatibles; se
+corrigieron. Suite ampliada: 88 pruebas pasaron antes del cierre documental.
+Resultado final y comando conservados en 03_pytest.txt y 03_pytest.xml.
+Red bloqueada en pytest; los tests del adaptador SDK usan un cliente falso.
+
+Documentación oficial consultada: GPT-4.1 mini y GPT-5 mini figuraban deprecados;
+se preparó GPT-5.6 Terra con salida estructurada y reasoning none. Acceso de cuenta
+no probado. No se afirma validez de un prompt frente al modelo hasta F4 real.
+
+## F4 · infraestructura de evaluación lista; ejecución real bloqueada
+
+Diez casos y evaluador por versión, métricas, hashes, criterios y revisión humana.
+20 ejecuciones fake completadas, sin API: 04_golden_set_mock.json/.csv.
+Las tasas fake son solo diagnóstico del evaluador. Costo real de IA en esta tarea: cero
+llamadas; no se presenta factura ni consumo medido del proveedor.
+Presupuesto conservador de primera batería: 40 intentos, reserva máxima USD 5,664,
+tope solicitado USD 6. Requiere autorización literal AUTORIZO EVAL IA.
+
+## F5/F7 · documentación local anticipada
+
+README, reglas del agente, diccionario, metodología, costos, matriz y guion preparados.
+Ficha PDF preliminar de una página, renderizada y revisada visualmente; conserva
+pendientes reales. Poppler produjo avisos de caché de fuentes durante renderizado,
+pero finalizó y se inspeccionó el PNG; no hay texto cortado ni páginas adicionales.
+Auditoría pip-audit: sin vulnerabilidades conocidas en las dependencias de ejecución
+consultadas (05_dependencias_audit.json); no es garantía absoluta de seguridad.
+Revisión de secretos por patrones y contexto de imagen documentada; Git todavía no
+existe, por lo que no hay historial auditable ni hash de commit.
+
+## Pendientes que impiden cerrar
+
+- G1, credencial de servidor y primera evaluación real; revisión humana y comparación.
+- Repetición final de evaluación dentro de presupuesto autorizado.
+- G2: propietario/repositorio/visibilidad, commit/push y acceso docente.
+- G3: proyecto cloud, facturación, cuotas, secretos/IAM, despliegue HTTPS e IA real.
+- Cuotas/alertas configuradas con evidencia; estado actual: NO CONFIGURADAS.
+- Video real ≤180 s; estado: NO GRABADO.
+- URLs finales, ficha y README finales, comprobación incógnito pública.
+
+No se declara PROYECTO COMPLETO. La próxima puerta es G1; F5 local se adelantó para
+que la aprobación de gasto sea sobre un resultado concreto ya revisable.
+
+## Verificación final local
+
+Suite final: **90 passed**, comando `.venv/bin/python -m pytest -q
+--junitxml=evidencias/03_pytest.xml`. Sin red y sin llamadas pagadas.
+`pip check`: no dependencias rotas. Escáner local: sin hallazgos tras corregir
+un falso positivo que confundía la línea posterior a una API key vacía.
+Se añadió prueba de regresión para ese caso y rechazo de informes sin hallazgos
+cuando sí existen hechos válidos. Docker se reconstruyó tras el último cambio.
+La interfaz queda disponible en http://127.0.0.1:8081 mediante el contenedor
+`pulso-local-g0`, ligado solo a loopback. No equivale a URL pública.
+
+## Actualización G1 · configuración y prueba de conexión
+
+El usuario autorizó explícitamente «AUTORIZA EVAL IA», proporcionó una credencial
+del docente y pidió guardarla en env y hacer una prueba simple. Se conservó la
+autorización sin exigir repetir la fórmula gramatical. Registro sin credencial:
+`evidencias/10_autorizacion_g1.md`. Alcance previo: máximo USD 6 y 40 intentos.
+
+Se creó .env con modo 0600, excluido por .gitignore y por la lista de inclusión
+.dockerignore. No se copió la clave a código, evidencias, imagen ni comandos shell.
+Se añadió python-dotenv 1.2.4 al entorno virtual y requirements.txt; app.py carga
+.env solo al iniciarse directamente, no al importarse en pytest/Gunicorn.
+AI_ENABLED permanece false en el producto; la prueba puntual usa la clave sin
+habilitar el gasto libre desde el dashboard. Se recomendó rotar la clave expuesta.
+
+Se ejecutó `scripts/probar_conexion_ia.py --ejecutar`: una petición a Responses,
+modelo gpt-5.6-terra, salida máxima 32 tokens, timeout 20 s y cero reintentos SDK.
+Resultado real: **HTTP 401, invalid_api_key**, rechazo de OpenAI en 720 ms.
+No hubo texto generado ni tokens/consumo reportados. No se asigna un costo inventado.
+Evidencia sin secretos: `evidencias/10_conexion_ia.json`.
+
+La batería de evaluación no comenzó. Bloqueo técnico: reemplazo de credencial;
+G1 ya está autorizado. Esta prueba consume un intento del alcance máximo, por lo
+que restan como máximo 39; cualquier nueva conexión se contabiliza también.
+La imagen local anterior sigue sin credencial y con IA deshabilitada; no se reinició
+ni publicó para esta prueba. La dependencia nueva aún debe incorporarse al rebuild.
+
+Validación de esta actualización: 92 pruebas aprobadas sin red; evidencia en
+10_pytest_configuracion.txt/.xml. Comprobación de permisos/exclusiones y búsqueda
+de la clave exacta fuera de .env: cero exposiciones en archivos del proyecto
+inspeccionados; registro seguro en 10_configuracion_segura.json.
+
+## Continuación autorizada: cierre de pendientes locales y paquete G2
+
+El usuario indicó «Procede con el resto». Se avanzó sobre el trabajo local autorizado
+y se preparó la publicación para aprobación final, sin inferir visibilidad ni habilitar
+recursos externos. No se repitió la llamada de IA: .env no cambió desde el rechazo 401.
+G1 permanece autorizado; G2 y G3 no han sido concedidos con su alcance concreto.
+
+Se actualizó la imagen con python-dotenv, sin incorporar .env. Docker se encontraba
+detenido y se inició antes de construir. Build Linux amd64 y ejecución con UID 10001
+verificados; health y dashboard 200, IA deshabilitada 503 esperado. Evidencias
+11_docker_build.txt y 11_docker_verificacion.json. La auditoría actualizada no encontró
+vulnerabilidades conocidas: 11_dependencias_audit.json.
+
+Se corrigió la recuperación del frontend: un CSV nuevo inválido ya no conserva cifras
+del dataset anterior, y los controles quedan deshabilitados durante la carga para
+evitar carreras. Navegador a 375/1440 px verificado; 11_revision_navegador.json y
+capturas 11_demo_local_*.png. Suite: 96 pruebas aprobadas sin red (11_pytest.txt/.xml).
+
+Se preparó un empaquetador por lista explícita y pruebas de exclusión de .env, symlinks
+y patrones de secretos. El ZIP incluye manifiesto por archivo; su verificación
+externa se registra en entrega/VERIFICACION_PAQUETE.json. No incluye la credencial
+ni el PDF original del curso. No se utiliza un zip indiscriminado del directorio.
+
+GitHub: el conector confirmó cuenta fbahamondesc1992; la búsqueda del nombre propuesto
+pulso-comercial-ia no arrojó repositorio. Propuesta concreta en docs/REVISION_PUBLICACION.md:
+crear repositorio público y rama main con commit inicial normal, solo después de G2.
+Sin commits, pushes, despliegue, IAM, alertas cloud ni grabación de video final.
+
+## Fase 12: G2 autorizado y revisión del nuevo modelo
+
+El usuario autorizó GitHub para el repositorio público acordado y reemplazó la
+clave local. La CLI confirmó fbahamondesc1992; creó el repositorio público
+https://github.com/fbahamondesc1992/pulso-comercial-ia. Sin force push ni G3.
+
+El preflight de conexión se detuvo antes de crear el cliente porque AI_MODEL
+cambió a gpt-6.1-sol. No hubo nueva llamada ni cargo medido. El usuario confirmó
+ese modelo y pidió revisar tarifas/presupuesto primero. Revisión oficial y propuesta
+de USD 7 acumulados, 40 intentos totales en REVISION_MODELO_GPT61_SOL.md.
+El código conserva GPT-5.6 Terra hasta finalizar la revisión y migración; IA apagada.
+
+Suite vigente: 96 pruebas aprobadas sin red, 12_pytest.txt. Publicación por lista
+explícita con auditoría de índice y todos los objetos Git, incluso huérfanos.
+.gitattributes conserva bytes exactos para evitar normalizar CSV y alterar hashes.
+El ZIP de fase 11 y la ficha PDF se conservan como entregables históricos locales,
+con modelo anterior y pendientes de publicación visibles. El README indica el estado
+vigente; no se presenta esa ficha como documento final de entrega.

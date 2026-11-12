@@ -1,0 +1,16 @@
+{
+  "fecha_utc": "2026-11-12T20:54:45.411610+00:00",
+  "G2": "AUTORIZO GITHUB recibido en el chat",
+  "repositorio": "fbahamondesc1992/pulso-comercial-ia",
+  "visibilidad": "publico",
+  "rama": "main",
+  "force_push": false,
+  "G3": "NO AUTORIZADO",
+  "IA": {
+    "nueva_credencial": "presente en .env; no expuesta ni probada",
+    "modelo_env": "gpt-6.1-sol",
+    "resultado_preflight": "DETENIDO_LOCALMENTE_POR_CAMBIO_MODELO",
+    "llamadas_api_nuevas": 0,
+    "decision_usuario": "Usar gpt-6.1-sol: revisar primero sus tarifas y el presupuesto"
+  }
+}
