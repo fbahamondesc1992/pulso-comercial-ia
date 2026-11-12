@@ -1,0 +1,4 @@
+Comando: .venv/bin/python -m pytest -q
+Resultado observado: 149 passed in 0.60s
+Código de salida: 0
+Suite con fixture sin_red; no se cargó .env ni se habilitó AI_ENABLED.

@@ -10,9 +10,9 @@ from decimal import Decimal
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from analista_ia import MODEL, ErrorIA, ProveedorOpenAI, analizar, cargar_prompt, MAX_PAYLOAD_BYTES, MAX_PROMPT_BYTES
+from analista_ia import MODEL, ErrorIA, ProveedorOpenAI, analizar, cargar_prompt, MAX_PAYLOAD_BYTES, MAX_PROMPT_BYTES, VALIDADOR_VERSION
 from schemas import InformeIA
-from scripts.golden import cargar_casos, construir_payload, criterios_automaticos
+from scripts.golden import cargar_casos, construir_payload, criterios_automaticos, CRITERIOS_VERSION
 
 PRECIO_ENTRADA = Decimal("2")
 PRECIO_SALIDA = Decimal("10")
@@ -138,7 +138,7 @@ def evaluar(modo, proveedor, presupuesto, out):
                 i["costo_usd"]=str((Decimal(i["input_tokens"])*PRECIO_ENTRADA+Decimal(i["output_tokens"])*PRECIO_SALIDA)/1_000_000) if i.get("input_tokens") is not None and i.get("output_tokens") is not None else None
                 i["costo_superior_estimado_usd"] = str((Decimal(i["input_tokens"])*PRECIO_ENTRADA_RESERVA+Decimal(i["output_tokens"])*PRECIO_SALIDA)/1_000_000) if i.get("input_tokens") is not None and i.get("output_tokens") is not None else None
             resultados.append(result)
-            informe={"modo":modo,"evidencia_ia_real":modo=="real","modelo_solicitado":getattr(proveedor,"model","FAKE-SIN-IA"),
+            informe={"modo":modo,"validador_version":VALIDADOR_VERSION,"criterios_version":CRITERIOS_VERSION,"evidencia_ia_real":modo=="real","modelo_solicitado":getattr(proveedor,"model","FAKE-SIN-IA"),
                      "parametros":{"reasoning_effort":"low","service_tier":"default","prompt_cache_ttl":"30m","max_output_tokens":MAX_SALIDA,"timeout_seconds":20,"max_retries_sdk":0,"max_reintentos_validacion":1},
                      "precio_usd_por_millon":{"entrada":str(PRECIO_ENTRADA),"salida":str(PRECIO_SALIDA),"entrada_reserva":str(PRECIO_ENTRADA_RESERVA),"fuente":"https://developers.openai.com/api/docs/models/gpt-6.1-sol","fecha":"2026-11-12"},
                      "reserva_conservadora_usd":str(presupuesto.reservado),"tope_acumulado_usd":str(presupuesto.tope),"saldo_conservador_usd":str(presupuesto.tope-presupuesto.reservado),"llamadas":presupuesto.llamadas,"resultados":resultados,"comparacion":consolidar(resultados)}

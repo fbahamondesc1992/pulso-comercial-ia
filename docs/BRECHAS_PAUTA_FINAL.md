@@ -1,5 +1,18 @@
 # Brechas frente al prompt maestro y la pauta final
 
+Actualización fase 16: validador y criterios corregidos, 149 pruebas aprobadas;
+revisión asistida de 23 respuestas y aprobación humana global recibida. Se conservan
+las observaciones v1. Repetición real final, selección de prompt y G3 pendientes.
+La publicación de las correcciones está autorizada bajo G2. El diagnóstico siguiente
+es histórico (fases 13–14); los estados vigentes están en MATRIZ_CUMPLIMIENTO.md.
+
+
+Actualización fase 14: correcciones locales del punto 1 realizadas y 139 pruebas
+aprobadas. Revalidación de salidas guardadas 9/10 v1 y 10/10 v2, sin API. Sigue
+pendiente la revisión semántica humana, selección final y repetición real comparable.
+Ver CORRECCIONES_LOCALES.md; el diagnóstico original de abajo conserva contexto.
+
+
 Revisión: 12-11-2026. Fuentes: PROMPT_MAESTRO.md íntegro y
 Proyecto_Final_Advanced_Prompt_Engineering.pdf, una página. La pauta formal prevalece
 sobre decisiones técnicas del prompt. No se asigna nota ni aprobación académica.

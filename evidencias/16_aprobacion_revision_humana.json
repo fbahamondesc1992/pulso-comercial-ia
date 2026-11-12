@@ -1,0 +1,38 @@
+{
+  "fecha_registro_utc": "2026-11-12T21:59:27.807971+00:00",
+  "fecha_aprobacion_chat": "2026-11-12",
+  "origen": "Mensaje explícito del usuario en el chat del proyecto",
+  "mensaje_literal": "1. Revision humana aprobado",
+  "revisor": "Usuario del proyecto; nombre no proporcionado",
+  "estado": "APROBACION_HUMANA_GLOBAL_RECIBIDA",
+  "alcance": "Aceptación global del informe de revisión semántica de las 23 respuestas; no aporta dictámenes individuales nuevos.",
+  "artefactos_revisados": [
+    {
+      "ruta": "evidencias/13_evaluacion_real.json",
+      "sha256": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7"
+    },
+    {
+      "ruta": "evidencias/15_revision_semantica_asistente.json",
+      "sha256": "519e90d9c578492e029ac33af5b03b3114093fa8c7a47da5ced79e1a69aacead"
+    },
+    {
+      "ruta": "evidencias/15_revalidacion_offline.json",
+      "sha256": "3de4df0d3ecd8502362a219bae3eb7f7926c9e91a4d1c738def1ac30a1703800"
+    }
+  ],
+  "observaciones_conservadas": [
+    "GS-03/v1: prioridad editorial del hallazgo familiar",
+    "GS-05/v1: referencias interanuales faltantes"
+  ],
+  "dictamen_individual_adicional": null,
+  "justificacion_adicional_usuario": null,
+  "no_implica": [
+    "Aprobación académica",
+    "Mejora demostrada del prompt",
+    "Nueva evaluación pagada",
+    "Autorización de despliegue"
+  ],
+  "evidencias_originales_modificadas": false,
+  "llamadas_api_nuevas": 0,
+  "costo_api_nuevo_usd": "0"
+}

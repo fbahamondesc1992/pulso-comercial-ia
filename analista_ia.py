@@ -13,6 +13,7 @@ from indicadores import formato, LABELS
 
 ROOT = Path(__file__).resolve().parent
 MODEL = "gpt-6.1-sol"
+VALIDADOR_VERSION = "3"
 MAX_PAYLOAD_BYTES = 32_000
 MAX_PROMPT_BYTES = 12_000
 TOKEN = re.compile(r"\{\{(F\d{3})\}\}")
@@ -20,6 +21,51 @@ URL = re.compile(r"https?://|www\.|mailto:|[\w.+-]+@[\w.-]+\.[a-z]{2,}", re.I)
 CAUSA = re.compile(r"\b(debido a|causad[oa] por|se debe a|producto de|a causa de|explicad[oa] por|por (?:el |la |los |las )?(?:precio|stock|promoci|competencia))", re.I)
 CAUSAL_TEMA = re.compile(r"\b(precios?|stock|quiebre|competencia|promociones?|demanda)\b", re.I)
 NUM_PALABRA = re.compile(r"\b(cien|ciento|doscientos|trescientos|cuatrocientos|quinientos|mil|mill[oó]n|millones|por ciento)\b", re.I)
+
+# Excepciones de alcance acotado: una negación solo ampara su propia cláusula.
+# Son reglas conservadoras de lenguaje, no un clasificador semántico exhaustivo.
+_TEMA = r"(?:(?:el|la|los|las) )?(?:precios?|stock|quiebres? de stock|competencia|promociones?|demanda)"
+_LISTA_TEMAS = rf"{_TEMA}(?:(?:,\s*(?:(?:y|o|ni) )?| (?:y|o|ni) ){_TEMA})*"
+_OBJETO = r"(?:los resultados|las brechas|la brecha|los desvíos|el resultado|la caída|el incumplimiento)"
+_VERBO_REVISION = r"(?:Investigar|Revisar|Comprobar|Verificar|Explorar|Contrastar)"
+NEGACION_CAUSAL = re.compile(
+    rf"(?:(?:Los hechos(?: disponibles)?|Los datos(?: disponibles)?|La información(?: disponible)?) "
+    rf"no permiten? (?:establecer causas de {_OBJETO} ni )?atribuir(?:las|los)?(?: {_OBJETO})? a {_LISTA_TEMAS}"
+    rf"|No se (?:puede|pueden) atribuir(?:las|los)?(?: {_OBJETO})? a {_LISTA_TEMAS}"
+    rf"|(?:No hay|No contamos con|No se dispone de|Sin) (?:datos|información|evidencia)"
+    rf"(?: causales?)? (?:sobre|de|acerca de) {_LISTA_TEMAS})", re.I)
+LIMITACION_COBERTURA = re.compile(
+    r"(?:La comparación interanual|La variación interanual|El crecimiento interanual) "
+    r"(?:no permite concluir crecimiento|no es comparable|no es válid[oa]|no es evaluable) "
+    r"(?:debido a|a causa de|por) (?:la )?(?:cobertura (?:insuficiente|incompleta|parcial)|falta de cobertura)", re.I)
+DIRECTIVA_TEMA = re.compile(
+    rf"{_VERBO_REVISION} (?:(?:los datos|la información|los antecedentes) (?:sobre|de) )?{_LISTA_TEMAS}", re.I)
+AFIRMACION_ANADIDA = re.compile(
+    rf"(?:,\s*|\s+(?:y|e|además)\s+){_TEMA}\s+"
+    r"(?:(?:claramente|directamente|también|sí)\s+)?"
+    r"(?:caus(?:a|an|ó|aron)|explic(?:a|an|ó|aron)|reduc(?:e|en)|reduj(?:o|eron)|"
+    r"provoc(?:a|an|ó|aron)|gener(?:a|an|ó|aron)|impuls(?:a|an|ó|aron))\b", re.I)
+
+
+def validar_causalidad(texto, *, permitir_hipotesis=False, cobertura_incompleta=False):
+    clausulas = re.split(r"[.!?;\n]+|\b(?:pero|sin embargo|no obstante|aunque)\b", texto, flags=re.I)
+    for fragmento in clausulas:
+        frase = " ".join(fragmento.split()).strip(" ,:")
+        if not frase:
+            continue
+        negacion = re.sub(r"\bal\b", "a el", frase, flags=re.I)
+        if NEGACION_CAUSAL.fullmatch(negacion):
+            continue
+        if cobertura_incompleta and LIMITACION_COBERTURA.fullmatch(frase):
+            continue
+        if CAUSA.search(frase):
+            raise ErrorIA("causalidad_no_sustentada")
+        if CAUSAL_TEMA.search(frase):
+            # Una acción no da permiso a afirmaciones posteriores al punto/contraste.
+            pregunta = re.match(rf"{_VERBO_REVISION} si\b", frase, re.I)
+            afirmacion = re.search(r"\b(?:confirmad[oa]|demostrad[oa]|se confirmó|se demostró|sabemos que)\b", frase, re.I) or AFIRMACION_ANADIDA.search(frase)
+            if not (permitir_hipotesis and (DIRECTIVA_TEMA.fullmatch(frase) or (pregunta and not afirmacion))):
+                raise ErrorIA("causalidad_no_sustentada")
 
 
 class ErrorIA(ValueError):
@@ -98,6 +144,8 @@ def validar_informe(raw, payload):
     if not all_refs <= hechos.keys():
         raise ErrorIA("ids_invalidos")
     validos = {k for k, h in hechos.items() if h["estado"] == "valido" and h["valor"] is not None}
+    cobertura_incompleta = any(h["indicador"] == "base" and h["estado"] == "cobertura_parcial"
+                              and h["dimension"] == {"nivel": "total"} for h in hechos.values())
     if not validos and (informe.hallazgos or informe.acciones_sugeridas):
         raise ErrorIA("requiere_abstencion")
     if validos and not informe.hallazgos:
@@ -114,10 +162,8 @@ def validar_informe(raw, payload):
             raise ErrorIA("cifra_sin_respaldo")
         if URL.search(limpio) or re.search(r"<[^>]+>", limpio):
             raise ErrorIA("contenido_externo")
-        if CAUSA.search(limpio):
-            raise ErrorIA("causalidad_no_sustentada")
-        if CAUSAL_TEMA.search(limpio) and not permitir_hipotesis and not re.search(r"no (?:se dispone|hay|contamos)|sin (?:datos|informaci[oó]n)", limpio, re.I):
-            raise ErrorIA("causalidad_no_sustentada")
+        validar_causalidad(limpio, permitir_hipotesis=permitir_hipotesis,
+                          cobertura_incompleta=cobertura_incompleta)
         return tokens
 
     texto_seguro(informe.resumen_ejecutivo, all_refs)

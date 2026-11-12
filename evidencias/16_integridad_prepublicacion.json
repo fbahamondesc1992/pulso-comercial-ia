@@ -1,0 +1,23 @@
+{
+  "fecha_utc": "2026-11-12T21:59:52.856218+00:00",
+  "archivos_publicables_revisados": 124,
+  "hallazgos_secretos": 0,
+  "metodo": "Lista explícita, patrones y coincidencia exacta de clave local; sin imprimir secretos",
+  "limitacion": "No garantiza detección universal de secretos",
+  "originales_iguales_a_HEAD": [
+    "prompts/analista_v1.md",
+    "prompts/analista_v2.md",
+    "golden_set/casos_analista.json",
+    "indicadores.py",
+    "datos/demo_ventas.csv",
+    "evidencias/13_evaluacion_real.json",
+    "evidencias/13_evaluacion_real.csv",
+    "evidencias/13_presupuesto_final.json",
+    "PROMPT_MAESTRO.md"
+  ],
+  "presupuesto_persistente_sin_cambios": true,
+  "hashes_aprobacion_verificados": true,
+  "filas_matriz": 27,
+  "llamadas_api_nuevas": 0,
+  "costo_api_nuevo_usd": "0"
+}

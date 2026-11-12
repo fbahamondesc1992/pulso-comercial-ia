@@ -204,6 +204,19 @@ Evidencias de esta versión en `evidencias/11_*`.
 
 [Brechas de cierre](docs/BRECHAS_PAUTA_FINAL.md) contrasta los cinco criterios y los
 cuatro entregables del PDF formal. Veinte casos reales: v1 80%, v2 70%, sin mejora
-positiva; revisión humana y corrección de falsos positivos pendientes. Compromiso
-conservador USD 0,5843775 del tope USD 2, no factura. Suite actual: 100 pruebas
+positiva en la corrida original. Correcciones y aprobación humana global descritas abajo. Compromiso
+conservador USD 0,5843775 del tope USD 2, no factura. Suite de fase 13: 100 pruebas
 aprobadas; Docker actualizado y verificado. Evidencias: `evidencias/13_*`.
+
+Correcciones locales posteriores: [detalle y límites](docs/CORRECCIONES_LOCALES.md).
+139 pruebas aprobadas; revalidación sin API de las salidas guardadas: 9/10 v1 y
+10/10 v2. Son resultados del evaluador corregido, no una nueva evaluación real
+ni evidencia independiente de mejora del prompt. Evidencias de fase 13 preservadas.
+
+[Revisión semántica y técnica](docs/REVISION_SEMANTICA.md): 23 respuestas revisadas
+por el asistente (no revisión humana), dos observaciones en v1, 149 tests sin red,
+revalidación sin cambios y presupuesto intacto. Evidencias de fase 15.
+
+Aprobación humana global recibida el 12-11-2026; registro independiente con hashes en
+`evidencias/16_aprobacion_revision_humana.json`. Se conservan las observaciones v1
+y la evidencia original. La repetición real final y el despliegue siguen pendientes.

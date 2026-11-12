@@ -206,3 +206,58 @@ No se ejecutó repetición final, no se habilitó servicio público ni se gastó
 Se releyó la pauta Proyecto_Final_Advanced_Prompt_Engineering.pdf y se contrastó
 con el prompt maestro. El informe de brechas distingue implementación, despliegue,
 validación y entregables; la fecha de entrega es 13-11-2026 a las 23:59 de Chile.
+
+## Fase 14: correcciones locales solicitadas del punto 1
+
+Se acotaron por cláusula las excepciones de negación causal, se exigió cobertura
+parcial estructurada para explicar incomparabilidad y se limitó el alcance de
+acciones de investigación. Se corrigió el criterio KG/UN para reconocer porcentajes
+de cumplimiento por unidad física. La revalidación reveló otro falso positivo en
+la prohibición literal de «cumplimiento perfecto» dentro de una negación directa;
+se corrigió manteniendo rechazo de afirmaciones positivas y dobles negaciones.
+
+Se añadieron 39 pruebas de regresión/adversarias: total 139 aprobadas sin red.
+Nuevo script revalidar_evidencia.py verifica hashes, conserva datos/prompts y no
+llama al proveedor. Resultado final offline 9/10 v1 y 10/10 v2 sobre las mismas
+23 respuestas observadas; no es una mejora nueva del prompt ni revisión humana.
+La prueba intermedia queda conservada. GS-05/v1 sigue sin cumplir referencias.
+
+14_integridad.json verifica igualdad con HEAD de prompts, golden set, demo, motor,
+evaluación y presupuesto originales. Registro persistente sin cambios, cero llamadas
+y costo API nuevo USD 0. Dashboard deshabilitado. No se realizó repetición real,
+no se cambió el prompt por defecto y no se desplegó ni publicó esta fase.
+
+## Fase 15: revisión semántica asistida y técnica local
+
+Se leyeron íntegramente las 23 respuestas de los veinte pares caso/prompt y se
+contrastaron contra hechos reconstruidos. Sin contradicciones numéricas observadas,
+inyección obedecida ni causalidad comercial afirmada. Dos observaciones v1: orden
+del foco familiar GS-03 y falta de referencias interanuales GS-05. Registro individual
+con hash, ubicación y justificación en 15_revision_semantica_asistente.json. No se
+completó revisión humana ni se modificaron los campos humanos originales.
+
+Se reprodujo y bloqueó una afirmación causal añadida a una acción «Investigar si…»
+y se corrigió la revalidación offline para no rescatar JSON de una respuesta incompleta
+o con fallo operativo. Validador revisión 3, criterios revisión 2, revalidador revisión 2.
+149 tests aprobados sin red; revalidación conserva 9/10 v1 y 10/10 v2. Se reconstruye
+y verifica el contenedor local. Sin nuevas llamadas ni consumo API, originales y
+registro presupuestario intactos; sin commit/push, despliegue o cambio de prompt activo.
+
+## Fase 16: aprobación humana y publicación de correcciones bajo G2
+
+El usuario aprobó globalmente la revisión humana y solicitó expresamente auditar
+y publicar las correcciones locales en el repositorio público existente, rama main.
+La aceptación se registra con hashes en 16_aprobacion_revision_humana.json. No se
+alteran respuestas, observaciones ni campos individuales del registro histórico.
+
+Se ejecutó nuevamente `.venv/bin/python -m pytest -q`: 149 pruebas aprobadas en
+0,60 s, sin red. Docker conserva la verificación de fase 15; no se declara un nuevo
+build en esta fase documental y de publicación. Sin nuevas llamadas pagadas ni
+cambios del presupuesto. La repetición real, G3, URL pública, video y ficha final
+siguen pendientes. El resultado de publicación se documentará tras verificar GitHub.
+
+Auditoría previa: 125 archivos del índice y 204 objetos Git inspeccionados, incluidos
+objetos huérfanos, sin hallazgos por patrones ni coincidencia de la credencial local.
+Originales y presupuesto conservados; las 27 filas de la matriz permanecen presentes.
+Los reintentos de acceso a Git usaron la autorización G2 tras las restricciones de
+red y escritura de .git del entorno; no se amplió el alcance de publicación.

@@ -2,9 +2,13 @@
 
 Alcance actual: G0/G2 completos; G1 vigente hasta USD 2 acumulados.
 Conexión real GPT-6.1 Sol HTTP 200 y veinte casos evaluados (diez por prompt).
-V1: 80% y v2: 70% de casos con criterios automáticos cumplidos; sin mejora positiva.
+Evaluación real original: v1 80%, v2 70%; sin mejora positiva.
+Revisión local vigente: 149 tests, revalidación offline 9/10 y 10/10.
+Revisión cualitativa del asistente sobre 23 respuestas documentada en fase 15.
+Aprobación humana global recibida; evidencia 16_aprobacion_revision_humana.json.
+No sustituye una nueva comparación real ni aporta dictámenes individuales nuevos.
 Compromiso conservador total USD 0,5843775; billing no consultado.
-GitHub público; despliegue G3, revisión humana, video y ficha final pendientes.
+GitHub público; despliegue G3, comparación real final, video y ficha final pendientes.
 No asigna puntaje ni aprobación comercial/académica.
 VERIFICADO significa evidencia concreta dentro del alcance señalado, no una promesa.
 Se preservan las 27 filas de la sección 14 del prompt.
@@ -24,14 +28,14 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | PE-02 | Reglas del agente | AGENTS.md; evidencias/10_autorizacion_g1.md | VERIFICADO | G0/G1/G2 documentados; G1 ajustado a USD 2 acumulados; G3 pendiente |
 | PE-03 | Prompts de sistema versionados | prompts/analista_v1.md; analista_v2.md; 12_github_publicado.json | VERIFICADO | Dos versiones y carga literal comprobadas; ambas versionadas en Git |
 | PE-04 | Golden set 5+, objetivo 8–10 | golden_set/casos_analista.json; tests/test_golden_set.py | VERIFICADO | Diez casos reproducibles; evaluación real es PE-05 |
-| PE-05 | Mejora medida v1/v2 | docs/MEJORA_PROMPTS.md; evidencias/13_evaluacion_real.json | EN_PROCESO | Comparación real: 80% v1 vs 70% v2; regresión de 10 pp. Falsos positivos, revisión humana y repetición final pendientes |
-| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; verificación semántica no exhaustiva |
-| PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; suite local | EN_PROCESO | GS-07/10 cumplen criterios automáticos reales; revisión semántica humana pendiente, casos de cobertura/unidad por corregir |
+| PE-05 | Mejora medida v1/v2 | docs/MEJORA_PROMPTS.md; evidencias/13_evaluacion_real.json | EN_PROCESO | Comparación real: 80% v1 vs 70% v2; regresión de 10 pp. Falsos positivos corregidos localmente (fase 14); revisión asistida completada en fase 15; aprobación humana global recibida en fase 16; repetición real pendiente |
+| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; validador revisión 3 y 149 tests; verificación semántica no exhaustiva |
+| PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; suite local | EN_PROCESO | GS-07/10 cumplen criterios automáticos reales; revisión asistida de inyección/abstención completada; aprobación humana global recibida; cobertura/unidad revalidadas offline |
 | DEV-01 | README completo | README.md | EN_PROCESO | Uso, arquitectura, negocio y controles completos; URLs reales pendientes |
-| DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/13_docker_build.txt; 13_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con adaptador GPT-6.1 Sol; salud/demo 200 y usuario 10001; .env excluido |
+| DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
 | DEV-03 | Repositorio accesible al profesor | evidencias/12_github_publicado.json; 06_github_url.txt | VERIFICADO | Público, HTTP 200 sin autenticación, README íntegro y SHA local/remoto iguales |
 | DEV-04 | URL HTTPS pública | NO EJECUTADO | BLOQUEADO | Falta G3; localhost no cuenta |
-| DEV-05 | Secretos fuera repo/historial/imagen | evidencias/12_github_publicado.json; 12_auditoria_indice.json; 11_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
+| DEV-05 | Secretos fuera repo/historial/imagen | evidencias/16_auditoria_indice.json; 16_integridad_prepublicacion.json; 15_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
 | DEV-06 | Secreto en plataforma | docs/DESPLIEGUE.md | BLOQUEADO | Solo diseño; falta configurar referencia a secreto con G3 |
 | DEV-07 | Control de gasto cloud y API | docs/COSTOS_Y_LIMITACIONES.md; tests/test_golden_set.py; test_app.py | EN_PROCESO | Presupuesto persistente del evaluador comprobado hasta USD 2; no protege endpoint público; cuotas/alertas cloud pendientes |
 | DEV-08 | Health y flujo posdespliegue | Salud/dashboard locales comprobados | BLOQUEADO | Prueba pública todavía no ejecutada; requiere G3/G1 |

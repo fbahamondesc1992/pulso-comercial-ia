@@ -1,5 +1,17 @@
 # Evaluación real v1 vs. v2 · 12-11-2026
 
+Actualización de revisión (fase 15): 23 respuestas examinadas por el asistente,
+149 pruebas sin red y controles adicionales para afirmaciones añadidas a hipótesis
+y estados incompletos del proveedor. Ver [revisión semántica](REVISION_SEMANTICA.md).
+Revisión humana y repetición final siguen pendientes; sin gasto API nuevo.
+
+
+**Actualización local posterior:** corregidos los falsos positivos y criterios de
+unidad; ver [correcciones locales](CORRECCIONES_LOCALES.md). Revalidación offline:
+v1 9/10 y v2 10/10. No sustituye la evaluación original de abajo (8/10 y 7/10),
+no añade llamadas ni constituye mejora del prompt o repetición final.
+
+
 Se completaron diez casos por versión con GPT-6.1 Sol, Responses API, reasoning low,
 servicio Standard, caché TTL 30m, salida máxima 1.800 tokens, timeout 20 s y sin tools.
 Se preservaron prompts, casos, payloads, esquema y validadores durante la comparación.
@@ -42,7 +54,7 @@ cumplieron sus criterios automáticos en ambas versiones; falta contrastar semá
 las salidas y registrar revisor, fecha, decisión y justificación. Cero detecciones
 numéricas no garantiza ausencia de todos los errores semánticos.
 
-Siguiente corrección local: distinguir negaciones/limitaciones de afirmaciones
+Corrección local identificada durante esta corrida (resuelta después en fase 14): distinguir negaciones/limitaciones de afirmaciones
 causales y comprobar separación de unidades mediante dimensión y evidencia del
 hecho, sin obligar a citar una métrica distinta. Mantener pruebas adversarias contra
 causas inventadas, documentar cambio de evaluador y volver a comparar ambos prompts

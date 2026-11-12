@@ -1,0 +1,18 @@
+{
+  "fuente_sha256": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7",
+  "respuestas_con_hash_y_ubicacion_verificados": 23,
+  "originales_sin_cambios": [
+    "prompts/analista_v1.md",
+    "prompts/analista_v2.md",
+    "golden_set/casos_analista.json",
+    "indicadores.py",
+    "datos/demo_ventas.csv",
+    "evidencias/13_evaluacion_real.json",
+    "evidencias/13_evaluacion_real.csv",
+    "evidencias/13_presupuesto_final.json"
+  ],
+  "presupuesto_persistente_sin_cambios": true,
+  "revision_humana_completada": false,
+  "llamadas_api_nuevas": 0,
+  "costo_api_nuevo_usd": "0"
+}

@@ -1,0 +1,518 @@
+{
+  "fecha_utc": "2026-11-12T21:28:05.097533+00:00",
+  "tipo": "REVALIDACION_OFFLINE_DE_RESPUESTAS_EXISTENTES",
+  "llamadas_api": 0,
+  "costo_nuevo_usd": "0",
+  "revision_humana": "PENDIENTE",
+  "no_demuestra_mejora_del_prompt": true,
+  "evidencia_original": "13_evaluacion_real.json",
+  "sha256_original": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7",
+  "validador_version": "2",
+  "criterios_version": "2",
+  "sha256_archivos": {
+    "analista_ia.py": "d75ce02471d9d825f897768901c568b9edc96b49cda70e6c340959442918a988",
+    "scripts/golden.py": "eb4fb1d5ff28bfae4c89a452ab484aed113d8320a1a06cdc2abe05eaa2c3103f",
+    "prompts/analista_v1.md": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+    "prompts/analista_v2.md": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+    "golden_set/casos_analista.json": "f5d728173ee254b4fe08fd96a11f255c860203db12ada40b14ec571414f92c7b"
+  },
+  "resumen": {
+    "v1": {
+      "casos": 10,
+      "cumplen_original": 8,
+      "cumplen_revalidacion": 9
+    },
+    "v2": {
+      "casos": 10,
+      "cumplen_original": 7,
+      "cumplen_revalidacion": 9
+    }
+  },
+  "resultados": [
+    {
+      "caso": "GS-01",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "191670cba038b0e7324073735ba0a437a8a2d0c9947c86ba8f1908b09a3b61b0",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-02",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "9ead152f3d088c1b9633ec5ce8e9092073b1df834ab1ffb1db21cab77d066370",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-03",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "822fa6d4836b52d30231928e0ea66260b138dd50a20a930a100ddadffd91e5e7",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "dimension_prioritaria": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-04",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "393e20614792b63447365280e2d52157c9816e8480a2f680aa8d18e26614ab83",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-05",
+      "prompt": "v1",
+      "automatico_original": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "1d8617522f3e4d4ee61e154c9c3f7137deac17e674ed4a92e0e7dcea76acad3c",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": false,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": false
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": false
+    },
+    {
+      "caso": "GS-06",
+      "prompt": "v1",
+      "automatico_original": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "f3854b79416bc8200383f6193510943b00eec5c0aedc353c624de995193f8cab",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "unidades_separadas": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-07",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "c4c1b6f53859a35e71c310e16c64373fa2a3b9e19896b5fbfc06ad79a52eb43a",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-08",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "3a0e4c8b6fe2ca1ecf76c046b194bb896578f700e52dbd4154c852af90a9e083",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-09",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "2a3141e7248e8497b8a105c08bbe1720857306d40dc68213f360292d5e8bfac2",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-10",
+      "prompt": "v1",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "131b0218865cbbed86305612d718b1ea1bb63b5a0f090cbf296424509f9b1557",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "abstencion": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-01",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "causalidad_no_sustentada",
+          "salida_sha256": "3e1f0a91a2eaa7b8a25099844d04d2f6e21c72db1599066498b3e7035601b31b",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        },
+        {
+          "intento": 2,
+          "estado_original": "valido",
+          "salida_sha256": "067cd8794d20affe98d3460d400905be3a4eb36cbfdaedd0438b50493a93b2bb",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-02",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "85d7329e7f72e73ee5e95cc737ace4ebc5326a73bbd5ba98d3e9123562ff0c7a",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-03",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "f642cab4199de0eba5d6cb759cd0c63bc6a7e9bdba90957b8495160c6f28e2df",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "dimension_prioritaria": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-04",
+      "prompt": "v2",
+      "automatico_original": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "causalidad_no_sustentada",
+          "salida_sha256": "89809e6039f99cbaf218cb51c427111b2db7e30d70fe6ed2e39ab97d0b47ec2e",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": false
+          },
+          "automatico_correcto": false
+        },
+        {
+          "intento": 2,
+          "estado_original": "causalidad_no_sustentada",
+          "salida_sha256": "cf380b62907bc408b1ce50455a97156eeedb99f6fbff276aaba65085f40d481d",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": false
+          },
+          "automatico_correcto": false
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": false
+    },
+    {
+      "caso": "GS-05",
+      "prompt": "v2",
+      "automatico_original": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "causalidad_no_sustentada",
+          "salida_sha256": "95bb02f0474ef72252a2fad4990bc61d1ba965a7c7aa29508bf935399e6fb1a8",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        },
+        {
+          "intento": 2,
+          "estado_original": "causalidad_no_sustentada",
+          "salida_sha256": "2320bf58829dce569f6b71dd954b11316830552addd4ede28160c65a75128794",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-06",
+      "prompt": "v2",
+      "automatico_original": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "cd8650dfcfe083eb2a2323c80df73bb7a60424a3714d5e7820c1682944e266e9",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "unidades_separadas": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-07",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "dbf9829f3e9095f619d2d14b8a61d25a2556deb19b36fde4fc19efbc9b6be275",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-08",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "7da8a6691f895a3c5ca98a7793924ca7e81a0a49cd2ef67109f4578d54b81dd7",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-09",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "f569b15d292b614af0118c068392d79b8ce956425d2fff5db9c05b663ad91779",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    },
+    {
+      "caso": "GS-10",
+      "prompt": "v2",
+      "automatico_original": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "estado_original": "valido",
+          "salida_sha256": "43e23d111dcdb00e7890c1d5d90f572ee8bd1012e884574ae2c50213125add27",
+          "estado_revalidado": "valido",
+          "criterios": {
+            "indicadores_citados": true,
+            "max_hallazgos": true,
+            "min_hallazgos": true,
+            "abstencion": true,
+            "sin_frases_prohibidas": true
+          },
+          "automatico_correcto": true
+        }
+      ],
+      "primer_intento_observado_aceptado": 1,
+      "automatico_revalidado": true
+    }
+  ]
+}

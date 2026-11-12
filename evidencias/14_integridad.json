@@ -1,0 +1,40 @@
+{
+  "base_git": "db35039752d29c5c8936a413700c7db2280a6c33",
+  "archivos": {
+    "prompts/analista_v1.md": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208"
+    },
+    "prompts/analista_v2.md": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109"
+    },
+    "golden_set/casos_analista.json": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "f5d728173ee254b4fe08fd96a11f255c860203db12ada40b14ec571414f92c7b"
+    },
+    "datos/demo_ventas.csv": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "ed65e0e254440f079b36622b7a9fb4d72da1e91ad900662c928dbeed2c8c5532"
+    },
+    "indicadores.py": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "7afedfe9b085ae3bc5b97f615be1fa89d5c4b6a0e08a2a313acf7e597dc65f9a"
+    },
+    "evidencias/13_evaluacion_real.json": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7"
+    },
+    "evidencias/13_evaluacion_real.csv": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "4a22b1f02024081772bc1669e1f78b7c2cdd15e2af14e9ae6b31580e611e64ac"
+    },
+    "evidencias/13_presupuesto_final.json": {
+      "sin_cambios_frente_a_HEAD": true,
+      "sha256": "11a9d38fdbb410b0fba752b35ce74eb7f000f48645f9f0b6365982034c865cc2"
+    }
+  },
+  "presupuesto_persistente_sin_cambios": true,
+  "llamadas_api_nuevas": 0,
+  "costo_api_nuevo_usd": "0"
+}
