@@ -33,9 +33,9 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; suite local | EN_PROCESO | GS-07/10 cumplen criterios automáticos reales; revisión asistida de inyección/abstención completada; aprobación humana global recibida; cobertura/unidad revalidadas offline |
 | DEV-01 | README completo | README.md | EN_PROCESO | Uso, arquitectura, negocio y controles completos; URLs reales pendientes |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
-| DEV-03 | Repositorio accesible al profesor | evidencias/12_github_publicado.json; 06_github_url.txt | VERIFICADO | Público, HTTP 200 sin autenticación, README íntegro y SHA local/remoto iguales |
+| DEV-03 | Repositorio accesible al profesor | evidencias/16_github_publicado.json; 06_github_url.txt | VERIFICADO | Correcciones 98199c0 publicadas; HTTP 200 sin autenticación, README íntegro y SHA local/remoto iguales |
 | DEV-04 | URL HTTPS pública | NO EJECUTADO | BLOQUEADO | Falta G3; localhost no cuenta |
-| DEV-05 | Secretos fuera repo/historial/imagen | evidencias/16_auditoria_indice.json; 16_integridad_prepublicacion.json; 15_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
+| DEV-05 | Secretos fuera repo/historial/imagen | evidencias/16_auditoria_indice.json; 16_github_publicado.json; 15_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
 | DEV-06 | Secreto en plataforma | docs/DESPLIEGUE.md | BLOQUEADO | Solo diseño; falta configurar referencia a secreto con G3 |
 | DEV-07 | Control de gasto cloud y API | docs/COSTOS_Y_LIMITACIONES.md; tests/test_golden_set.py; test_app.py | EN_PROCESO | Presupuesto persistente del evaluador comprobado hasta USD 2; no protege endpoint público; cuotas/alertas cloud pendientes |
 | DEV-08 | Health y flujo posdespliegue | Salud/dashboard locales comprobados | BLOQUEADO | Prueba pública todavía no ejecutada; requiere G3/G1 |

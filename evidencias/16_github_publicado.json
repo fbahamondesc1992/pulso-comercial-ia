@@ -1,0 +1,28 @@
+{
+  "fecha_utc": "2026-11-12T22:02:15.960464+00:00",
+  "repo": "https://github.com/fbahamondesc1992/pulso-comercial-ia",
+  "visibilidad": "public",
+  "rama": "main",
+  "commit_correcciones": "98199c0f391d40a54b21c6b8ca266a24383ebfee",
+  "sha_remoto_verificado": "98199c0f391d40a54b21c6b8ca266a24383ebfee",
+  "sha_local_remoto_iguales": true,
+  "http_sin_autenticacion": 200,
+  "readme_http_sin_autenticacion": 200,
+  "readme_identico": true,
+  "readme_sha256": "edf869596ebd825ea99deedd1e8785e85f565f011dfd2cddbc0d6270f7273ad5",
+  "push": "normal, sin force",
+  "tests": {
+    "aprobados": 149,
+    "red": false
+  },
+  "auditoria_post_commit": {
+    "archivos_indice": 126,
+    "objetos_git": 211,
+    "hallazgos": 0,
+    "limitacion": "Patrones y coincidencia de credencial local; no garantía universal"
+  },
+  "llamadas_ia_nuevas": 0,
+  "costo_ia_nuevo_usd": "0",
+  "despliegue": false,
+  "nota": "Este registro verifica el commit de correcciones; se incorpora en un commit documental posterior."
+}

@@ -3,7 +3,7 @@
 Actualización fase 16: validador y criterios corregidos, 149 pruebas aprobadas;
 revisión asistida de 23 respuestas y aprobación humana global recibida. Se conservan
 las observaciones v1. Repetición real final, selección de prompt y G3 pendientes.
-La publicación de las correcciones está autorizada bajo G2. El diagnóstico siguiente
+Correcciones publicadas bajo G2: commit 98199c0; evidencia 16_github_publicado.json. El diagnóstico siguiente
 es histórico (fases 13–14); los estados vigentes están en MATRIZ_CUMPLIMIENTO.md.
 
 

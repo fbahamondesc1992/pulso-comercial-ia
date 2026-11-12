@@ -261,3 +261,10 @@ objetos huérfanos, sin hallazgos por patrones ni coincidencia de la credencial 
 Originales y presupuesto conservados; las 27 filas de la matriz permanecen presentes.
 Los reintentos de acceso a Git usaron la autorización G2 tras las restricciones de
 red y escritura de .git del entorno; no se amplió el alcance de publicación.
+
+Publicación completada: commit de correcciones
+`98199c0f391d40a54b21c6b8ca266a24383ebfee`, push normal a origin/main.
+SHA local/remoto iguales, repositorio HTTP 200 sin autenticación y README remoto
+idéntico byte a byte. Auditoría posterior al commit: 126 archivos y 211 objetos,
+sin hallazgos. Evidencia: 16_github_publicado.json, incorporada en un commit documental
+posterior. No hubo llamadas a IA ni despliegue en esta fase.
