@@ -1,108 +1,88 @@
-# Costos y límites · estimación, no gasto observado
+# Costos y límites · 12-11-2026
 
-Actualización G2/modelo: nueva clave guardada por el usuario; todavía no probada.
-Se seleccionó GPT-6.1 Sol y se solicitó revisar primero sus tarifas/presupuesto.
-Ver [revisión vigente](REVISION_MODELO_GPT61_SOL.md). Los importes y el 401 descritos
-más abajo corresponden al alcance anterior de GPT-5.6 Terra. No se ejecutaron
-nuevas llamadas pagadas ni evaluación.
+## Autorización vigente
 
+El usuario declaró una carga de USD 5 y limitó la prueba de conexión y evaluación a
+**USD 2 acumulados**, para reservar USD 3 al profesor. Este límite sustituye USD 3
+inicialmente autorizado y la propuesta no aprobada de USD 7. No se verificó el saldo
+real de billing. G3 y consumo público siguen sin autorizar; AI_ENABLED=false.
 
-Fecha de consulta: 12-11-2026. Moneda: USD; sin IVA, conversión a CLP, créditos ni
-descuentos por caché. No se realizó ninguna llamada pagada ni despliegue.
+Modelo seleccionado: `gpt-6.1-sol`, Responses API, reasoning low, servicio Standard,
+store=false, sin herramientas, caché con TTL de 30 minutos. No se utilizan Fast,
+Ultrafast, residencia regional ni contexto largo. Salida máxima: 512 tokens en
+conexión y 1.800 en evaluación, incluidos tokens de razonamiento; timeout 20 s.
 
-Actualización de conexión: G1 autorizado; se realizó un intento real rechazado con
-HTTP 401 `invalid_api_key`, sin generación ni datos de uso reportados. El costo del
-intento no se inventa (null en evidencia). Se conserva prudentemente una reserva de
-USD 0,1416 del alcance presentado y se descuenta un intento de los 40 autorizados.
-La batería permanece sin ejecutar hasta disponer de una credencial válida.
+## Precios y estimación operativa
 
-## Modelo y API
+Precios oficiales por millón de tokens: entrada USD 2; salida USD 10; lectura de
+caché USD 0,10; escritura con TTL 30m USD 2,50. La escritura usa esa tarifa total,
+no un recargo adicional. Consulta oficial el 12-11-2026:
+- https://developers.openai.com/api/docs/models/gpt-6.1-sol
+- https://developers.openai.com/api/docs/pricing?latest-pricing=standard
+- https://developers.openai.com/api/docs/guides/prompt-caching
 
-OpenAI `gpt-5.6-terra` declara soporte de Responses API y salidas estructuradas.
-Precio estándar publicado: USD 2 por millón de tokens de entrada, USD 12 de salida.
-Se propone reasoning.effort=none y salida máxima 1.800 tokens. Cuenta, saldo,
-disponibilidad y límites efectivos: NO VERIFICADOS.
-Fuente: https://developers.openai.com/api/docs/models/gpt-5.6-terra
+Supuesto por intento: 6.000 tokens de entrada y 900 de salida totales.
+Costo estimado sin escritura: USD 0,021; valorando toda la entrada como escritura:
+USD 0,024. Con 10% de reintentos: USD 0,0231–0,0264 por análisis. No son mediciones
+reales ni tarifas garantizadas. Los descuentos de lectura no se presuponen.
 
-Hipótesis para una consulta típica: 6.000 tokens de entrada y 900 de salida.
-Son supuestos de planificación, NO mediciones del modelo. El payload demo observado
-tiene 13.258 bytes UTF-8 antes de los últimos ajustes de advertencias; no equivalen
-a tokens. Prompt, esquema y framing también consumen entrada.
+Cloud Run Santiago: 1 vCPU, 512 MiB, min=0, max=1, concurrencia=4. Supuestos aún no
+configurados: 20 s activos y ocho requests/análisis, sin free tier. Tarifas consultadas
+previamente: CPU USD 0,0000336/vCPU-s, memoria USD 0,0000035/GiB-s y USD 0,40/millón
+requests. Evidencia: 05_fuente_cloud_run.json. Compute estimado: USD 0,0007102/análisis.
+Provisión hipotética adicional: USD 2/mes para builds, imagen, secretos, logs y tráfico.
+No es una tarifa ni un tope; falta concretar recursos antes de G3.
 
-Costo por intento típico = (6.000 × 2 + 900 × 12) / 1.000.000 = USD 0,0228.
-Con 10% de consultas que requieren un segundo intento: USD 0,02508 por análisis.
-Como máximo se realizan dos intentos, no un bucle ilimitado.
-
-## Infraestructura propuesta
-
-Cloud Run, Santiago `southamerica-west1`, facturación por solicitudes, 1 vCPU,
-512 MiB, min-instances=0, max-instances=1, concurrencia=4 y un worker con cuatro
-threads. Valores propuestos, NO configurados. Región presente en documentación.
-
-Tarifas de Santiago extraídas de su tabla oficial: CPU activa USD 0,0000336 por
-vCPU-segundo; memoria activa USD 0,0000035 por GiB-segundo; USD 0,40 por millón
-de requests. Fragmento y región conservados en `evidencias/05_fuente_cloud_run.json`.
-Supuesto conservador de carga ligera: 20 segundos activos por análisis, memoria
-0,5 GiB y ocho solicitudes HTTP por análisis, sin compartir tiempos concurrentes.
-No se aplica free tier: puede estar consumido por otros proyectos de la cuenta.
-
-Compute/requests por análisis = 20 × (0,0000336 + 0,5 × 0,0000035)
-+ 8 × 0,40 / 1.000.000 = USD 0,0007102.
-
-Se añade una **provisión hipotética de USD 2/mes** para builds, almacenamiento de
-imagen, secretos, logs, tráfico y arranques adicionales. No es una tarifa oficial
-ni una garantía de cobertura: reemplazarla por el cálculo por SKU/uso antes de G3.
-
-| Escenario mensual | IA con 10% reintentos | Compute/HTTP | Provisión otros | Total estimado |
+| Análisis/mes | IA estimada | Compute/HTTP | Provisión otros | Total USD |
 |---|---:|---:|---:|---:|
-| 100 análisis | 2,50800 | 0,07102 | 2,00 | **4,58 USD** |
-| 1.000 análisis | 25,08000 | 0,71020 | 2,00 | **27,79 USD** |
+| 100 | 2,31–2,64 | 0,07102 | 2,00 | 4,38–4,71 |
+| 1.000 | 23,10–26,40 | 0,71020 | 2,00 | 25,81–29,11 |
 
-No son un precio de venta, un tope duro ni una factura. Variaciones en duración,
-tráfico, tokens, abuso o configuración pueden elevarlos. La suscripción B2B y su
-precio son hipótesis por validar; el MVP no realiza cobros.
+Sin impuestos, cambio CLP, créditos ni descuentos. Fuentes cloud:
+https://cloud.google.com/run/pricing y https://docs.cloud.google.com/run/docs/locations.
+La ficha PDF de fase 09 conserva el escenario histórico de GPT-5.6 Terra; esta hoja
+sustituye sus estimaciones para el modelo actual. No se presenta la ficha como final.
 
-Fuentes cloud:
-- https://cloud.google.com/run/pricing
-- https://docs.cloud.google.com/run/docs/locations
-- https://docs.cloud.google.com/billing/docs/how-to/budgets
-- https://docs.cloud.google.com/run/docs/configuring/services/secrets
+## Control acumulado de la evaluación
 
-## Propuesta G1: primera evaluación
+Antes de cada intento se reserva USD 0,168: 60.000 tokens de entrada × 2,50/millón
+más 1.800 de salida × 10/millón. La entrada reservada es una cota conservadora por
+bytes UTF-8 más margen de esquema/framing, no una medición de tokens. Se verificó
+que cada payload, prompt y esquema del golden set más 8.192 bytes queda bajo 60.000.
 
-Diez casos × dos prompts = 20 llamadas iniciales; máximo 40 intentos con reintentos.
-Reserva conservadora por intento: 60.000 tokens entrada y 1.800 salida = USD 0,1416.
-Máximo reservado de la batería: USD 5,664. **Solicitar tope USD 6, máximo 40 intentos.**
-La cota de entrada usa un token por byte más margen para esquema/framing, deliberadamente
-superior al contexto admitido. No es una estimación de uso típico. Cada llamada reserva
-ese importe antes de ejecutarse, sin liberarlo tras un fallo de uso desconocido.
-El presupuesto se controla dentro de una ejecución; reiniciar el script no crea permiso
-para otra batería. Consultar gasto anterior y saldo de autorización antes de reejecutar.
-El escenario típico de 20 llamadas sería USD 0,456, pero su consumo real se medirá.
+Cuando OpenAI reporta uso válido, se reemplaza esa reserva por su valoración superior:
+entrada × USD 2,50/millón + salida × USD 10/millón. Los errores sin uso reportado
+mantienen íntegra la reserva; no se les atribuye costo cero. Las respuestas incompletas
+conservan tokens y estado de fallo. El costo estándar simple del informe es una
+estimación, no factura; el compromiso conservador del registro controla el límite.
 
-Esta propuesta NO autoriza la repetición final ni la prueba de producción; deben
-incluirse en una ampliación de presupuesto o una autorización posterior explícita.
-El cambio de modelo exige revalidar tarifas y parámetros.
+Registro persistente: entrega/13_presupuesto_ia.json, exclusivo mediante bloqueo de
+archivo, escrito antes de la llamada y tras liquidar. Un reinicio no reinicia saldo;
+una reserva interrumpida se conserva. Copia final publicable en evidencias/13_presupuesto_final.json.
+El contador incluye intentos previos y limita el total a 40. Si no alcanza para la
+siguiente reserva, se detiene. No se reintentan automáticamente errores del proveedor.
+La batería se detiene si el proveedor no está disponible, evitando repetir fallos de
+configuración. La validación de contenido permite como máximo un reintento por caso.
 
-## Restricciones de abuso y privacidad
+Inicio de la batería: tres intentos de conexión acumulados y compromiso USD 0,3096775:
+USD 0,1416 reservado por el 401 histórico, USD 0,168 por el 400 de migración sin uso,
+y USD 0,0000775 como valoración superior de la conexión válida (11 entrada/5 salida).
+La documentación detectó que in_memory no era compatible con este modelo; se usó
+prompt_cache_options.ttl=30m. La conexión válida respondió OK. Ningún fallo se oculta.
 
-AI_ENABLED=false por defecto; una clave por sí sola no habilita llamadas.
-SDK sin reintentos automáticos; validación con máximo un reintento; timeout de 20 s
-por intento; payload 32.000 bytes; prompt 12.000 bytes; máximo 45 hechos.
-El límite acepta 5 solicitudes IA por IP y hora, 30 globales por hora y proceso;
-cada solicitud puede generar dos intentos. remote_addr no confía en headers externos:
-detrás del proxy puede agrupar usuarios. No equivale a identificación individual.
-Se elimina el estado vencido para acotar memoria. Restart, nuevos workers o instancias
-reinician/separan contadores: **no son un tope duradero de gasto**.
+La autorización cubre esta comparación inicial, no una repetición final ni tráfico
+público. El saldo real del proveedor puede diferir por otros usos de la misma cuenta.
 
-No hay CORS abierto; se exige header de aplicación y Origin compatible. Esto reduce
-uso cruzado desde navegadores, no bloquea clientes HTTP deliberados.
-Configurar cuota/límite efectivo del proveedor si está disponible; documentar su
-ausencia si no. Configurar alertas cloud y comprobar si existen spend caps aplicables
-al servicio/cuenta. Una alerta de presupuesto no detiene por sí misma el consumo.
-Ninguna alerta, cuota o secreto cloud está configurado todavía.
+## Límites de operación y privacidad
 
-El CSV se mantiene solo en memoria del navegador y petición. Flask usa BytesIO para
-multipart, sin spool a disco. Etiquetas enviadas al modelo son alias; esto no convierte
-datos sensibles en datos autorizados. Usar exclusivamente datos ficticios. El reporte
-no determina causalidad, predicción ni aprobación comercial.
+Límites locales de dashboard: 5 solicitudes/IP/h y 30 globales/h por proceso; cada
+solicitud puede requerir dos intentos. Reinicios o nuevos workers reinician contadores:
+no son un tope persistente para la demo pública. El presupuesto persistente descrito
+arriba protege el evaluador, no el endpoint público. Antes de habilitar pruebas del
+profesor se debe acotar el gasto del servicio y definir cómo usará el saldo reservado.
+
+CSV ficticios exclusivamente, conservados en memoria; nunca se guardan uploads.
+El proveedor recibe agregados con alias, no el CSV. Evidencias de evaluación contienen
+solo casos y respuestas sintéticos. Secretos excluidos de Git, imagen y logs.
+No hay cuotas, alertas, secretos cloud ni despliegue configurados. Las alertas de gasto
+por sí solas no detienen consumo: https://docs.cloud.google.com/billing/docs/how-to/budgets.

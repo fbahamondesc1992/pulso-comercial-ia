@@ -1,0 +1,17 @@
+{
+  "fecha_utc": "2026-11-12T21:02:59.373976+00:00",
+  "autorizacion": "AUTORIZO EVAL IA GPT-6.1-SOL HASTA USD 3",
+  "tope_acumulado_usd": "3",
+  "max_intentos_acumulados": 40,
+  "modelo": "gpt-6.1-sol",
+  "reasoning_effort": "low",
+  "service_tier": "default",
+  "intentos_anteriores": 1,
+  "reserva_anterior_usd": "0.1416",
+  "prueba_conexion_nueva": {
+    "reserva_antes_de_llamar_usd": "0.168",
+    "max_intentos": 1,
+    "max_output_tokens": 512
+  },
+  "G3": "NO AUTORIZADO"
+}

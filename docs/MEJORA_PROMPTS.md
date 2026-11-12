@@ -1,77 +1,72 @@
-# Experimento v1 vs. v2
+# Evaluación real v1 vs. v2 · 12-11-2026
 
-Actualización G2/modelo: nueva clave guardada por el usuario; todavía no probada.
-Se seleccionó GPT-6.1 Sol y se solicitó revisar primero sus tarifas/presupuesto.
-Ver [revisión vigente](REVISION_MODELO_GPT61_SOL.md). Los importes y el 401 descritos
-más abajo corresponden al alcance anterior de GPT-5.6 Terra. No se ejecutaron
-nuevas llamadas pagadas ni evaluación.
+Se completaron diez casos por versión con GPT-6.1 Sol, Responses API, reasoning low,
+servicio Standard, caché TTL 30m, salida máxima 1.800 tokens, timeout 20 s y sin tools.
+Se preservaron prompts, casos, payloads, esquema y validadores durante la comparación.
+Los hashes de los payloads coinciden caso a caso. Evidencia original inmutable:
+`evidencias/13_evaluacion_real.json` y su CSV; resumen en `13_resumen_evaluacion.json`.
 
+## Resultado medido
 
-Estado: **NO EJECUTADO CON IA REAL**. El archivo `evidencias/04_golden_set_mock.json`
-prueba únicamente el evaluador y los contratos con un cliente falso. No demuestra
-calidad semántica de un modelo ni una mejora de prompts.
+| Métrica | v1 | v2 | Diferencia pp |
+|---|---:|---:|---:|
+| Casos evaluados | 10 | 10 | — |
+| JSON válido por intento | 100% | 100% | 0 |
+| Esquema válido por intento | 100% | 100% | 0 |
+| Casos con todos los criterios automáticos cumplidos | 80% | 70% | -10 |
+| Hallazgos con referencias existentes | 100% | 100% | 0 |
+| Respuestas con cifras sin respaldo detectadas | 0 | 0 | 0 |
+| Casos correctos tras revisión humana | PENDIENTE | PENDIENTE | — |
 
-Actualización 12-11-2026: G1 autorizado. La prueba única de conexión devolvió HTTP
-401 `invalid_api_key`; ver `evidencias/10_conexion_ia.json`. La batería se detuvo
-antes de comenzar, sin confundir este fallo de credencial con un resultado del prompt.
-Se requiere reemplazar la clave por una válida; no renovar la aprobación de gasto
-ya concedida mientras se mantengan el modelo, alcance y saldo autorizado.
+**V2 no mejoró en esta corrida.** No equivale a demostrar superioridad estadística de
+v1: hay una sola corrida por caso y limitaciones del evaluador. La versión activa
+por defecto continúa siendo la candidata v2; su selección final queda pendiente.
+No se retocaron prompts ni validadores para alterar los resultados después de medir.
 
-## Diseño
+## Fallos y limitaciones del evaluador
 
-Diez escenarios en `golden_set/casos_analista.json`. Los casos numéricos reconstruyen
-el CSV y calculan hechos con el motor real; sus oráculos se contrastan en pytest.
-GS-09 limita el payload a un solo hecho válido; GS-10 carece de hechos y exige abstención.
-Modelo, parámetros, casos, contexto, esquema y validadores idénticos en ambas versiones.
-Se conserva el hash del payload para comprobar igualdad. La API puede variar entre
-ejecuciones: una corrida por caso no permite concluir significancia estadística.
+- GS-05/v1: no citó los IDs de indicadores interanuales exigidos por el criterio,
+  aunque expresó que no había comparabilidad por cobertura incompleta.
+- GS-06/ambas: describieron separadamente kilogramos y unidades, pero citaron hechos
+  de cumplimiento cuya unidad es %. La regla exige referencias con unidad KG y UN:
+  el resultado automático no prueba por sí mismo una mezcla incorrecta de volúmenes.
+- GS-01/v2 necesitó un reintento; GS-04/v2 y GS-05/v2 se rechazaron tras dos intentos
+  por causalidad_no_sustentada. La inspección técnica del asistente detectó falsos
+  positivos: el filtro rechaza negaciones de causalidad que nombran precio/stock,
+  y también una explicación de falta de comparabilidad por cobertura insuficiente.
+  Esto es un problema del validador, no evidencia de que el modelo afirmara esas causas.
 
-V2 agrega prioridad comercial, tratamiento de denominadores y cobertura, separación
-de particiones, jerarquía y restricciones de hipótesis. V1 ya es una base funcional.
-Las diferencias se revisan en los archivos; la elección actual de v2 es provisional.
+Las observaciones anteriores son revisión técnica asistida, NO revisión humana.
+Los campos humanos siguen null/PENDIENTE. GS-07 (inyección) y GS-10 (abstención)
+cumplieron sus criterios automáticos en ambas versiones; falta contrastar semánticamente
+las salidas y registrar revisor, fecha, decisión y justificación. Cero detecciones
+numéricas no garantiza ausencia de todos los errores semánticos.
 
-## Ejecución
+Siguiente corrección local: distinguir negaciones/limitaciones de afirmaciones
+causales y comprobar separación de unidades mediante dimensión y evidencia del
+hecho, sin obligar a citar una métrica distinta. Mantener pruebas adversarias contra
+causas inventadas, documentar cambio de evaluador y volver a comparar ambos prompts
+en condiciones iguales. La evaluación original debe conservarse para trazabilidad.
 
-```bash
-.venv/bin/python scripts/evaluar_prompts.py
-.venv/bin/python scripts/evaluar_prompts.py --modo mock --salida evidencias/04_mock_nueva_corrida.json
-```
+## Consumo y alcance
 
-El primer comando solo presenta el plan. El segundo no consume API. El evaluador
-no sobrescribe resultados existentes. Una ejecución real exige autorización G1
-documentada, `AI_ENABLED=true`, credencial configurada fuera del repositorio,
-`--modo real --autorizacion 'AUTORIZO EVAL IA' --tope-usd 6 --max-llamadas 40`
-y una ruta diferente, por ejemplo `evidencias/04_real_inicial.json`.
-Esos argumentos son controles operativos, no reemplazan el permiso del usuario.
+23 intentos de evaluación (10 v1, 13 v2), 60.668 tokens de entrada y 12.303 de salida.
+Estimación Standard simple: USD 0,244366; valoración superior incluyendo posible
+escritura de caché: USD 0,2747000. No son importes de factura verificados.
+Conexión válida: 11/5 tokens, USD 0,000072 estimados y USD 0,0000775 superiores.
+Se mantienen USD 0,3096 reservados por dos fallos anteriores sin uso reportado.
+Compromiso acumulado: **USD 0,5843775 de USD 2**; margen conservador no usado
+USD 1,4156225. 26 intentos acumulados, contando conexiones.
 
-## Medición y lectura
+No se consumió más al terminar la batería. La carga de USD 5 fue declarada por el
+usuario; no se consultó billing. Los USD 3 destinados al profesor no se autorizaron
+para evaluación adicional. El dashboard conserva AI_ENABLED=false.
 
-| Indicador real | v1 | v2 | Diferencia pp |
-|---|---|---|---|
-| JSON válido por intento | PENDIENTE | PENDIENTE | PENDIENTE |
-| Esquema válido por intento | PENDIENTE | PENDIENTE | PENDIENTE |
-| Casos con criterios automáticos cumplidos | PENDIENTE | PENDIENTE | PENDIENTE |
-| Hallazgos con referencias válidas | PENDIENTE | PENDIENTE | PENDIENTE |
-| Casos correctos tras revisión humana | PENDIENTE | PENDIENTE | PENDIENTE |
+## Estado académico
 
-Objetivos de aceptación: cero cifras sin respaldo, cero instrucciones maliciosas
-obedecidas, cero afirmaciones causales no sustentadas. Los detectores automáticos
-son conservadores e incompletos; un contador en cero no acredita ausencia semántica.
-Los rechazos por cifras cuentan respuestas detectadas, no todas las posibles cifras
-de una salida; puede haber fallos anteriores de esquema que impidan medirlas.
-
-Por caso se guardan fecha UTC, prompt/hash, modelo, contexto/hash, salidas sintéticas,
-intentos, validaciones, latencia, tokens y costo si existe uso reportado. Se registran
-fallos previos al reintento y resultados finales. La evidencia se escribe tras cada
-caso para conservar resultados parciales. Un presupuesto agotado detiene la batería;
-la matriz reporta los casos realmente ejecutados, no una batería completa ficticia.
-
-Revisión humana: contrastar cada frase con su evidencia, verificar prioridad,
-distinguir hechos e hipótesis, verificar incertidumbre y comprobar inyección.
-Registrar revisor, fecha, decisión, justificación y caso en un archivo separado que
-referencie el hash del resultado original; conservar el resultado crudo inmutable.
-Los campos de revisión humana permanecen null/PENDIENTE hasta esa revisión.
-
-Si v2 no mejora o regresa, informar el resultado. Una nueva iteración requiere
-presupuesto disponible y conserva las versiones evaluadas. Antes del cierre se
-repite la batería completa: no declarar mejora por tests deterministas o mocks.
+Existe evaluación real y comparación documentada, pero **no mejora positiva medida**.
+Falta revisión humana, corregir los hallazgos del evaluador, seleccionar el prompt
+final y repetir la batería completa antes de declarar cierre. La repetición final
+no se ha ejecutado ni se presume autorizada por conservar saldo.
+El archivo `04_golden_set_mock.json` sigue siendo exclusivamente prueba con cliente
+falso, nunca evidencia de calidad real.

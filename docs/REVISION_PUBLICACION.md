@@ -10,10 +10,10 @@ Se revisan staging e historial antes del push, incluyendo patrones y coincidenci
 exacta de la credencial local, sin imprimirla. .env, .venv, caches, originales del
 curso y entrega/ están excluidos. La auditoría no constituye garantía universal.
 
-Nueva clave presente en .env, permisos 0600. No fue enviada a OpenAI: el preflight
-rechazó el cambio de modelo antes de crear el cliente. El usuario seleccionó
-GPT-6.1 Sol y pidió revisar tarifas y presupuesto primero. Ver
-REVISION_MODELO_GPT61_SOL.md. El 401 anterior no demuestra que la nueva clave falle.
+Nueva clave presente en .env con permisos 0600 y conexión HTTP 200 verificada.
+Adaptador migrado a GPT-6.1 Sol, low, Standard. Evaluación de veinte casos terminada:
+v1 80%, v2 70%; sin mejora positiva. Compromiso USD 0,5843775 dentro del tope de USD 2.
+Evidencias de fase 13; no equivalen a despliegue ni a revisión humana final.
 
 Código publicado y verificado sin autenticación (HTTP 200); README remoto idéntico.
 Primer SHA local/remoto: 879bfdba8c37da8ae5db0a6bdff6060557af44c4.

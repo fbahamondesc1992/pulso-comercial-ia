@@ -5,11 +5,12 @@ Copiloto ejecutivo de ventas: **Python calcula y valida; el LLM interpreta; el u
 Estado al 12-11-2026: MVP local verificado y publicado en GitHub con autorización G2.
 Repositorio público: https://github.com/fbahamondesc1992/pulso-comercial-ia
 URL de la aplicación: **PENDIENTE**. Evaluación IA y video: **PENDIENTES**.
-La clave anterior devolvió 401; el usuario la reemplazó. La nueva todavía no fue
-probada porque también seleccionó `gpt-6.1-sol` y pidió revisar primero su presupuesto.
-El código conserva `gpt-5.6-terra` hasta completar esa revisión/migración; no usar
-`AI_ENABLED=true` con el nuevo modelo antes de adaptar parámetros y tarifas.
-G3 sigue pendiente. Ver [revisión del modelo](docs/REVISION_MODELO_GPT61_SOL.md).
+La nueva clave pasó la conexión con `gpt-6.1-sol` (HTTP 200, respuesta OK).
+G1 vigente: conexión y evaluación hasta USD 2 acumulados, máximo 40 intentos;
+el usuario reservó los otros USD 3 de su saldo declarado para el profesor.
+El adaptador usa reasoning low y servicio Standard; AI_ENABLED sigue false.
+G3 sigue pendiente. Ver [evaluación](docs/MEJORA_PROMPTS.md) y
+[presupuesto](docs/COSTOS_Y_LIMITACIONES.md).
 
 ![Dashboard local con datos ficticios](evidencias/11_demo_local_1440.png)
 
@@ -63,7 +64,7 @@ comandos guardados. En producción referenciar Secret Manager.
 | PORT | 8080 |
 | AI_ENABLED | false; requiere activación expresa después de G1 |
 | OPENAI_API_KEY | Solo servidor, nunca frontend ni repositorio |
-| AI_MODEL | gpt-5.6-terra; disponibilidad en cuenta pendiente |
+| AI_MODEL | gpt-6.1-sol; conexión real verificada |
 | ANALYST_PROMPT_VERSION | v2, candidata sin mejora real medida |
 | AI_TIMEOUT_SECONDS | 20 por intento, máximo admitido 30 |
 | AI_MAX_OUTPUT_TOKENS | 1800, rango admitido 256..2400 |
@@ -119,14 +120,14 @@ Rutas: `GET /`, `GET /health`, `GET /demo.csv`, `POST /api/dashboard`,
 ```
 
 Prueba puntual autorizada: `.venv/bin/python scripts/probar_conexion_ia.py --ejecutar`.
-Lee la clave de .env, realiza un intento con 32 tokens máximos de salida y no imprime
+Lee la clave de .env, realiza un intento con 512 tokens máximos de salida y no imprime
 el cuerpo de errores ni la credencial. No sobrescribe evidencia existente; para una
-clave reemplazada usar una nueva ruta `--salida`. El rechazo histórico corresponde a la clave anterior; la nueva no fue probada.
+clave reemplazada usar una nueva ruta `--salida`. La prueba de la nueva clave está en evidencias/13_conexion_ia_corregida.json.
 AI_ENABLED=false conserva deshabilitado el gasto desde el dashboard.
 
 Pytest bloquea red. Golden set con cliente falso verifica infraestructura, no calidad
 de IA. [Protocolo y comparación pendiente](docs/MEJORA_PROMPTS.md).
-La evaluación real necesita `AUTORIZO EVAL IA` y presupuesto explícito.
+La evaluación real está autorizada dentro del límite acumulado de USD 2.
 El script conserva resultados por caso, se detiene antes de superar su reserva y no
 sobrescribe evidencias. Repetirlo no renueva una autorización de gasto.
 
@@ -172,7 +173,7 @@ MVP sin login, ERP, persistencia, usuarios, RAG, pronósticos, precios ni datos 
 ## Entrega y apagado
 
 - [Matriz completa](docs/MATRIZ_CUMPLIMIENTO.md), [bitácora](docs/BITACORA_ENTREGA.md).
-- [Ficha de negocio PDF](docs/FICHA_NEGOCIO.pdf): versión local con pendientes visibles.
+- [Ficha de negocio PDF](docs/FICHA_NEGOCIO.pdf): versión histórica local; actualizar modelo/costos y URLs antes de entregar.
 - [Guion de video](docs/VIDEO_GUION.md): no sustituye grabación real.
 - URL pública: PENDIENTE; video: NO GRABADO. GitHub enlazado al inicio.
 
@@ -193,6 +194,16 @@ quedan fuera. La carpeta entrega está excluida de Git.
 fbahamondesc1992/pulso-comercial-ia, público. Despliegue pendiente de G3.
 El ZIP anterior representa el cierre local previo a G2; su manifiesto fecha ese estado.
 
-Actualización local: 96 pruebas sin red, imagen Linux amd64 con python-dotenv,
+Actualización de modelo: GPT-6.1 Sol, low, Standard y caché de 30 minutos.
+Las evidencias vigentes de evaluación y presupuesto se registran en la fase 13.
+Verificación local anterior: 96 pruebas sin red, imagen Linux amd64 con python-dotenv,
 salud/dashboard 200, revisión responsive y recuperación de CSV inválido.
 Evidencias de esta versión en `evidencias/11_*`.
+
+## Revisión de pauta y evaluación real
+
+[Brechas de cierre](docs/BRECHAS_PAUTA_FINAL.md) contrasta los cinco criterios y los
+cuatro entregables del PDF formal. Veinte casos reales: v1 80%, v2 70%, sin mejora
+positiva; revisión humana y corrección de falsos positivos pendientes. Compromiso
+conservador USD 0,5843775 del tope USD 2, no factura. Suite actual: 100 pruebas
+aprobadas; Docker actualizado y verificado. Evidencias: `evidencias/13_*`.

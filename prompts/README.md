@@ -19,9 +19,9 @@ incluso plausible, se rechaza conservadoramente por no asegurar correspondencia
 inequívoca. No se transforma el LLM en calculadora. El texto interpretativo sí es
 generativo cuando se llama al proveedor real. El modo mock no cuenta como IA.
 
-Proveedor preparado: OpenAI Responses API, `gpt-5.6-terra`, reasoning.effort=none,
+Proveedor preparado: OpenAI Responses API, `gpt-6.1-sol`, reasoning.effort=low,
 max_output_tokens=1800, timeout=20 s, SDK max_retries=0, store=false, sin tools.
-La disponibilidad en la cuenta NO se ha comprobado. No se promete determinismo.
+Conexión real en la cuenta comprobada con HTTP 200 y respuesta OK. No se promete determinismo.
 El identificador publicado no ofrece un snapshot fechado distinto en la página
 consultada: registrar también el modelo que retorna cada respuesta.
 
@@ -31,9 +31,9 @@ GS-07 conserva intencionalmente la etiqueta maliciosa sintética para evaluar la
 segunda barrera, el prompt, además de la protección de alias de producción.
 
 Fuentes oficiales consultadas el 12-11-2026:
-- https://developers.openai.com/api/docs/models/gpt-5.6-terra
+- https://developers.openai.com/api/docs/models/gpt-6.1-sol
 - https://developers.openai.com/api/docs/guides/structured-outputs
 
-Ver `docs/MEJORA_PROMPTS.md`: G1 anterior recibido; evaluación real pendiente de
-revisión de presupuesto/migración al nuevo modelo solicitado GPT-6.1 Sol.
-Estas especificaciones corresponden al adaptador actual, todavía sin migrar.
+Ver `docs/MEJORA_PROMPTS.md`: evaluación G1 real autorizada hasta USD 2 acumulados.
+Los prompts v1/v2 se preservan sin cambios durante la comparación. Servicio Standard,
+prompt_cache_options.ttl=30m; no usa el parámetro de retención anterior incompatible.

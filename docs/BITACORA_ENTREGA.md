@@ -176,3 +176,33 @@ SHA inicial 879bfdba8c37da8ae5db0a6bdff6060557af44c4 idéntico local/remoto.
 HTTP 200 sin autenticación y README remoto idéntico. Auditoría completa: 104 objetos
 Git, cero hallazgos. Evidencia 12_github_publicado.json. No hubo llamadas OpenAI
 nuevas, migración del adaptador ni despliegue cloud.
+
+## Fase 13: GPT-6.1 Sol, evaluación real y ajuste de presupuesto
+
+El usuario autorizó USD 3 y luego redujo a USD 2 para conservar USD 3 de una carga
+de USD 5 declarada para el profesor. Billing no consultado. Dashboard sin IA activa.
+Se adaptó reasoning low, Standard, endpoint oficial fijo y cliente sin proxies del
+entorno. La primera conexión recibió 400; se detectó incompatibilidad de in_memory
+y se cambió a prompt_cache_options.ttl=30m según documentación. Segunda: HTTP 200,
+OK, 11 tokens de entrada y 5 de salida. Se preservaron ambas evidencias y reservas.
+
+Se incorporó presupuesto persistente exclusivo por archivo con reservas previas a
+cada llamada y liquidación conservadora del uso reportado. Los fallos sin uso
+conservan toda su reserva; no se imputó costo cero. Las respuestas incompletas
+conservan tokens. Un fallo de proveedor detiene la batería.
+
+Suite: 100 pruebas aprobadas sin red. Docker reconstruido Linux amd64, usuario 10001,
+salud/dashboard 200 e IA 503 deshabilitada; imagen sin credenciales. El primer intento
+de reinicio encontró el nombre aún retenido por auto-remove; tras completarse la
+retirada se inició y verificó el contenedor correcto. Evidencias 13_docker_*.
+
+Evaluación real: 20 casos, 23 intentos (10 v1 y 13 v2), 60.668/12.303 tokens.
+V1 80% frente a v2 70%, sin mejora. Falsos positivos de causalidad y limitación de
+criterio KG/UN descritos en MEJORA_PROMPTS.md; sin modificar la corrida original ni
+marcar revisión asistida como humana. Compromiso acumulado USD 0,5843775, incluye
+USD 0,3096 de reservas históricas desconocidas. Saldo del límite: USD 1,4156225.
+No se ejecutó repetición final, no se habilitó servicio público ni se gastó más.
+
+Se releyó la pauta Proyecto_Final_Advanced_Prompt_Engineering.pdf y se contrastó
+con el prompt maestro. El informe de brechas distingue implementación, despliegue,
+validación y entregables; la fecha de entrega es 13-11-2026 a las 23:59 de Chile.

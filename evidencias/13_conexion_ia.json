@@ -1,0 +1,13 @@
+{
+  "fecha_utc": "2026-11-12T21:03:03.423851+00:00",
+  "modelo_solicitado": "gpt-6.1-sol",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "intentos_maximos": 1,
+  "max_output_tokens": 512,
+  "store": false,
+  "resultado": "RECHAZADO_POR_PROVEEDOR",
+  "http_status": 400,
+  "codigo": "codigo_no_publicado",
+  "costo_estimado_usd": null,
+  "latencia_ms": 1244
+}

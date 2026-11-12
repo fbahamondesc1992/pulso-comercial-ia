@@ -15,22 +15,80 @@ from schemas import InformeIA
 from scripts.golden import cargar_casos, construir_payload, criterios_automaticos
 
 PRECIO_ENTRADA = Decimal("2")
-PRECIO_SALIDA = Decimal("12")
+PRECIO_SALIDA = Decimal("10")
+PRECIO_ENTRADA_RESERVA = Decimal("2.5")
 MAX_SALIDA = 1800
 # Cota deliberadamente conservadora: un token por byte UTF-8, más margen para
 # schema y framing. No es una medición de tokens. El uso real llega del proveedor.
 MAX_ENTRADA_RESERVA = 60_000
-RESERVA_INTENTO = (MAX_ENTRADA_RESERVA*PRECIO_ENTRADA + MAX_SALIDA*PRECIO_SALIDA)/1_000_000
+RESERVA_INTENTO = (MAX_ENTRADA_RESERVA*PRECIO_ENTRADA_RESERVA + MAX_SALIDA*PRECIO_SALIDA)/1_000_000
 
 
 class Presupuesto:
-    def __init__(self,max_calls,tope):
-        self.max_calls,self.tope,self.llamadas,self.reservado = max_calls,Decimal(tope),0,Decimal(0)
+    def __init__(self, max_calls, tope, estado_path=None, consumo_previo="0", llamadas_previas=0):
+        self.max_calls, self.tope = max_calls, Decimal(tope)
+        self.llamadas, self.reservado = llamadas_previas, Decimal(consumo_previo)
+        self.pendiente = False
+        self.movimientos = []
+        self.path = Path(estado_path) if estado_path else None
+        self.lock = None
+        if self.tope <= 0 or self.reservado < 0 or self.reservado > self.tope or not 0 <= self.llamadas <= max_calls:
+            raise ValueError("Presupuesto inicial inválido.")
+        if self.path:
+            import fcntl
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            self.lock = self.path.with_suffix(".lock").open("a")
+            try:
+                fcntl.flock(self.lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except BlockingIOError:
+                self.lock.close()
+                raise ValueError("Otra evaluación utiliza este presupuesto.") from None
+            if self.path.exists():
+                data = json.loads(self.path.read_text())
+                if data["tope_usd"] != str(self.tope) or data["max_llamadas"] != max_calls or data["modelo"] != MODEL:
+                    self.close()
+                    raise ValueError("No se puede ampliar ni cambiar el presupuesto persistido.")
+                self.llamadas, self.reservado = data["llamadas"], Decimal(data["comprometido_usd"])
+                self.movimientos = data["movimientos"]
+                # Una reserva interrumpida se conserva íntegra, nunca se liquida sin uso.
+            self.guardar()
+
+    def guardar(self):
+        if self.path:
+            data = {"modelo": MODEL, "tope_usd": str(self.tope), "max_llamadas": self.max_calls,
+                    "llamadas": self.llamadas, "comprometido_usd": str(self.reservado),
+                    "saldo_usd": str(self.tope-self.reservado), "movimientos": self.movimientos}
+            tmp = self.path.with_suffix(".tmp")
+            tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n")
+            tmp.replace(self.path)
+
     def reservar(self):
-        if self.llamadas >= self.max_calls or self.reservado+RESERVA_INTENTO>self.tope:
-            raise ErrorIA("presupuesto_agotado","Evaluación detenida antes de exceder el presupuesto conservador.")
-        self.llamadas+=1
-        self.reservado+=RESERVA_INTENTO
+        if self.llamadas >= self.max_calls or self.reservado+RESERVA_INTENTO > self.tope:
+            raise ErrorIA("presupuesto_agotado", "Evaluación detenida antes de exceder el presupuesto conservador.")
+        self.llamadas += 1
+        self.reservado += RESERVA_INTENTO
+        self.pendiente = True
+        self.movimientos.append({"intento_acumulado": self.llamadas, "reserva_usd": str(RESERVA_INTENTO),
+                                 "estado": "RESERVADO_ANTES_DE_LLAMAR", "fecha_utc": datetime.now(timezone.utc).isoformat()})
+        self.guardar()
+
+    def liquidar(self, entrada, salida):
+        if not self.pendiente:
+            raise ValueError("No hay reserva pendiente para liquidar.")
+        self.pendiente = False
+        if type(entrada) is int and type(salida) is int and 0 <= entrada <= MAX_ENTRADA_RESERVA and 0 <= salida <= MAX_SALIDA:
+            upper = (Decimal(entrada)*PRECIO_ENTRADA_RESERVA + Decimal(salida)*PRECIO_SALIDA)/1_000_000
+            self.reservado += upper-RESERVA_INTENTO
+            self.movimientos[-1].update(estado="USO_REPORTADO_VALORADO_CONSERVADORAMENTE", input_tokens=entrada,
+                                        output_tokens=salida, compromiso_usd=str(upper))
+        else:
+            self.movimientos[-1].update(estado="USO_DESCONOCIDO_RESERVA_CONSERVADA", compromiso_usd=str(RESERVA_INTENTO))
+        self.guardar()
+
+    def close(self):
+        if self.lock:
+            self.lock.close()
+            self.lock = None
 
 
 def evaluar(modo, proveedor, presupuesto, out):
@@ -46,6 +104,7 @@ def evaluar(modo, proveedor, presupuesto, out):
             payload=construir_payload(caso)
             intentos=[]
             def observer(record,text):
+                presupuesto.liquidar(record.get("input_tokens"), record.get("output_tokens"))
                 intentos.append({**record,"salida_cruda_sintetica":text})
             result={"caso":caso["id"],"version_prompt":version,"fecha_utc":datetime.now(timezone.utc).isoformat(),
                     "payload_sha256":hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest(),
@@ -57,7 +116,7 @@ def evaluar(modo, proveedor, presupuesto, out):
                 result.update(estado="valido",salida=r["estructurado"],resultado_criterios=criterios,automatico_correcto=all(criterios.values()))
             except ErrorIA as exc:
                 result.update(estado=exc.codigo,automatico_correcto=False,resultado_criterios={})
-                stop=exc.codigo=="presupuesto_agotado"
+                stop=exc.codigo=="presupuesto_agotado" or any(i.get("estado")=="proveedor_no_disponible" for i in intentos)
             result["intentos"]=intentos
             result["latencia_ms"]=sum(i.get("latencia_ms",0) for i in intentos)
             for i in intentos:
@@ -77,11 +136,12 @@ def evaluar(modo, proveedor, presupuesto, out):
                 i["cifras_sin_respaldo_detectadas"]=int(i["estado"]=="cifra_sin_respaldo")
                 i["causalidad_detectada_por_reglas"]=int(i["estado"]=="causalidad_no_sustentada")
                 i["costo_usd"]=str((Decimal(i["input_tokens"])*PRECIO_ENTRADA+Decimal(i["output_tokens"])*PRECIO_SALIDA)/1_000_000) if i.get("input_tokens") is not None and i.get("output_tokens") is not None else None
+                i["costo_superior_estimado_usd"] = str((Decimal(i["input_tokens"])*PRECIO_ENTRADA_RESERVA+Decimal(i["output_tokens"])*PRECIO_SALIDA)/1_000_000) if i.get("input_tokens") is not None and i.get("output_tokens") is not None else None
             resultados.append(result)
             informe={"modo":modo,"evidencia_ia_real":modo=="real","modelo_solicitado":getattr(proveedor,"model","FAKE-SIN-IA"),
-                     "parametros":{"reasoning_effort":"none","max_output_tokens":MAX_SALIDA,"timeout_seconds":20,"max_retries_sdk":0,"max_reintentos_validacion":1},
-                     "precio_usd_por_millon":{"entrada":str(PRECIO_ENTRADA),"salida":str(PRECIO_SALIDA),"fuente":"https://developers.openai.com/api/docs/models/gpt-5.6-terra","fecha":"2026-11-12"},
-                     "reserva_conservadora_usd":str(presupuesto.reservado),"llamadas":presupuesto.llamadas,"resultados":resultados,"comparacion":consolidar(resultados)}
+                     "parametros":{"reasoning_effort":"low","service_tier":"default","prompt_cache_ttl":"30m","max_output_tokens":MAX_SALIDA,"timeout_seconds":20,"max_retries_sdk":0,"max_reintentos_validacion":1},
+                     "precio_usd_por_millon":{"entrada":str(PRECIO_ENTRADA),"salida":str(PRECIO_SALIDA),"entrada_reserva":str(PRECIO_ENTRADA_RESERVA),"fuente":"https://developers.openai.com/api/docs/models/gpt-6.1-sol","fecha":"2026-11-12"},
+                     "reserva_conservadora_usd":str(presupuesto.reservado),"tope_acumulado_usd":str(presupuesto.tope),"saldo_conservador_usd":str(presupuesto.tope-presupuesto.reservado),"llamadas":presupuesto.llamadas,"resultados":resultados,"comparacion":consolidar(resultados)}
             # Guardar tras cada caso: fallos posteriores no eliminan consumo/evidencia anterior.
             out.write_text(json.dumps(informe,ensure_ascii=False,indent=2)+"\n")
             if stop:break
@@ -116,18 +176,21 @@ def main():
     p.add_argument("--tope-usd",default="0")
     p.add_argument("--max-llamadas",type=int,default=40)
     p.add_argument("--salida",default="evidencias/04_golden_set_mock.json")
+    p.add_argument("--estado-presupuesto")
+    p.add_argument("--consumo-previo-usd", default="0")
+    p.add_argument("--llamadas-previas", type=int, default=0)
     args=p.parse_args()
     if args.modo=="plan":
         print(json.dumps({"casos":len(cargar_casos()),"versiones":["v1","v2"],"llamadas_iniciales":20,"max_intentos_por_bateria":40,
                           "reserva_usd_por_intento":str(RESERVA_INTENTO),"max_reserva_bateria_usd":str(40*RESERVA_INTENTO),"modelo_propuesto":MODEL,"estado":"NO EJECUTADO"},indent=2));return
     if args.modo=="real":
-        if args.autorizacion!="AUTORIZO EVAL IA" or Decimal(args.tope_usd)<=0 or not 1<=args.max_llamadas<=80:
-            p.error("Requiere autorización G1 real documentada, tope positivo y máximo 1..80 llamadas.")
+        if args.autorizacion!="AUTORIZO EVAL IA" or Decimal(args.tope_usd)<=0 or not 1<=args.max_llamadas<=40 or not args.estado_presupuesto:
+            p.error("Requiere autorización G1 real documentada, tope positivo y máximo 1..40 llamadas y estado persistente.")
         if os.getenv("AI_MODEL",MODEL)!=MODEL:
             p.error("Cambio de modelo requiere recalcular tarifas/presupuesto antes de evaluar.")
         if "mock" in args.salida.lower():p.error("La evaluación real requiere nombre de salida diferente de mock.")
         proveedor=ProveedorOpenAI()
-        budget=Presupuesto(args.max_llamadas,args.tope_usd)
+        budget=Presupuesto(args.max_llamadas,args.tope_usd,args.estado_presupuesto,args.consumo_previo_usd,args.llamadas_previas)
     else:
         from tests.fakes import ProveedorFalso
         proveedor=ProveedorFalso();budget=Presupuesto(40,"100")

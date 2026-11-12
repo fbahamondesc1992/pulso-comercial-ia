@@ -1,0 +1,9 @@
+{
+  "fecha_utc": "2026-11-12T21:03:39.114386+00:00",
+  "instruccion_usuario": "Cargué USD 5; evaluación hasta USD 2 para dejar USD 3 al profesor",
+  "tope_acumulado_evaluacion_usd": "2",
+  "sustituye_tope_usd": "3",
+  "incluye_conexion_y_reserva_anterior": true,
+  "saldo_cuenta": "Declarado por el usuario, no verificado en billing",
+  "dashboard_ia": "Permanece deshabilitado"
+}

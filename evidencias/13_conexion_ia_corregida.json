@@ -1,0 +1,17 @@
+{
+  "fecha_utc": "2026-11-12T21:04:25.672258+00:00",
+  "modelo_solicitado": "gpt-6.1-sol",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "intentos_maximos": 1,
+  "max_output_tokens": 512,
+  "store": false,
+  "resultado": "CONEXION_OK",
+  "http_status": 200,
+  "respuesta": "OK",
+  "modelo_devuelto": "gpt-6.1-sol",
+  "input_tokens": 11,
+  "output_tokens": 5,
+  "costo_estimado_usd": "0.000072",
+  "costo_superior_estimado_usd": "0.0000775",
+  "latencia_ms": 2457
+}

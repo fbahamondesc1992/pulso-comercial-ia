@@ -1,0 +1,49 @@
+{
+  "modelo": "gpt-6.1-sol",
+  "casos": 20,
+  "intentos_evaluacion": 23,
+  "intentos_acumulados": 26,
+  "input_tokens_evaluacion": 60668,
+  "output_tokens_evaluacion": 12303,
+  "estimacion_standard_evaluacion_usd": "0.244366",
+  "valoracion_superior_evaluacion_usd": "0.2747000",
+  "conexion_valida_estimacion_standard_usd": "0.000072",
+  "reservas_fallos_sin_uso_usd": "0.3096",
+  "compromiso_acumulado_usd": "0.5843775",
+  "tope_usd": "2",
+  "saldo_conservador_no_utilizado_usd": "1.4156225",
+  "saldo_billing": "NO CONSULTADO; carga USD 5 declarada por usuario",
+  "comparacion": {
+    "v1": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 80.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "v2": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 70.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "delta_puntos_porcentuales": {
+      "pct_JSON_valido_por_intento": 0.0,
+      "pct_schema_valido_por_intento": 0.0,
+      "pct_casos_automaticos": -10.0,
+      "pct_hallazgos_con_referencias_validas": 0.0
+    }
+  },
+  "sha256_evidencia_cruda": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7",
+  "revision_humana": "PENDIENTE",
+  "repeticion_final": "NO EJECUTADA"
+}

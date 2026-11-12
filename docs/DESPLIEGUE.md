@@ -2,11 +2,9 @@
 
 ## G2 GitHub
 
-Antes de `AUTORIZO GITHUB`: revisar archivos, diff y secretos; acordar propietario,
-nombre y visibilidad. Recomendación: repositorio público solo con código/datos ficticios.
-No hay Git inicializado ni commits. La aprobación G0 no permite commits/push.
-Tras G2: inicializar, revisar staging, commit y push normal; registrar URL/hash y
-comprobar acceso docente. No force push, credenciales en remote ni cambios ajenos.
+G2 completado. Repositorio público: https://github.com/fbahamondesc1992/pulso-comercial-ia.
+Commit/push normal, acceso anónimo y auditoría de secretos comprobados en fase 12.
+Las actualizaciones mantienen el mismo alcance autorizado; no se usa force push.
 
 ## G3 Cloud Run
 

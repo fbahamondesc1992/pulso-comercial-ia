@@ -12,7 +12,7 @@ from schemas import InformeIA
 from indicadores import formato, LABELS
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gpt-5.6-terra"
+MODEL = "gpt-6.1-sol"
 MAX_PAYLOAD_BYTES = 32_000
 MAX_PROMPT_BYTES = 12_000
 TOKEN = re.compile(r"\{\{(F\d{3})\}\}")
@@ -36,6 +36,7 @@ class RespuestaProveedor:
     input_tokens: int | None = None
     output_tokens: int | None = None
     request_id: str | None = None
+    estado: str = "completed"
 
 
 class ProveedorOpenAI:
@@ -50,7 +51,11 @@ class ProveedorOpenAI:
         if not 1 <= timeout <= 30 or not 256 <= max_output_tokens <= 2400:
             raise ValueError("Límites de IA fuera del rango permitido.")
         from openai import OpenAI
-        self.client = sdk_client or OpenAI(timeout=timeout, max_retries=0)
+        import httpx2
+        self.client = sdk_client or OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"), base_url="https://api.openai.com/v1",
+            timeout=timeout, max_retries=0,
+            http_client=httpx2.Client(trust_env=False, timeout=timeout))
         self.model = model or os.getenv("AI_MODEL", MODEL)
         self.timeout = timeout
         self.max_output_tokens = max_output_tokens
@@ -61,15 +66,13 @@ class ProveedorOpenAI:
             model=self.model,
             input=[{"role": "system", "content": sistema}, {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
             text={"format": {"type": "json_schema", "name": "informe_comercial", "strict": True, "schema": InformeIA.model_json_schema()}},
-            reasoning={"effort": "none"}, max_output_tokens=self.max_output_tokens,
-            store=False,
+            reasoning={"effort": "low"}, max_output_tokens=self.max_output_tokens,
+            store=False, service_tier="default", prompt_cache_options={"ttl": "30m"},
         )
-        if response.status != "completed" or not response.output_text:
-            raise ErrorIA("respuesta_incompleta")
         usage = response.usage
         return RespuestaProveedor(response.output_text, response.model,
             usage.input_tokens if usage else None, usage.output_tokens if usage else None,
-            getattr(response, "_request_id", None))
+            getattr(response, "_request_id", None), response.status)
 
 
 def cargar_prompt(version):
@@ -169,6 +172,8 @@ def analizar(payload, proveedor, version="v2", observador=None, antes_llamada=No
             respuesta = proveedor.generar(prompt, payload, correccion=bool(attempt))
             registro.update({"modelo": respuesta.modelo, "input_tokens": respuesta.input_tokens,
                              "output_tokens": respuesta.output_tokens, "request_id": respuesta.request_id})
+            if respuesta.estado != "completed" or not respuesta.texto:
+                raise ErrorIA("respuesta_incompleta")
             try:
                 informe = validar_informe(respuesta.texto, payload)
                 registro["estado"] = "valido"
@@ -177,9 +182,15 @@ def analizar(payload, proveedor, version="v2", observador=None, antes_llamada=No
                 raise
         except ErrorIA as error:
             registro.setdefault("estado", error.codigo)
-        except Exception:
+        except Exception as exc:
             # No exponer excepciones del SDK, que pueden contener contexto o identificadores.
             registro["estado"] = "proveedor_no_disponible"
+            from openai import APIStatusError
+            if isinstance(exc, APIStatusError):
+                registro["http_status"] = exc.status_code
+                param = getattr(exc, "param", None)
+                if param in ("model", "reasoning.effort", "max_output_tokens", "service_tier", "text.format.schema", "prompt_cache_options"):
+                    registro["parametro"] = param
         registro["latencia_ms"] = round((time.monotonic() - start) * 1000)
         intentos.append(registro)
         if observador:

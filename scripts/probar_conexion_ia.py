@@ -26,12 +26,12 @@ def probar(client, model=MODEL):
     """Solo publica una respuesta si es exactamente OK; errores nunca contienen el body."""
     record = {"fecha_utc": datetime.now(timezone.utc).isoformat(), "modelo_solicitado": model,
               "endpoint": "https://api.openai.com/v1/responses", "intentos_maximos": 1,
-              "max_output_tokens": 32, "store": False, "resultado": "NO_EJECUTADO"}
+              "max_output_tokens": 512, "store": False, "resultado": "NO_EJECUTADO"}
     start = time.monotonic()
     try:
         response = client.responses.create(
-            model=model, input="Responde únicamente OK.", reasoning={"effort": "none"},
-            max_output_tokens=32, store=False,
+            model=model, input="Responde únicamente OK.", reasoning={"effort": "low"},
+            max_output_tokens=512, store=False, service_tier="default", prompt_cache_options={"ttl": "30m"},
         )
         ok = response.status == "completed" and response.output_text.strip() == "OK"
         record.update(resultado="CONEXION_OK" if ok else "RESPUESTA_NO_ESPERADA",
@@ -39,9 +39,13 @@ def probar(client, model=MODEL):
         if response.usage:
             entrada, salida = response.usage.input_tokens, response.usage.output_tokens
             record.update(input_tokens=entrada, output_tokens=salida,
-                          costo_estimado_usd=str((Decimal(entrada)*2 + Decimal(salida)*12)/1_000_000))
+                          costo_estimado_usd=str((Decimal(entrada)*2 + Decimal(salida)*10)/1_000_000),
+                          costo_superior_estimado_usd=str((Decimal(entrada)*Decimal("2.5") + Decimal(salida)*10)/1_000_000))
     except APIStatusError as exc:
         code = getattr(exc, "code", None)
+        param = getattr(exc, "param", None)
+        safe_params = {"model", "reasoning.effort", "max_output_tokens", "service_tier", "prompt_cache_options", "prompt_cache_retention"}
+        record["parametro"] = param if param in safe_params else "no_publicado"
         record.update(resultado="RECHAZADO_POR_PROVEEDOR", http_status=exc.status_code,
                       codigo=code if isinstance(code, str) and code in CODIGOS_SEGUROS else "codigo_no_publicado",
                       costo_estimado_usd=None)

@@ -7,7 +7,9 @@ resultados, capturas, URLs, mejoras ni aprobaciones. Solo datos ficticios.
 ## Autorizaciones
 - G0 APROBADO PLAN recibido en el chat el 12-11-2026: desarrollo local e instalación
   exclusivamente en .venv; pruebas con mocks. No constituye permiso para API pagada.
-- G1 AUTORIZO EVAL IA: presupuesto, modelo y alcance previamente presentados.
+- G1 actualizado el 12-11-2026: GPT-6.1 Sol, conexión y evaluación hasta USD 2
+  acumulados (incluye reserva anterior), máximo 40 intentos. Preservar USD 3
+  del saldo declarado para el profesor. No habilita consumo público ni G3.
 - G2 AUTORIZO GITHUB recibido el 12-11-2026: repositorio público
   fbahamondesc1992/pulso-comercial-ia, rama main, commits/push normales. No force push.
 - G3 AUTORIZO DESPLIEGUE: recursos e IAM dentro del alcance autorizado.

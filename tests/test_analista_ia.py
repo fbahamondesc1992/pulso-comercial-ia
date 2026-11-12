@@ -115,6 +115,11 @@ def test_contrato_sdk_sin_red(monkeypatch, payload):
     assert captured["text"]["format"]["schema"] == InformeIA.model_json_schema()
     assert captured["input"][0]["role"] == "system"
     assert "tools" not in captured
+    assert captured["reasoning"] == {"effort": "low"}
+    assert captured["model"] == "gpt-6.1-sol"
+    assert captured["service_tier"] == "default"
+    assert captured["prompt_cache_options"] == {"ttl": "30m"}
+    assert "prompt_cache_retention" not in captured
 
 
 def test_prompt_path_y_contexto(payload):
@@ -125,3 +130,19 @@ def test_prompt_path_y_contexto(payload):
     with pytest.raises(ErrorIA):
         analizar(payload, fake)
     assert not fake.calls
+
+
+def test_respuesta_incompleta_conserva_uso_sin_reintentar(monkeypatch, payload):
+    monkeypatch.setenv('AI_ENABLED', 'true')
+    calls = []
+    def create(**kwargs):
+        calls.append(kwargs)
+        return SimpleNamespace(status='incomplete', output_text='{"parcial":', model='gpt-6.1-sol',
+                               usage=SimpleNamespace(input_tokens=1000, output_tokens=1800))
+    provider = ProveedorOpenAI(sdk_client=SimpleNamespace(responses=SimpleNamespace(create=create)))
+    seen = []
+    with pytest.raises(ErrorIA):
+        analizar(payload, provider, observador=lambda record, text: seen.append(record))
+    assert len(calls) == 1
+    assert seen[0]['estado'] == 'respuesta_incompleta'
+    assert seen[0]['input_tokens'] == 1000 and seen[0]['output_tokens'] == 1800

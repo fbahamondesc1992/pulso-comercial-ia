@@ -1,0 +1,59 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.04kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#2 DONE 1.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 267B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 11.22kB done
+#5 DONE 0.0s
+
+#6 [1/9] FROM docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#6 resolve docker.io/library/python:3.12.15-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704 done
+#6 DONE 0.0s
+
+#7 [2/9] WORKDIR /app
+#7 CACHED
+
+#8 [3/9] COPY requirements.txt .
+#8 CACHED
+
+#9 [4/9] RUN pip install --no-cache-dir -r requirements.txt && useradd --uid 10001 --create-home pulso
+#9 CACHED
+
+#10 [5/9] COPY app.py validador_csv.py indicadores.py schemas.py analista_ia.py ./
+#10 DONE 0.0s
+
+#11 [6/9] COPY templates/ templates/
+#11 DONE 0.0s
+
+#12 [7/9] COPY static/ static/
+#12 DONE 0.0s
+
+#13 [8/9] COPY datos/demo_ventas.csv datos/demo_ventas.csv
+#13 DONE 0.0s
+
+#14 [9/9] COPY prompts/analista_v1.md prompts/analista_v2.md prompts/
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers 0.0s done
+#15 exporting manifest sha256:1b249723986e01d8fcce906b431d02b8bf913599d278df953342c30c3ff20859 done
+#15 exporting config sha256:6bdc51eef7e1488e7c272cf04761859050fa31f4c62d828fce6d907891417cfb done
+#15 exporting attestation manifest sha256:3fd02c7a99e8d9e922630290a0c22f4cce1fdac778364123089928298a779824 done
+#15 exporting manifest list sha256:e72a9f903e0a0a9ff7fc5995b238dc7dbef3a358bfb42d6152fb9f1a58d3142c done
+#15 naming to docker.io/library/pulso-comercial-ia:local done
+#15 DONE 0.1s

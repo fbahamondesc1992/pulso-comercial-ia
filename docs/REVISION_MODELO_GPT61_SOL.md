@@ -1,5 +1,13 @@
 # GPT-6.1 Sol: revisión de tarifas y presupuesto
 
+**Actualización vigente:** el usuario autorizó USD 3 y posteriormente redujo el
+tope a **USD 2 acumulados** para preservar USD 3 del saldo declarado al profesor.
+La propuesta de USD 7 de abajo queda como antecedente, NO es el límite autorizado.
+Adaptación local realizada; conexión HTTP 200 verificada. Se conserva reserva
+completa de fallos sin uso conocido y se liquida cada respuesta con uso reportado
+a USD 2,50 de entrada/10 de salida por millón, de forma conservadora.
+El registro persistente y los resultados están en la fase 13.
+
 Fecha: 12-11-2026. Seleccionado expresamente por el usuario, quien pidió revisar
 primero tarifas y presupuesto. No se ejecutaron llamadas con la nueva clave.
 El código y la ficha PDF anterior conservan GPT-5.6 Terra; la migración queda
