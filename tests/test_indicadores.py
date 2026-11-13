@@ -86,3 +86,14 @@ def test_filtros_futuros_vacios():
         calcular(dataset(), F.model_copy(update={"ano_actual": 9999}))
     with pytest.raises(ValueError):
         calcular(dataset(), F.model_copy(update={"canal": "No existe"}))
+
+
+def test_devoluciones_netas_sin_perder_decimales():
+    ds = Dataset([fila(real="-1.123456789012345678901", meta="2.000000000000001",
+                       volumen_real_ump=D("-0.000000001")),
+                  fila(ano=2025, real="1", meta=None)], [])
+    r = calcular(ds, F)
+    assert r["total"]["real"]["valor"] == "-1.123456789012345678901"
+    assert r["total"]["brecha"]["valor"] == "-3.123456789012346678901"
+    assert D(r["total"]["volumen"]["KG"]["volumen_real"]["valor"]) == D("-0.000000001")
+    assert any("netos" in a for a in r["advertencias"])

@@ -1,0 +1,10 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00005-p4q",
+  "http": 200,
+  "valor_real_exacto": "-1.123456789012345678901",
+  "advertencia_netos": true,
+  "datos": "ficticios",
+  "llamadas_ia": 0,
+  "archivo_usuario_transmitido": false
+}

@@ -35,7 +35,7 @@ def formato(valor, unidad="CLP"):
     decimal = D(valor)
     precision = D("1") if unidad == "CLP" else D("0.1")
     with localcontext() as ctx:
-        ctx.prec = 50
+        ctx.prec = max(50, len(decimal.as_tuple().digits) + 2)
         redondeado = decimal.quantize(precision, rounding=ROUND_HALF_UP)
     if redondeado == 0:
         redondeado = abs(redondeado)
@@ -128,7 +128,11 @@ def filtros_iniciales(dataset):
 
 def calcular(dataset: Dataset, filtros: Filtros):
     with localcontext() as ctx:
-        ctx.prec = 50
+        # La suma de importes netos conserva todos los decimales de entrada.
+        max_digitos = max(len(v.as_tuple().digits) for r in dataset.filas for v in
+                          (r["facturacion_real_clp"], r["facturacion_meta_clp"],
+                           r["volumen_real_ump"], r["volumen_meta_ump"]) if v is not None)
+        ctx.prec = max(50, max_digitos + len(str(len(dataset.filas))) + 2)
         return _calcular(dataset, filtros)
 
 
@@ -166,6 +170,8 @@ def _calcular(dataset, filtros):
         grupos[dim] = items
         rankings[dim] = sorted(negativos, key=lambda x: (D(x["metricas"]["brecha"]["valor"]), str(x["dimension"])))[:5]
     avisos = list(dataset.advertencias)
+    if any(r["facturacion_real_clp"] < 0 or r["volumen_real_ump"] < 0 for r in rows):
+        avisos.append("Hay devoluciones o ajustes negativos en valores reales. Los indicadores muestran netos; el CSV no permite distinguir su causa ni separar ventas brutas de devoluciones.")
     if total["meses_comparables"] != filtros.meses:
         avisos.append("No comparable interanualmente: falta cobertura de uno o más grupos. Meses con cobertura completa en ambos años: " + (", ".join(map(str, total["meses_comparables"])) or "ninguno") + ". No se imputan ceros.")
     if total["meta"]["estado"] != "valido":

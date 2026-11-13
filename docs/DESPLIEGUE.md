@@ -83,3 +83,18 @@ localmente y en URL pública. Sin uso IA ni datos del usuario enviados. Evidenci
 El archivo del usuario, examinado solo localmente, aún falla en línea 5 por 7
 decimales en facturacion_meta_clp; se observaron también 5 negativos en real CLP
 y volumen real. No se redondeó ni alteró el archivo. F6 visual pendiente.
+
+## Fase 24 · netos negativos y precisión de entrada · 13-11-2026
+
+Facturación y volumen reales admiten negativos por devoluciones/ajustes; las metas
+siguen no negativas. La ingesta conserva todos los decimales del CSV, con suma Decimal
+y precisión de cálculo adaptada a la longitud de entrada; se redondea solo al mostrar.
+Se agrega aviso de netos y de causalidad no verificable. El archivo aportado de
+5.088 filas pasó validación local; quedó intacto y no se envió al servicio ni Git.
+
+Suite sin red: 166 passed en 0,84 s. Build Docker linux/amd64 correcto.
+Revisión `pulso-comercial-ia-00005-p4q`, 100% tráfico, digest
+`sha256:9600e969f8d77f4dc9d9104c9b23df5f812a196d888f14f14a91b88984bcdc3a`.
+Prueba pública con CSV ficticio: HTTP 200, valor negativo de 21 decimales conservado
+y advertencia visible. Sin llamadas IA. Evidencia `evidencias/24_netos_publico.json`.
+F6 sigue pendiente de recorrido visual/capturas.

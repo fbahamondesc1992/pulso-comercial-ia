@@ -11,7 +11,7 @@ MAX_ROWS = 10_000
 DIMENSIONES = ("canal", "linea", "familia", "oficina")
 GRANO = ("ano", "mes", *DIMENSIONES, "unidad_ump")
 COLUMNAS = (*GRANO, "facturacion_real_clp", "facturacion_meta_clp", "volumen_real_ump", "volumen_meta_ump")
-NUMERO = re.compile(r"\d{1,15}(?:\.\d{1,6})?\Z", re.ASCII)
+NUMERO = re.compile(r"-?\d{1,15}(?:\.\d+)?\Z", re.ASCII)
 
 
 class ErrorCSV(ValueError):
@@ -78,9 +78,9 @@ def leer_csv(contenido: bytes, nombre: str = "datos.csv") -> Dataset:
                 decimal_incorrecto = "." in valor if separador == ";" else "," in valor
                 if valor == "" and "meta" in campo:
                     row[campo] = None
-                elif decimal_incorrecto or not NUMERO.fullmatch(canonico):
+                elif decimal_incorrecto or not NUMERO.fullmatch(canonico) or (canonico.startswith("-") and "meta" in campo):
                     decimal = "coma decimal" if separador == ";" else "punto decimal"
-                    raise ErrorCSV(f"Línea {linea}: {campo} requiere decimal positivo o cero, {decimal}, máximo 15 enteros y 6 decimales. No se admiten separadores de miles, negativos ni NaN/infinitos.")
+                    raise ErrorCSV(f"Línea {linea}: {campo} requiere un número finito con {decimal} y máximo 15 enteros. Negativos solo en valores reales; sin miles ni notación científica.")
                 else:
                     row[campo] = Decimal(canonico)
             clave = tuple(row[k] for k in GRANO)

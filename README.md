@@ -8,7 +8,7 @@ Estado al 13-11-2026: **aplicación pública con IA real** verificada mediante H
 - Repositorio: https://github.com/fbahamondesc1992/pulso-comercial-ia
 - Modelo `gpt-6.1-sol`, prompt `v2`, revisión `pulso-comercial-ia-00002-2gq`.
 - Demo y salud HTTP 200; análisis real con tres hallazgos y referencias válidas.
-- Suite local: 167 pruebas sin red. Falta validación visual pública y video final.
+- Suite local: 166 pruebas sin red. Falta validación visual pública y video final.
 
 Evaluación G1: tope USD 2 y 66 intentos; compromiso conservador USD 1,1850625,
 incluyendo reserva íntegra de validación pública. El usuario confirmó límite OpenAI
@@ -79,7 +79,7 @@ comandos guardados. En producción referenciar Secret Manager.
 `datos/demo_ventas.csv`: 360 filas ficticias, enero-octubre 2025/2026, tres canales,
 dos líneas/familias, tres oficinas, KG y UN. Regenerable con
 `.venv/bin/python scripts/generar_demo.py`.
-CSV UTF-8 con `;` y coma decimal (Chile), o con `,` y punto decimal. Sin separadores de miles.
+CSV UTF-8 con `;` y coma decimal (Chile), o con `,` y punto decimal. Sin separadores de miles; acepta valores reales negativos y conserva todos los decimales. Las metas deben ser no negativas.
 Contrato completo: [diccionario](datos/DICCIONARIO_DATOS.md).
 
 Facturación y meta son sumas Decimal; brecha=real-meta; cumplimiento=sum(real)/sum(meta).

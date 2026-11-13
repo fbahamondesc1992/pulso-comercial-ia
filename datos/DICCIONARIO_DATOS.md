@@ -14,18 +14,18 @@ Packs ficticios en UN. No contiene datos personales ni precios internos.
 | familia | Texto obligatorio hasta 100 caracteres |
 | oficina | Texto obligatorio hasta 80 caracteres |
 | unidad_ump | KG (kilogramos) o UN (unidades) |
-| facturacion_real_clp | Venta positiva o cero en CLP |
+| facturacion_real_clp | Facturación neta en CLP; admite negativos por devoluciones o ajustes |
 | facturacion_meta_clp | Meta CLP; vacío significa ausente, nunca cero |
-| volumen_real_ump | Volumen no negativo, en la unidad de la fila |
+| volumen_real_ump | Volumen neto en la unidad de la fila; admite negativos |
 | volumen_meta_ump | Meta en la misma unidad; vacío significa ausente |
 
 UTF-8 con BOM opcional. Se admiten dos formatos: punto y coma como delimitador
 y coma decimal (Chile), o coma como delimitador y punto decimal (ejemplo descargable).
 El delimitador se detecta por la cabecera; las etiquetas no se modifican por esta
-conversión. No se permiten mezclas de formatos, separadores de miles ni notación científica. Máximo 15 dígitos enteros y 6 decimales, 2 MiB por
+conversión. No se permiten mezclas de formatos, separadores de miles ni notación científica. Máximo 15 dígitos enteros y todos los decimales de entrada, 2 MiB por
 archivo y 10.000 filas. El límite HTTP incluye 64 KiB adicionales para el multipart.
 Se acepta el mismo conjunto exacto de columnas en otro orden. Columnas adicionales
-o duplicadas, filas vacías/mal formadas, NaN, infinito y negativos se rechazan.
+o duplicadas, filas vacías/mal formadas, NaN e infinito se rechazan. Metas negativas se rechazan; valores reales negativos se conservan.
 
 Grano único: ano|mes|canal|linea|familia|oficina|unidad_ump. Duplicados se rechazan
 con referencias de línea. Se aplica Unicode NFC y trim exterior, informando cambios.
@@ -34,7 +34,7 @@ Colisiones tras normalización se rechazan; no se agregan silenciosamente.
 
 ## Cálculo y cobertura
 
-Moneda única CLP. Decimal con contexto local de 50 dígitos; no redondear sumandos.
+Moneda única CLP. Decimal con precisión adaptada a los datos; no redondear sumandos.
 Presentación ROUND_HALF_UP: CLP entero, porcentajes y volúmenes a un decimal.
 KG/1.000 produce TON solo para presentación; el valor original permanece en KG.
 No existe volumen total combinado KG+UN.

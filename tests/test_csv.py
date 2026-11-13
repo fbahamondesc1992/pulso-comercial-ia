@@ -11,7 +11,8 @@ def test_valido_bom_y_meta_vacia():
 
 @pytest.mark.parametrize("campo,valor", [("mes", "13"), ("mes", "1.0"), ("ano", "26"), ("unidad_ump", "TON"),
     ("canal", ""), ("oficina", "x"*81), ("familia", "a\x01b"),
-    *[(k, v) for k in COLUMNAS[7:] for v in ("NaN", "Infinity", "-1", "1,2", "1e4", "1"*16)]])
+    *[(k, v) for k in COLUMNAS[7:] for v in ("NaN", "Infinity", "1,2", "1e4", "1"*16)],
+    ("facturacion_meta_clp", "-1"), ("volumen_meta_ump", "-1")])
 def test_campos_invalidos(campo, valor):
     with pytest.raises(ErrorCSV):
         leer_csv(csv_bytes([fila(**{campo: valor})]))
@@ -67,7 +68,7 @@ def test_chileno_equivalencia_exacta_y_textos():
     assert leer_csv(csv_chileno([chileno])).filas == leer_csv(csv_bytes([normal])).filas
 
 
-@pytest.mark.parametrize("valor", ["1.234,56", "1.23", "1,2,3", "NaN", "Infinity", "-1,2", "1e4", "0,1234567", "1"*16])
+@pytest.mark.parametrize("valor", ["1.234,56", "1.23", "1,2,3", "NaN", "Infinity", "1e4", "1"*16])
 def test_chileno_no_admite_ambiguos_ni_invalidos(valor):
     with pytest.raises(ErrorCSV, match="coma decimal"):
         leer_csv(csv_chileno([fila(facturacion_real_clp=valor)]))
@@ -78,3 +79,19 @@ def test_chileno_duplicados_y_filas_malformadas():
         leer_csv(csv_chileno([fila(), fila()]))
     with pytest.raises(ErrorCSV, match="cantidad de columnas"):
         leer_csv(csv_chileno([fila()]) + b"1;2;3\n")
+
+
+def test_devoluciones_y_precision_chilena():
+    from decimal import Decimal
+    entrada = fila(facturacion_real_clp="-1,123456789012345678901", volumen_real_ump="-0,000000001",
+                   facturacion_meta_clp="2,000000000000001", volumen_meta_ump="0,0000000001")
+    datos = leer_csv(csv_chileno([entrada])).filas[0]
+    assert datos["facturacion_real_clp"] == Decimal("-1.123456789012345678901")
+    assert datos["volumen_real_ump"] == Decimal("-0.000000001")
+    assert datos["facturacion_meta_clp"] == Decimal("2.000000000000001")
+
+
+def test_metas_negativas_chilenas_rechazadas():
+    for campo in ("facturacion_meta_clp", "volumen_meta_ump"):
+        with pytest.raises(ErrorCSV, match="Negativos solo"):
+            leer_csv(csv_chileno([fila(**{campo: "-1,2"})]))
