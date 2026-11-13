@@ -1,0 +1,8 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00008-zzt",
+  "health_http": 200,
+  "validador_local": "169 passed en 1,12 s",
+  "informe_publico_con_llm": "NO EJECUTADO: cupo G3 de pruebas publicas ya utilizado",
+  "llamadas_ia_nuevas": 0
+}

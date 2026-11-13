@@ -146,3 +146,27 @@ def test_respuesta_incompleta_conserva_uso_sin_reintentar(monkeypatch, payload):
     assert len(calls) == 1
     assert seen[0]['estado'] == 'respuesta_incompleta'
     assert seen[0]['input_tokens'] == 1000 and seen[0]['output_tokens'] == 1800
+
+
+def test_rechaza_marcador_nc_aunque_haya_otro_valido(payload):
+    obj = informe_valido(payload)
+    valido = next(h['id'] for h in payload['hechos'] if h['valor'] is not None and h['estado'] == 'valido')
+    nc = next(h['id'] for h in payload['hechos'] if h['id'] != valido)
+    next(h for h in payload['hechos'] if h['id'] == nc)['valor'] = None
+    obj['hallazgos'][0]['evidencia_ids'] = [valido, nc]
+    obj['hallazgos'][0]['descripcion'] = f'Brecha {{{{{valido}}}}} y dato {{{{{nc}}}}}'
+    with pytest.raises(ErrorIA) as exc:
+        validar_informe(json.dumps(obj), payload)
+    assert exc.value.codigo == 'evidencia_no_calculable'
+
+
+def test_cobertura_parcial_con_valor_se_renderiza_como_cifra(payload):
+    obj = informe_valido(payload)
+    ref = obj['hallazgos'][0]['evidencia_ids'][0]
+    hecho = next(h for h in payload['hechos'] if h['id'] == ref)
+    hecho['estado'] = 'cobertura_parcial'
+    informe = validar_informe(json.dumps(obj), payload)
+    from analista_ia import renderizar_informe
+    texto = renderizar_informe(informe, payload)['hallazgos'][0]['descripcion']
+    assert 'cobertura parcial' in texto
+    assert 'N/C' not in texto

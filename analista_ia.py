@@ -13,7 +13,7 @@ from indicadores import formato, LABELS
 
 ROOT = Path(__file__).resolve().parent
 MODEL = "gpt-6.1-sol"
-VALIDADOR_VERSION = "3"
+VALIDADOR_VERSION = "4"
 MAX_PAYLOAD_BYTES = 32_000
 MAX_PROMPT_BYTES = 12_000
 TOKEN = re.compile(r"\{\{(F\d{3})\}\}")
@@ -143,7 +143,8 @@ def validar_informe(raw, payload):
     all_refs = {ref for item in [*informe.hallazgos, *informe.acciones_sugeridas] for ref in item.evidencia_ids}
     if not all_refs <= hechos.keys():
         raise ErrorIA("ids_invalidos")
-    validos = {k for k, h in hechos.items() if h["estado"] == "valido" and h["valor"] is not None}
+    validos = {k for k, h in hechos.items() if h["valor"] is not None
+               and h["estado"] in ("valido", "cobertura_parcial")}
     cobertura_incompleta = any(h["indicador"] == "base" and h["estado"] == "cobertura_parcial"
                               and h["dimension"] == {"nivel": "total"} for h in hechos.values())
     if not validos and (informe.hallazgos or informe.acciones_sugeridas):
@@ -155,6 +156,8 @@ def validar_informe(raw, payload):
         tokens = set(TOKEN.findall(text))
         if not tokens <= refs:
             raise ErrorIA("ids_invalidos")
+        if not tokens <= validos:
+            raise ErrorIA("evidencia_no_calculable")
         limpio = TOKEN.sub("", text)
         # Política conservadora: cifras solo mediante tokens de hechos, nunca texto libre.
         # Se rechaza incluso una cifra plausible si su correspondencia semántica es ambigua.
@@ -188,8 +191,9 @@ def renderizar_informe(informe, payload):
     def sustituir(text):
         def expand(match):
             h = hechos[match.group(1)]
-            valor = formato(h["valor"], h["unidad"]) if h["estado"] == "valido" else "N/C"
-            return f"{LABELS[h['indicador']]}: {valor} [{h['id']}]"
+            valor = formato(h["valor"], h["unidad"]) if h["valor"] is not None else "N/C"
+            alcance = " (cobertura parcial)" if h["estado"] == "cobertura_parcial" else ""
+            return f"{LABELS[h['indicador']]}: {valor}{alcance} [{h['id']}]"
         return TOKEN.sub(expand, text)
     result = informe.model_dump()
     result["resumen_ejecutivo"] = sustituir(result["resumen_ejecutivo"])

@@ -467,3 +467,20 @@ Revisión pública `pulso-comercial-ia-00007-qpv`, 100% del tráfico, digest
 Prueba HTTP pública con tres filas ficticias: cumplimiento 80%, brecha -20 CLP,
 una fila de ranking, variación interanual N/C; evidencia
 `evidencias/26_cobertura_publica.json`. Sin llamadas IA ni CSV del usuario.
+
+## Fase 27 · evidencia IA N/C · 13-11-2026
+
+Se reprodujo el fallo reportado: el validador permitía marcadores de hechos sin valor
+si el hallazgo contenía otro marcador válido, y el renderizador convertía valores de
+cobertura parcial en `N/C`. Ahora todos los marcadores usados deben referir hechos
+numéricos con estado valido o cobertura_parcial; los valores parciales se muestran
+con su cifra y aviso de alcance. Una cita de N/C invalida la respuesta e inicia el
+reintento ya existente; si no hay informe verificable, se devuelve error recuperable.
+El prompt v2 histórico permanece byte a byte para conservar la evidencia de evaluación.
+Suite local 169 passed en 1,12 s, sin llamadas pagadas. Pendiente despliegue y prueba
+pública con proveedor falso/flujo de dashboard; no se repetirá IA real por presupuesto.
+
+Revisión pública `pulso-comercial-ia-00008-zzt`, 100% tráfico, digest
+`sha256:b10f2cc79710446910289173bdf3afdc0e015b78894b6a6cd2a64adf1c0853ff`.
+Health público HTTP 200. Evidencia `evidencias/27_validacion_publica.json`.
+No se generó otro informe IA real: el cupo G3 de validación pública ya se contabilizó.
