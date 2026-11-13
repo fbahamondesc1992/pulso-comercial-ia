@@ -97,3 +97,17 @@ def test_devoluciones_netas_sin_perder_decimales():
     assert r["total"]["brecha"]["valor"] == "-3.123456789012346678901"
     assert D(r["total"]["volumen"]["KG"]["volumen_real"]["valor"]) == D("-0.000000001")
     assert any("netos" in a for a in r["advertencias"])
+
+
+def test_base_tiene_grupo_extra_actual_con_metas_completas():
+    ds = Dataset([fila(real="80", meta="100", volumen_real_ump=D("8"), volumen_meta_ump=D("10")),
+                  fila(ano=2025, real="70", meta=None),
+                  fila(ano=2025, familia="Solo base", real="20", meta=None)], [])
+    r = calcular(ds, F)
+    assert r["total"]["cumplimiento"]["valor"] == "80.0"
+    assert r["total"]["brecha"]["valor"] == "-20"
+    assert r["total"]["brecha"]["estado"] == "cobertura_parcial"
+    assert r["total"]["yoy_pct"]["valor"] is None
+    assert r["total"]["volumen"]["KG"]["cumplimiento_ump"]["valor"] == "80.0"
+    assert r["rankings"]["linea"][0]["metricas"]["brecha"]["valor"] == "-20"
+    assert any("filas actuales presentes" in x for x in r["advertencias"])

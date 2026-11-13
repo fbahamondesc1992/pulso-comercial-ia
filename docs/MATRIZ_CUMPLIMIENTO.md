@@ -21,7 +21,7 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | NEG-04 | Costos mensuales sustentados | docs/COSTOS_Y_LIMITACIONES.md; evidencias/13_resumen_evaluacion.json | EN_PROCESO | Escenarios 100/1.000 actualizados a GPT-6.1 Sol; falta trasladarlos a ficha PDF final |
 | SW-01 | App funcional y responsive | evidencias/11_demo_local_1440.png; 11_demo_local_375.png; 11_revision_navegador.json | EN_PROCESO | Local verificado; HTTPS público pendiente |
 | SW-02 | Flujo principal sin login | scripts/verificar_ui.cjs; evidencias/11_revision_navegador.json | EN_PROCESO | Contextos limpios sin login; falta incógnito en URL pública |
-| SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; evidencias/25_limite_publico.json | VERIFICADO | 30.000 filas sintéticas, formato Chile, HTTP público 200 en 4,38 s; límite 8 MiB |
+| SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; evidencias/25_limite_publico.json | VERIFICADO | 30.000 filas sintéticas, HTTP público 200; regresión de cobertura verificada en URL pública con datos ficticios; evidencias/26_cobertura_publica.json |
 | SW-04 | KPIs exactos y unidades | tests/test_indicadores.py; datos/DICCIONARIO_DATOS.md | VERIFICADO | Seis oráculos, cobertura, Decimal, ponderación y KG/UN |
 | SW-05 | IA real activa en URL pública | evidencias/21_ia_real_publica.json; 21_cloud_run_ia_activa.json | VERIFICADO | GPT-6.1-Sol v2 HTTP 200, origen ia_real; falta recorrido desde botón en navegador |
 | PE-01 | PROMPT_MAESTRO.md raíz | Archivo íntegro; hash en evidencias/01_plan_aprobado.md; 12_github_publicado.json | VERIFICADO | Igual al original y versionado en repositorio público |

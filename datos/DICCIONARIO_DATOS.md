@@ -45,6 +45,11 @@ se rotula parcial y no produce brecha ni cumplimiento del agregado afectado.
 Real/meta se divide después de sumar, nunca se promedian porcentajes individuales.
 Meta cero produce cumplimiento N/C y brecha real-meta válida si la cobertura existe.
 
+Cumplimiento y brecha del período actual se calculan sobre las filas presentes
+cuando todas sus metas están informadas. Si faltan combinaciones respecto de la
+base, se rotulan cobertura parcial y se advierte el alcance; no se imputan ceros.
+La variación interanual continúa N/C hasta tener cobertura comparable.
+
 La cobertura se comprueba por cada combinación de dimensiones/unidad y mes para
 ambos años. El universo de combinaciones proviene de los dos años seleccionados.
 Una ausencia no equivale a cero. La comparación total se invalida ante cualquier

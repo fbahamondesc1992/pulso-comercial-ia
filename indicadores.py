@@ -72,17 +72,17 @@ def _agregado(rows, filtros):
     real = _suma(actual, "facturacion_real_clp") if actual else None
     real_base = _suma(base, "facturacion_real_clp") if base else None
     metas = [r["facturacion_meta_clp"] for r in actual]
-    meta_ok = completo_a and all(v is not None for v in metas)
+    meta_ok = bool(actual) and all(v is not None for v in metas)
     meta = sum((v for v in metas if v is not None), ZERO) if any(v is not None for v in metas) else None
     brecha = real - meta if meta_ok else None
-    estado_meta = "valido" if meta_ok else "meta_parcial_no_comparable"
+    estado_meta = ("valido" if completo_a else "cobertura_parcial") if meta_ok else "meta_parcial_no_comparable"
     result = {
         "real": metrica(real, estado="valido" if completo_a else "cobertura_parcial"),
         "base": metrica(real_base, estado="valido" if completo_b else "cobertura_parcial"),
         "meta": metrica(meta, estado=estado_meta),
         "brecha": metrica(brecha, estado=estado_meta),
         "cumplimiento": metrica(real / meta * 100 if meta_ok and meta > 0 else None, "%",
-                                 "valido" if meta_ok and meta > 0 else "meta_cero" if meta_ok else estado_meta),
+                                 estado_meta if meta_ok and meta > 0 else "meta_cero" if meta_ok else estado_meta),
         "yoy_clp": metrica(real - real_base if comparable else None, estado="valido" if comparable else "no_comparable"),
         "yoy_pct": metrica((real / real_base - 1) * 100 if comparable and real_base > 0 else None, "%",
                             "valido" if comparable and real_base > 0 else "nuevo" if comparable and real > 0 else "no_comparable"),
@@ -97,11 +97,12 @@ def _agregado(rows, filtros):
         unit_complete = all((k, m) in slots_a for k in unit_keys for m in meses)
         vr = _suma(a, "volumen_real_ump") if a else None
         vm = _suma(a, "volumen_meta_ump") if any(r["volumen_meta_ump"] is not None for r in a) else None
-        ok = bool(a) and unit_complete and all(r["volumen_meta_ump"] is not None for r in a)
+        ok = bool(a) and all(r["volumen_meta_ump"] is not None for r in a)
+        unit_status = "valido" if unit_complete else "cobertura_parcial"
         result["volumen"][unit] = {
             "volumen_real": metrica(vr, unit, "valido" if unit_complete else "cobertura_parcial"),
-            "volumen_meta": metrica(vm, unit, "valido" if ok else "meta_parcial_no_comparable"),
-            "cumplimiento_ump": metrica(vr / vm * 100 if ok and vm > 0 else None, "%", "valido" if ok and vm > 0 else "no_comparable"),
+            "volumen_meta": metrica(vm, unit, unit_status if ok else "meta_parcial_no_comparable"),
+            "cumplimiento_ump": metrica(vr / vm * 100 if ok and vm > 0 else None, "%", unit_status if ok and vm > 0 else "no_comparable"),
             "presentacion": formato(vr / 1000, "TON") if unit == "KG" and vr is not None else formato(vr, unit),
         }
     return result
@@ -160,7 +161,7 @@ def _calcular(dataset, filtros):
             items.append({"dimension": dimension, "metricas": _agregado(subset, filtros)})
         negativos = [x for x in items if x["metricas"]["brecha"]["valor"] is not None and D(x["metricas"]["brecha"]["valor"]) < 0]
         bruto = sum((-D(x["metricas"]["brecha"]["valor"]) for x in negativos), ZERO)
-        todos_validos = all(x["metricas"]["brecha"]["estado"] == "valido" for x in items)
+        todos_validos = all(x["metricas"]["brecha"]["valor"] is not None for x in items)
         for x in items:
             b = x["metricas"]["brecha"]["valor"]
             g = max(ZERO, -D(b)) if b is not None else None
@@ -174,10 +175,12 @@ def _calcular(dataset, filtros):
         avisos.append("Hay devoluciones o ajustes negativos en valores reales. Los indicadores muestran netos; el CSV no permite distinguir su causa ni separar ventas brutas de devoluciones.")
     if total["meses_comparables"] != filtros.meses:
         avisos.append("No comparable interanualmente: falta cobertura de uno o más grupos. Meses con cobertura completa en ambos años: " + (", ".join(map(str, total["meses_comparables"])) or "ninguno") + ". No se imputan ceros.")
-    if total["meta"]["estado"] != "valido":
+    if total["meta"]["estado"] == "meta_parcial_no_comparable":
         avisos.append("Meta parcial/no comparable: no se calcula brecha ni cumplimiento del total afectado.")
+    elif total["meta"]["estado"] == "cobertura_parcial":
+        avisos.append("Cumplimiento y brecha calculados solo sobre las filas actuales presentes con meta; faltan combinaciones respecto de la base. No se imputan ventas ni metas.")
     for unidad, v in total["volumen"].items():
-        if v["volumen_meta"]["estado"] != "valido":
+        if v["volumen_meta"]["estado"] == "meta_parcial_no_comparable":
             avisos.append(f"Meta de volumen {unidad} parcial/no comparable: no se calcula cumplimiento de esa unidad.")
     if filtros.ano_actual == hoy.year and hoy.month in filtros.meses:
         avisos.append("El mes en curso podría estar incompleto; la presencia de registros no certifica su cierre.")

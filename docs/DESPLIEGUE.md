@@ -114,3 +114,23 @@ digest `sha256:5c15a6f4a7700e4996c48af35c723257b16ca078ad6ddbb4443701920f6061cf`
 CSV ficticio chileno de 30.000 filas y 1.638.124 bytes: HTTP público 200,
 4,38 s, 30.000 filas en respuesta. Sin IA. Evidencia `evidencias/25_limite_publico.json`.
 F6 visual sigue pendiente.
+
+## Fase 26 · cobertura de metas actuales · 13-11-2026
+
+Se separó la validez de metas actuales de la cobertura interanual. Si todas las
+filas actuales presentes tienen meta, se calculan cumplimiento y brecha aunque
+haya combinaciones que solo existen en el año base; el estado se rotula cobertura
+parcial y se advierte expresamente el alcance. La variación interanual sigue N/C
+sin cobertura completa. Ranking muestra brechas actuales sustentadas. La gráfica
+muestra puntos calculados con nota de calidad en tabla y avisos. Prueba de regresión
+con dataset ficticio base-extra; suite 167 passed en 1,09 s, sin red.
+
+Diagnóstico del archivo aportado solo local: 77 filas actuales y 79 base para el
+filtro de la captura; dos combinaciones solo en base, cero metas actuales vacías.
+No se publicó ni transmitió el CSV ni sus cifras comerciales.
+
+Revisión pública `pulso-comercial-ia-00007-qpv`, 100% del tráfico, digest
+`sha256:6f7cf5fd32e5c4daf5ecb9af367519760dedeb68fe1c8e7c5479bea69a602857`.
+Prueba HTTP pública con tres filas ficticias: cumplimiento 80%, brecha -20 CLP,
+una fila de ranking, variación interanual N/C; evidencia
+`evidencias/26_cobertura_publica.json`. Sin llamadas IA ni CSV del usuario.

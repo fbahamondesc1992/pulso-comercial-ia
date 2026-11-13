@@ -1,0 +1,12 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00007-qpv",
+  "http": 200,
+  "filas_ficticias": 3,
+  "cumplimiento_pct": "80.0",
+  "brecha_clp": "-20",
+  "yoy": "no_comparable",
+  "ranking_linea": 1,
+  "ia_invocada": false,
+  "csv_usuario_transmitido": false
+}
