@@ -178,7 +178,7 @@ MVP sin login, ERP, persistencia, usuarios, RAG, pronósticos, precios ni datos 
 ## Entrega y apagado
 
 - [Matriz completa](docs/MATRIZ_CUMPLIMIENTO.md), [bitácora](docs/BITACORA_ENTREGA.md).
-- [Ficha de negocio PDF](docs/FICHA_NEGOCIO.pdf): versión histórica local; actualizar modelo/costos y URLs antes de entregar.
+- [Ficha de negocio PDF](docs/FICHA_NEGOCIO.pdf): versión final de una página con modelo, costos, fuentes y URLs vigentes.
 - [Guion de video](docs/VIDEO_GUION.md): no sustituye grabación real.
 - URL pública: PENDIENTE; video: NO GRABADO. GitHub enlazado al inicio.
 
@@ -254,3 +254,7 @@ fases 13–20 son históricas. F6 espera validación visual; F7 espera video/fic
 F6 cerrada por aprobación humana; ver `evidencias/28_aprobacion_f6.json`.
 F7 abierta: ficha PDF vigente, video real y revisión final de evidencia visual.
 La aprobación no reemplaza las verificaciones visuales pendientes.
+
+## F7 · revisión del 13-11-2026
+
+Ficha PDF actualizada y revisada visualmente. HTTP público de inicio, health, demo CSV y dashboard sintético: 200. Capturas visuales públicas y video real siguen pendientes de grabación.

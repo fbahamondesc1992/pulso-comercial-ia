@@ -124,3 +124,13 @@ Suite local: 152 passed en 0,62 s, sin red; no se modificó código de aplicaci�
 capturas reales, expansión de evidencia y comprobación visual del error de cuota.
 Herramienta de navegador no disponible; las pruebas HTTP no sustituyen esa evidencia.
 F7: video real y actualización de ficha PDF aún pendientes.
+
+## F7 · ficha final, 13-11-2026
+
+Ficha PDF actualizada con GPT-6.1 Sol Standard y escenarios 100/1.000 de la tabla
+de esta sección. Tarifas oficiales consultadas nuevamente el 13-11-2026: entrada
+USD 2, salida USD 10 y escritura de caché 30 min USD 2,50 por millón de tokens.
+Fuentes: https://developers.openai.com/api/docs/pricing y
+https://cloud.google.com/run/pricing . El escenario Cloud es supuesto, no factura;
+la provisión otros USD 2/mes no es tarifa ni tope. Las referencias históricas
+anteriores a F6 en esta página documentan el estado de su fecha, no el actual.

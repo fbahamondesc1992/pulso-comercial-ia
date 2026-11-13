@@ -1,0 +1,13 @@
+{
+  "fecha_local": "2026-11-13",
+  "ficha_pdf_paginas": 1,
+  "ficha_sha256": "f89570ec0f9e9ef61fda4f3149f0ca087e0ce8d3222b62899773079e83f1f677",
+  "render_png": "evidencias/29_ficha_pdf_final.png",
+  "render_revisado_visualmente": true,
+  "video_real": "NO GRABADO: herramienta de grabacion/navegacion no disponible",
+  "capturas_publicas_375_1440": "NO REALIZADAS",
+  "repo_visibilidad_detectada": "PRIVATE por gh repo view; correccion pendiente",
+  "app_publica_http": "ver evidencias/29_f7_http_demo.json",
+  "tests": "169 passed en 1,09 s",
+  "IA_real_nueva": "NO EJECUTADA"
+}

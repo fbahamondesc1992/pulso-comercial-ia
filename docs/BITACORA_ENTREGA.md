@@ -496,3 +496,12 @@ pagada. Evidencia de la decisión: `evidencias/28_aprobacion_f6.json`.
 F7 queda abierta: actualizar ficha PDF de una página con modelo/costos/URL vigentes,
 revisar guion y grabar video real de hasta 3 minutos, completar evidencias visuales
 solo con demo ficticia y hacer auditoría final de repositorio, matriz y gasto.
+
+## Fase 29 · F7 en ejecución · 13-11-2026
+
+Ficha PDF final de una página con modelo y costos vigentes, enlaces reales y
+fuentes oficiales; render PNG inspeccionado. HTTP público inicio/health/demo/dashboard
+200 con demo ficticia. Herramienta de navegador/grabación ausente: capturas 375/1440,
+incógnito y video real NO REALIZADOS. Guion final preparado. Auditoría GitHub
+detectó repositorio PRIVATE; acceso anónimo pendiente de corregir bajo G2 público.
+Evidencia 29_f7_estado.json. No se invocó IA pagada.

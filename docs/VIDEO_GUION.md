@@ -1,7 +1,7 @@
 # Video de entrega · máximo 180 segundos
 
 Estado: guion preparado; **VIDEO REAL NO GRABADO**. No reemplazar la demo pública
-por screenshots locales, mocks o animaciones. Grabar después de F6 con IA real.
+por screenshots locales, mocks o animaciones. F6 aprobada; la grabación pública sigue pendiente de una herramienta de captura y de un recorrido real.
 
 | Tiempo | Pantalla y narración |
 |---|---|
@@ -19,3 +19,15 @@ URL y repositorio reales; respuesta real vigente; evidencia legible; resultados 
 evaluación honestos. Exportar archivo reproducible o enlace accesible al docente.
 La grabación/publicación requiere herramientas y autorización apropiadas; no hay un
 video final en esta entrega local. Conservar el guion aunque se ajuste la narración.
+
+## Toma final pendiente de grabación
+
+Usar solo el botón de demo ficticia en la URL pública. Grabar escritorio 1440 px y,
+en una toma breve separada o al redimensionar, verificar 375 px. Mostrar la fecha y
+la URL visibles, sin claves, consola cloud ni CSV real. El informe con IA debe ser
+una nueva respuesta auténtica y verificable; si devuelve error, registrar el fallo
+y no sustituirlo por texto anterior. Comprobar duración con metadatos del archivo
+final y conservar enlace o video accesible al docente.
+
+Estado 13-11-2026: no existe archivo de video final ni captura pública de 375/1440
+producida en esta sesión. Las pruebas HTTP no acreditan navegación visual.

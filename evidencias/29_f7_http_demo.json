@@ -1,0 +1,14 @@
+{
+  "fecha_utc": "2026-11-13T18:30:57.239280+00:00",
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "http_inicio": 200,
+  "http_health": 200,
+  "http_demo_csv": 200,
+  "http_dashboard_demo": 200,
+  "filas_demo": 360,
+  "captura_375": "NO EJECUTADA: herramienta de navegador no disponible",
+  "captura_1440": "NO EJECUTADA: herramienta de navegador no disponible",
+  "incognito_visual": "NO VERIFICADO",
+  "informe_ia_nuevo": "NO EJECUTADO: cupo G3 de validacion publica utilizado",
+  "datos": "solo demo ficticia"
+}
