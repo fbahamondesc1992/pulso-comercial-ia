@@ -99,3 +99,9 @@ final y repetir la batería completa antes de declarar cierre. La repetición fi
 no se ha ejecutado ni se presume autorizada por conservar saldo.
 El archivo `04_golden_set_mock.json` sigue siendo exclusivamente prueba con cliente
 falso, nunca evidencia de calidad real.
+
+Estado vigente fase 18: F4 cerrado por aprobación global explícita del usuario;
+selección técnica v2 confirmada para el MVP. Evidencia 18_cierre_f4_inicio_f6.json.
+Los campos individuales históricos no se rellenan ni alteran. F6 en preparación,
+G3 pendiente, disponibilidad solicitada hasta 30-11-2026 (Chile). Ver PLAN_F6.md
+en docs/.

@@ -1,0 +1,1341 @@
+{
+  "fecha_utc": "2026-11-13T13:09:26.926313+00:00",
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "metodo": "HTTP anonimo, no prueba de navegador",
+  "solicitudes_http_ia": 1,
+  "max_intentos_proveedor": 2,
+  "costo_reservado_usd": "0.336",
+  "tokens_y_costo_real": "NO EXPUESTOS por endpoint; reserva íntegra conservada",
+  "status": 200,
+  "latencia_segundos": 26.969,
+  "respuesta": {
+    "etiquetas": {
+      "CANAL_001": {
+        "dimension": "canal",
+        "etiqueta": "Tradicional"
+      },
+      "CANAL_002": {
+        "dimension": "canal",
+        "etiqueta": "Foodservice"
+      },
+      "FAMILIA_001": {
+        "dimension": "familia",
+        "etiqueta": "Packs ficticios"
+      },
+      "FAMILIA_002": {
+        "dimension": "familia",
+        "etiqueta": "Preparados ficticios"
+      },
+      "LINEA_001": {
+        "dimension": "linea",
+        "etiqueta": "Insumos"
+      },
+      "LINEA_002": {
+        "dimension": "linea",
+        "etiqueta": "Alimentos"
+      },
+      "OFICINA_001": {
+        "dimension": "oficina",
+        "etiqueta": "Oficina Sur"
+      },
+      "OFICINA_002": {
+        "dimension": "oficina",
+        "etiqueta": "Oficina Norte"
+      }
+    },
+    "hechos": [
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F001",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "471435750"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F002",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "501480000"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F003",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-30044250"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "sum(real) / sum(meta) * 100",
+        "id": "F004",
+        "indicador": "cumplimiento",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "94.008883704235463029432878679109834888729361091170"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "sum(real año base)",
+        "id": "F005",
+        "indicador": "base",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "447750000"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "real actual - real base (mismos meses)",
+        "id": "F006",
+        "indicador": "yoy_clp",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "23685750"
+      },
+      {
+        "dimension": {
+          "nivel": "total"
+        },
+        "estado": "valido",
+        "formula": "(real actual / real base - 1) * 100",
+        "id": "F007",
+        "indicador": "yoy_pct",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "5.2899497487437185929648241206030150753768844221100"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "KG"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen real de una unidad)",
+        "id": "F008",
+        "indicador": "volumen_real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "KG",
+        "valor": "57608"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "KG"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen meta de una unidad)",
+        "id": "F009",
+        "indicador": "volumen_meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "KG",
+        "valor": "60381"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "KG"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen real) / sum(volumen meta) * 100",
+        "id": "F010",
+        "indicador": "cumplimiento_ump",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "95.407495735413457875821864493797717825143671022341"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "UN"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen real de una unidad)",
+        "id": "F011",
+        "indicador": "volumen_real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "UN",
+        "valor": "30057"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "UN"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen meta de una unidad)",
+        "id": "F012",
+        "indicador": "volumen_meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "UN",
+        "valor": "32436"
+      },
+      {
+        "dimension": {
+          "nivel": "total",
+          "unidad_ump": "UN"
+        },
+        "estado": "valido",
+        "formula": "sum(volumen real) / sum(volumen meta) * 100",
+        "id": "F013",
+        "indicador": "cumplimiento_ump",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "92.665556788753237143914169441361450240473547909730"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_001"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F014",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "114251750"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_001"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F015",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "138936000"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_001"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F016",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-24684250"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_001"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F017",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "74.356869596650299725878844473898243817212398710727"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_002"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F018",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "186871250"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_002"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F019",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "195384000"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_002"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F020",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-8512750"
+      },
+      {
+        "dimension": {
+          "canal": "CANAL_002"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F021",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "25.643130403349700274121155526101756182787601289273"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F022",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "240824250"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F023",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "259812000"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_001"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F024",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-18987750"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_001"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F025",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "63.199281060435857110761626600763873286901819815772"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F026",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "230611500"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F027",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "241668000"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_002"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F028",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-11056500"
+      },
+      {
+        "dimension": {
+          "linea": "LINEA_002"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F029",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "36.800718939564142889238373399236126713098180184228"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F030",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "240824250"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F031",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "259812000"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_001"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F032",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-18987750"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_001"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F033",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "63.199281060435857110761626600763873286901819815772"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F034",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "230611500"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F035",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "241668000"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_002"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F036",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-11056500"
+      },
+      {
+        "dimension": {
+          "familia": "FAMILIA_002"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F037",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "36.800718939564142889238373399236126713098180184228"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F038",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "169856250"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_001"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F039",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "181944000"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_001"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F040",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-12087750"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_001"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F041",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "40.233156094760228662722484335604982650590379190694"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(real)",
+        "id": "F042",
+        "indicador": "real",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "142444250"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_002"
+        },
+        "estado": "valido",
+        "formula": "sum(meta)",
+        "id": "F043",
+        "indicador": "meta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "152376000"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_002"
+        },
+        "estado": "valido",
+        "formula": "real - meta",
+        "id": "F044",
+        "indicador": "brecha",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "CLP",
+        "valor": "-9931750"
+      },
+      {
+        "dimension": {
+          "oficina": "OFICINA_002"
+        },
+        "estado": "valido",
+        "formula": "brecha negativa del grupo / suma de brechas negativas de la misma dimensión * 100",
+        "id": "F045",
+        "indicador": "participacion_bruta",
+        "periodo": {
+          "ano_actual": 2026,
+          "ano_base": 2025,
+          "meses": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        "unidad": "%",
+        "valor": "33.057074148963612005625036404636494503940021801177"
+      }
+    ],
+    "informe": {
+      "acciones_sugeridas": [
+        {
+          "accion": "Investigar el detalle comercial del canal asociado a Brecha facturación: $-24.684.250 [F016] para identificar dónde se concentra el incumplimiento y qué antecedentes adicionales se requieren para explicar la brecha.",
+          "categoria": "investigacion",
+          "evidencia_ids": [
+            "F016",
+            "F017"
+          ]
+        },
+        {
+          "accion": "Revisar el cruce entre la línea asociada a Brecha facturación: $-18.987.750 [F024] y el canal prioritario para delimitar el solapamiento antes de definir focos de gestión.",
+          "categoria": "investigacion",
+          "evidencia_ids": [
+            "F024",
+            "F016"
+          ]
+        },
+        {
+          "accion": "Dar seguimiento separado al cumplimiento de meta y a la variación interanual, evitando interpretar el crecimiento como cierre de la brecha comercial.",
+          "categoria": "seguimiento",
+          "evidencia_ids": [
+            "F003",
+            "F004",
+            "F007"
+          ]
+        }
+      ],
+      "hallazgos": [
+        {
+          "descripcion": "El cumplimiento total es Cumplimiento de meta: 94,0 % [F004], con una brecha de Brecha facturación: $-30.044.250 [F003]. Aunque la variación interanual es positiva, con Variación interanual %: 5,3 % [F007] en los mismos meses, ese crecimiento no equivale a cumplir la meta comercial.",
+          "evidencia_ids": [
+            "F003",
+            "F004",
+            "F007"
+          ],
+          "nivel": "atencion",
+          "titulo": "Crecimiento interanual sin alcanzar la meta"
+        },
+        {
+          "descripcion": "El canal con mayor brecha negativa reportada registra Brecha facturación: $-24.684.250 [F016] y concentra Participación en brechas negativas brutas: 74,4 % [F017] de la brecha negativa bruta de su dimensión. Esta concentración justifica priorizar su revisión; la participación no corresponde a la brecha neta total.",
+          "evidencia_ids": [
+            "F016",
+            "F017"
+          ],
+          "nivel": "atencion",
+          "titulo": "Principal foco de revisión por canal"
+        },
+        {
+          "descripcion": "La línea con mayor brecha negativa reportada presenta Brecha facturación: $-18.987.750 [F024] y representa Participación en brechas negativas brutas: 63,2 % [F025] de la brecha negativa bruta de su dimensión. Es un foco complementario de investigación, no un déficit adicional que deba sumarse al identificado por canal.",
+          "evidencia_ids": [
+            "F024",
+            "F025"
+          ],
+          "nivel": "atencion",
+          "titulo": "Brecha relevante en la apertura por línea"
+        }
+      ],
+      "limitaciones": [
+        "Los hechos disponibles describen resultados, pero no permiten atribuir causas a las brechas.",
+        "El análisis se limita al período acumulado informado; no permite evaluar la trayectoria mensual ni el cierre anual.",
+        "Los rankings muestran una selección por dimensión y las dimensiones se superponen; sus brechas no deben sumarse."
+      ],
+      "resumen_ejecutivo": "El período acumulado presenta una brecha negativa frente a meta de Brecha facturación: $-30.044.250 [F003], pese al crecimiento interanual de Variación interanual %: 5,3 % [F007]. La revisión comercial debiera priorizar el canal con mayor brecha negativa reportada y luego la apertura por línea, sin sumar dimensiones superpuestas."
+    },
+    "metadatos": {
+      "modelo": "gpt-6.1-sol",
+      "prompt": "v2"
+    },
+    "origen": "ia_real",
+    "snapshot": "e8bd9f091f90d55d2dac5559c4ecdb9e1f006135212e98513c7275818a864c4d"
+  }
+}

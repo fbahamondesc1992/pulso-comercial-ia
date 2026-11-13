@@ -1,0 +1,415 @@
+{
+  "modelo": "gpt-6.1-sol",
+  "tope_usd": "2",
+  "max_llamadas": 66,
+  "llamadas": 48,
+  "comprometido_usd": "0.8490625",
+  "saldo_usd": "1.1509375",
+  "movimientos": [
+    {
+      "intento_acumulado": 4,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:07:22.306744+00:00",
+      "input_tokens": 2953,
+      "output_tokens": 564,
+      "compromiso_usd": "0.0130225"
+    },
+    {
+      "intento_acumulado": 5,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:07:32.250019+00:00",
+      "input_tokens": 2948,
+      "output_tokens": 587,
+      "compromiso_usd": "0.01324"
+    },
+    {
+      "intento_acumulado": 6,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:07:40.818545+00:00",
+      "input_tokens": 2983,
+      "output_tokens": 609,
+      "compromiso_usd": "0.0135475"
+    },
+    {
+      "intento_acumulado": 7,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:07:50.827182+00:00",
+      "input_tokens": 1557,
+      "output_tokens": 588,
+      "compromiso_usd": "0.0097725"
+    },
+    {
+      "intento_acumulado": 8,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:07:59.862507+00:00",
+      "input_tokens": 3066,
+      "output_tokens": 626,
+      "compromiso_usd": "0.013925"
+    },
+    {
+      "intento_acumulado": 9,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:09.694594+00:00",
+      "input_tokens": 3601,
+      "output_tokens": 500,
+      "compromiso_usd": "0.0140025"
+    },
+    {
+      "intento_acumulado": 10,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:18.886681+00:00",
+      "input_tokens": 2977,
+      "output_tokens": 554,
+      "compromiso_usd": "0.0129825"
+    },
+    {
+      "intento_acumulado": 11,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:28.333189+00:00",
+      "input_tokens": 2953,
+      "output_tokens": 541,
+      "compromiso_usd": "0.0127925"
+    },
+    {
+      "intento_acumulado": 12,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:35.820805+00:00",
+      "input_tokens": 777,
+      "output_tokens": 241,
+      "compromiso_usd": "0.0043525"
+    },
+    {
+      "intento_acumulado": 13,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:41.542405+00:00",
+      "input_tokens": 649,
+      "output_tokens": 61,
+      "compromiso_usd": "0.0022325"
+    },
+    {
+      "intento_acumulado": 14,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:43.787578+00:00",
+      "input_tokens": 3265,
+      "output_tokens": 568,
+      "compromiso_usd": "0.0138425"
+    },
+    {
+      "intento_acumulado": 15,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:08:54.035104+00:00",
+      "input_tokens": 3301,
+      "output_tokens": 589,
+      "compromiso_usd": "0.0141425"
+    },
+    {
+      "intento_acumulado": 16,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:09:02.820272+00:00",
+      "input_tokens": 3260,
+      "output_tokens": 692,
+      "compromiso_usd": "0.01507"
+    },
+    {
+      "intento_acumulado": 17,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:09:14.925293+00:00",
+      "input_tokens": 3295,
+      "output_tokens": 729,
+      "compromiso_usd": "0.0155275"
+    },
+    {
+      "intento_acumulado": 18,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:09:26.908063+00:00",
+      "input_tokens": 1869,
+      "output_tokens": 667,
+      "compromiso_usd": "0.0113425"
+    },
+    {
+      "intento_acumulado": 19,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:09:38.984491+00:00",
+      "input_tokens": 1905,
+      "output_tokens": 646,
+      "compromiso_usd": "0.0112225"
+    },
+    {
+      "intento_acumulado": 20,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:09:50.576911+00:00",
+      "input_tokens": 3378,
+      "output_tokens": 661,
+      "compromiso_usd": "0.015055"
+    },
+    {
+      "intento_acumulado": 21,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:02.002987+00:00",
+      "input_tokens": 3414,
+      "output_tokens": 649,
+      "compromiso_usd": "0.015025"
+    },
+    {
+      "intento_acumulado": 22,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:12.598264+00:00",
+      "input_tokens": 3913,
+      "output_tokens": 704,
+      "compromiso_usd": "0.0168225"
+    },
+    {
+      "intento_acumulado": 23,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:24.809795+00:00",
+      "input_tokens": 3289,
+      "output_tokens": 584,
+      "compromiso_usd": "0.0140625"
+    },
+    {
+      "intento_acumulado": 24,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:35.104738+00:00",
+      "input_tokens": 3265,
+      "output_tokens": 596,
+      "compromiso_usd": "0.0141225"
+    },
+    {
+      "intento_acumulado": 25,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:44.830011+00:00",
+      "input_tokens": 1089,
+      "output_tokens": 261,
+      "compromiso_usd": "0.0053325"
+    },
+    {
+      "intento_acumulado": 26,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T21:10:50.381680+00:00",
+      "input_tokens": 961,
+      "output_tokens": 86,
+      "compromiso_usd": "0.0032625"
+    },
+    {
+      "intento_acumulado": 27,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:06.678297+00:00",
+      "input_tokens": 2953,
+      "output_tokens": 519,
+      "compromiso_usd": "0.0125725"
+    },
+    {
+      "intento_acumulado": 28,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:15.456849+00:00",
+      "input_tokens": 2948,
+      "output_tokens": 607,
+      "compromiso_usd": "0.01344"
+    },
+    {
+      "intento_acumulado": 29,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:23.877924+00:00",
+      "input_tokens": 2983,
+      "output_tokens": 651,
+      "compromiso_usd": "0.0139675"
+    },
+    {
+      "intento_acumulado": 30,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:34.333426+00:00",
+      "input_tokens": 1557,
+      "output_tokens": 599,
+      "compromiso_usd": "0.0098825"
+    },
+    {
+      "intento_acumulado": 31,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:44.573570+00:00",
+      "input_tokens": 3066,
+      "output_tokens": 651,
+      "compromiso_usd": "0.014175"
+    },
+    {
+      "intento_acumulado": 32,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:13:54.812762+00:00",
+      "input_tokens": 3601,
+      "output_tokens": 530,
+      "compromiso_usd": "0.0143025"
+    },
+    {
+      "intento_acumulado": 33,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:03.721876+00:00",
+      "input_tokens": 2977,
+      "output_tokens": 569,
+      "compromiso_usd": "0.0131325"
+    },
+    {
+      "intento_acumulado": 34,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:12.631802+00:00",
+      "input_tokens": 2953,
+      "output_tokens": 522,
+      "compromiso_usd": "0.0126025"
+    },
+    {
+      "intento_acumulado": 35,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:21.335922+00:00",
+      "input_tokens": 777,
+      "output_tokens": 229,
+      "compromiso_usd": "0.0042325"
+    },
+    {
+      "intento_acumulado": 36,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:25.838988+00:00",
+      "input_tokens": 649,
+      "output_tokens": 78,
+      "compromiso_usd": "0.0024025"
+    },
+    {
+      "intento_acumulado": 37,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:28.643779+00:00",
+      "input_tokens": 3265,
+      "output_tokens": 644,
+      "compromiso_usd": "0.0146025"
+    },
+    {
+      "intento_acumulado": 38,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:40.382804+00:00",
+      "input_tokens": 3260,
+      "output_tokens": 629,
+      "compromiso_usd": "0.01444"
+    },
+    {
+      "intento_acumulado": 39,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:14:51.647846+00:00",
+      "input_tokens": 3295,
+      "output_tokens": 689,
+      "compromiso_usd": "0.0151275"
+    },
+    {
+      "intento_acumulado": 40,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:15:03.119272+00:00",
+      "input_tokens": 1869,
+      "output_tokens": 624,
+      "compromiso_usd": "0.0109125"
+    },
+    {
+      "intento_acumulado": 41,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:15:15.195946+00:00",
+      "input_tokens": 3378,
+      "output_tokens": 682,
+      "compromiso_usd": "0.015265"
+    },
+    {
+      "intento_acumulado": 42,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:15:26.818888+00:00",
+      "input_tokens": 3913,
+      "output_tokens": 706,
+      "compromiso_usd": "0.0168425"
+    },
+    {
+      "intento_acumulado": 43,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:15:40.081636+00:00",
+      "input_tokens": 3289,
+      "output_tokens": 568,
+      "compromiso_usd": "0.0139025"
+    },
+    {
+      "intento_acumulado": 44,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:15:51.137681+00:00",
+      "input_tokens": 3325,
+      "output_tokens": 646,
+      "compromiso_usd": "0.0147725"
+    },
+    {
+      "intento_acumulado": 45,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:16:02.505581+00:00",
+      "input_tokens": 3265,
+      "output_tokens": 618,
+      "compromiso_usd": "0.0143425"
+    },
+    {
+      "intento_acumulado": 46,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:16:14.077454+00:00",
+      "input_tokens": 3301,
+      "output_tokens": 675,
+      "compromiso_usd": "0.0150025"
+    },
+    {
+      "intento_acumulado": 47,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:16:24.834878+00:00",
+      "input_tokens": 1089,
+      "output_tokens": 263,
+      "compromiso_usd": "0.0053525"
+    },
+    {
+      "intento_acumulado": 48,
+      "reserva_usd": "0.168",
+      "estado": "USO_REPORTADO_VALORADO_CONSERVADORAMENTE",
+      "fecha_utc": "2026-11-12T22:16:30.462595+00:00",
+      "input_tokens": 961,
+      "output_tokens": 101,
+      "compromiso_usd": "0.0034125"
+    }
+  ]
+}

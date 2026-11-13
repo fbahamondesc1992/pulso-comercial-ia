@@ -1,0 +1,12 @@
+{
+  "fecha_chile": "2026-11-13",
+  "fuente": "confirmacion explicita del usuario en chat, consistente con consola observada anteriormente",
+  "proyecto": "Pulso-Comercial-IA",
+  "gasto_mensual_reportado_usd": "0.51",
+  "limite_aplicado_usd": "5.00",
+  "clave_env_pertenece_al_proyecto": true,
+  "instruccion": "docente puede ocupar todo el cupo restante",
+  "validacion_max_intentos": 2,
+  "validacion_max_reserva_usd": "0.336",
+  "nota": "Sustituye propuesta de cupo docente 2.50+0.50; limite mensual no equivale a saldo de creditos ni corte instantaneo."
+}

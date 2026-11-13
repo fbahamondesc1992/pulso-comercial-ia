@@ -1,0 +1,12 @@
+{
+  "fecha_chile": "2026-11-13",
+  "version": "593.0.0",
+  "ubicacion": ".venv/google-cloud-sdk",
+  "configuracion": ".venv/gcloud-config",
+  "python": ".venv/bin/python",
+  "sha256_verificado": "563b2102362a54506836b73ef3485b6abfe112c1e48559022bbb5dbf45f55e4e",
+  "proyecto": "pulso-comercial-ia-uai-2026",
+  "region": "southamerica-west1",
+  "autenticacion": "PENDIENTE_USUARIO",
+  "recursos_cloud_modificados": false
+}

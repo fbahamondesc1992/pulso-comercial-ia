@@ -13,7 +13,15 @@ resultados, capturas, URLs, mejoras ni aprobaciones. Solo datos ficticios.
   del saldo declarado para el profesor. No habilita consumo público ni G3.
 - G2 AUTORIZO GITHUB recibido el 12-11-2026: repositorio público
   fbahamondesc1992/pulso-comercial-ia, rama main, commits/push normales. No force push.
-- G3 AUTORIZO DESPLIEGUE: recursos e IAM dentro del alcance autorizado.
+- F4 cerrado expresamente por el usuario; aprobación global registrada en fase 18.
+- F6 desplegado en pulso-comercial-ia-uai-2026, IA real HTTP verificada; pendiente
+  validación visual pública. Disponibilidad hasta 30-11-2026.
+- El 13-11-2026 el usuario confirma límite OpenAI USD 5 aplicado, gasto USD 0,51
+  y clave del proyecto; autoriza al docente todo el cupo restante. Evaluación pública
+  conserva tope 2 intentos/USD 0,336 y registro histórico; no ampliar pruebas pagadas.
+- G3 recibido: ejecutar PLAN_F6.md con la cuenta elegida; provisión cloud USD 5,
+  disponibilidad hasta 30-11-2026. Validación pública: máximo 2 intentos y USD 0,336
+  dentro de USD 2 acumulados; preservar USD 3 docentes. Evidencia 19_autorizacion_g3.json.
 - No delegar a subagentes sin petición expresa del usuario.
 
 ## Trabajo y verificación

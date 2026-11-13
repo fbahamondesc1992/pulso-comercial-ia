@@ -1,0 +1,25 @@
+{
+  "fecha_registro_utc": "2026-11-13T02:30:37.829322+00:00",
+  "mensaje_usuario": "Da por cerrado F4 y comienza con F6",
+  "estado": "F4_CERRADO_POR_USUARIO",
+  "alcance": "Aprobación global del cierre de F4; selección v2 y observaciones conservadas. No aporta dictámenes individuales ni aprueba G3.",
+  "artefactos": [
+    {
+      "ruta": "evidencias/17_evaluacion_real_final.json",
+      "sha256": "56a8ce71ea550ab30342d1d7591faa527aa2a3d88377d139dc36a18184dab34e"
+    },
+    {
+      "ruta": "evidencias/17_revision_semantica_asistente.json",
+      "sha256": "ae7bf87ef453e7634e64061b2dd015d8e62191969e4112c40e78679a49d837bf"
+    },
+    {
+      "ruta": "docs/EVALUACION_FINAL.md",
+      "sha256": "0712172d170ae79186de46c3ba1df90bffe2329c6439fc24c907b36e34cc34c3"
+    }
+  ],
+  "disponibilidad_solicitada_hasta": "2026-11-30",
+  "zona_horaria": "America/Santiago",
+  "proyecto_cloud": "No existe, según usuario",
+  "usuario_puede_administrar_gasto_openai": true,
+  "g3_recibido": false
+}

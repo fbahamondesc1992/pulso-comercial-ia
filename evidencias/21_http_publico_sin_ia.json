@@ -1,0 +1,35 @@
+{
+  "fecha_utc": "2026-11-13T13:07:00.066322+00:00",
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "modo": "HTTP_ANONIMO_SIN_NAVEGADOR_SIN_IA",
+  "checks": {
+    "/": {
+      "status": 200
+    },
+    "/health": {
+      "status": 200,
+      "body": {
+        "servicio": "pulso-comercial-ia",
+        "status": "ok"
+      }
+    },
+    "/demo.csv": {
+      "status": 200
+    },
+    "dashboard": {
+      "status": 200,
+      "snapshot": "e8bd9f091f90d55d2dac5559c4ecdb9e1f006135212e98513c7275818a864c4d"
+    },
+    "analisis": {
+      "status": 503,
+      "codigo": "ia_deshabilitada",
+      "llamadas_proveedor": 0
+    },
+    "sin_header": {
+      "status": 403
+    },
+    "fuente_invalida": {
+      "status": 400
+    }
+  }
+}

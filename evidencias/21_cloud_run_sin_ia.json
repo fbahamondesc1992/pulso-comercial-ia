@@ -1,0 +1,18 @@
+{
+  "fuente": "gcloud run services describe; registro completo conservado en entrega/ excluido de Git",
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00001-lmv",
+  "listo": true,
+  "imagen_digest": "sha256:725063e85c319ce0473374f0fab18dea720fabed47386fcf8122daa3b93af7e8",
+  "region": "southamerica-west1",
+  "cpu": "1",
+  "memoria": "512Mi",
+  "concurrencia": 1,
+  "timeout_segundos": 65,
+  "max_servicio": 1,
+  "max_revision": 1,
+  "acceso_publico": true,
+  "ia_activa": false,
+  "secreto_por_referencia_versionada": true,
+  "cuenta_runtime_dedicada": true
+}

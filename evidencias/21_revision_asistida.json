@@ -1,0 +1,8 @@
+{
+  "alcance": "Una respuesta publica guardada en 21_ia_real_publica.json",
+  "hallazgos": 3,
+  "ids_existentes": true,
+  "snapshot_coincide": true,
+  "revision_textual_asistente": "Distingue meta y YoY, brecha negativa bruta y neta; advierte solapamiento dimensional; no se observaron atribuciones causales afirmativas.",
+  "limitaciones": "No es revision humana ni prueba visual. Sin tokens ni reintentos expuestos; costo reservado, no medido."
+}

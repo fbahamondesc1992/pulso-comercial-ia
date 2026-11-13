@@ -1,0 +1,26 @@
+{
+  "fuente": "Cloud Billing Budgets API, registro completo privado",
+  "amount": {
+    "specifiedAmount": {
+      "currencyCode": "CLP",
+      "units": "4900"
+    }
+  },
+  "thresholdRules": [
+    {
+      "spendBasis": "CURRENT_SPEND",
+      "thresholdPercent": 0.5
+    },
+    {
+      "spendBasis": "CURRENT_SPEND",
+      "thresholdPercent": 0.8
+    },
+    {
+      "spendBasis": "CURRENT_SPEND",
+      "thresholdPercent": 1.0
+    }
+  ],
+  "alcance": "solo proyecto de la aplicación",
+  "tipo": "alertas, sin corte automatico",
+  "identificadores_cuenta_y_proyecto": "OMITIDOS"
+}

@@ -2,15 +2,18 @@
 
 Copiloto ejecutivo de ventas: **Python calcula y valida; el LLM interpreta; el usuario decide.**
 
-Estado al 12-11-2026: MVP local verificado y publicado en GitHub con autorización G2.
-Repositorio público: https://github.com/fbahamondesc1992/pulso-comercial-ia
-URL de la aplicación: **PENDIENTE**. Evaluación IA y video: **PENDIENTES**.
-La nueva clave pasó la conexión con `gpt-6.1-sol` (HTTP 200, respuesta OK).
-G1 vigente: conexión y evaluación hasta USD 2 acumulados, máximo 40 intentos;
-el usuario reservó los otros USD 3 de su saldo declarado para el profesor.
-El adaptador usa reasoning low y servicio Standard; AI_ENABLED sigue false.
-G3 sigue pendiente. Ver [evaluación](docs/MEJORA_PROMPTS.md) y
-[presupuesto](docs/COSTOS_Y_LIMITACIONES.md).
+Estado al 13-11-2026: **aplicación pública con IA real** verificada mediante HTTP.
+
+- Aplicación: https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app
+- Repositorio: https://github.com/fbahamondesc1992/pulso-comercial-ia
+- Modelo `gpt-6.1-sol`, prompt `v2`, revisión `pulso-comercial-ia-00002-2gq`.
+- Demo y salud HTTP 200; análisis real con tres hallazgos y referencias válidas.
+- Suite local: 152 pruebas sin red. Falta validación visual pública y video final.
+
+Evaluación G1: tope USD 2 y 66 intentos; compromiso conservador USD 1,1850625,
+incluyendo reserva íntegra de validación pública. El usuario confirmó límite OpenAI
+USD 5 aplicado y autoriza al docente todo el cupo restante. Ver
+[despliegue](docs/DESPLIEGUE.md) y [costos](docs/COSTOS_Y_LIMITACIONES.md).
 
 ![Dashboard local con datos ficticios](evidencias/11_demo_local_1440.png)
 
@@ -150,8 +153,8 @@ un worker/cuatro threads y usuario sin privilegios. `.dockerignore` es una lista
 inclusión de archivos de ejecución. La imagen no incluye evidencia, tests ni secretos.
 Estado efectivo del build: consultar [bitácora](docs/BITACORA_ENTREGA.md).
 
-Publicación planificada en Cloud Run Santiago, HTTPS sin login, solo después de G3.
-No ejecutar publicación antes de revisar [preparación de despliegue](docs/DESPLIEGUE.md).
+Publicado en Cloud Run Santiago bajo G3, HTTPS sin login.
+Configuración y límites en [despliegue](docs/DESPLIEGUE.md).
 G2 completado: código público y acceso sin autenticación comprobados; SHA local/remoto
 conciliado. Ver evidencias/12_github_publicado.json. Auditoría antes de cada push.
 
@@ -167,7 +170,8 @@ actualizar, resolver en entorno aislado, revisar cambios y repetir suite/auditor
 La base Docker quedó fijada a versión y digest verificado durante el build local.
 
 Contadores de solicitudes son volátiles por proceso. No garantizan gasto máximo.
-Alertas cloud, cuotas del proveedor, Secret Manager y acceso docente siguen pendientes.
+Alertas cloud CLP 4900, límite OpenAI aplicado USD 5 y Secret Manager configurados.
+Demo limitada a 2 solicitudes/IP/h y 3 globales/h; el público puede consumir el cupo.
 MVP sin login, ERP, persistencia, usuarios, RAG, pronósticos, precios ni datos reales.
 
 ## Entrega y apagado
@@ -191,7 +195,7 @@ y revisión de credenciales. `.env`, entornos, caches y PDF original del curso
 quedan fuera. La carpeta entrega está excluida de Git.
 
 [Registro de publicación](docs/REVISION_PUBLICACION.md): G2 autorizado para
-fbahamondesc1992/pulso-comercial-ia, público. Despliegue pendiente de G3.
+fbahamondesc1992/pulso-comercial-ia, público. G3 recibido; despliegue en proceso.
 El ZIP anterior representa el cierre local previo a G2; su manifiesto fecha ese estado.
 
 Actualización de modelo: GPT-6.1 Sol, low, Standard y caché de 30 minutos.
@@ -230,3 +234,16 @@ sin afirmar superioridad estadística general. Revisión humana nueva pendiente.
 152 pruebas locales sin red. Costo superior nuevo USD 0,264685; compromiso acumulado
 USD 0,8490625 de USD 2, incluyendo reservas históricas. Billing no consultado.
 Evidencias `17_*`; 22 llamadas nuevas, 48 intentos acumulados de 66 autorizados.
+
+Estado vigente fase 18: F4 cerrado por aprobación global explícita del usuario;
+selección técnica v2 confirmada para el MVP. Evidencia 18_cierre_f4_inicio_f6.json.
+Los campos individuales históricos no se rellenan ni alteran. F6 en preparación,
+G3 recibido, disponibilidad solicitada hasta 30-11-2026 (Chile). Ver PLAN_F6.md
+en docs/.
+
+Estado F6 al 13-11-2026: proyecto, APIs, repositorio de imágenes y cuenta runtime
+creados. Resultado de subida de imagen y servicio pendientes de verificar. Control
+del navegador no disponible; ver `docs/DESPLIEGUE.md` y `evidencias/19_avance_f6.json`.
+
+Estado vigente: fase 21 desplegada y validada por HTTP; las notas anteriores de
+fases 13–20 son históricas. F6 espera validación visual; F7 espera video/ficha finales.

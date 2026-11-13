@@ -38,3 +38,9 @@ Fuentes oficiales consultadas el 12-11-2026:
 Ver `docs/MEJORA_PROMPTS.md`: evaluación G1 real autorizada hasta USD 2 acumulados.
 Los prompts v1/v2 se preservan sin cambios durante la comparación. Servicio Standard,
 prompt_cache_options.ttl=30m; no usa el parámetro de retención anterior incompatible.
+
+Estado vigente fase 18: F4 cerrado por aprobación global explícita del usuario;
+selección técnica v2 confirmada para el MVP. Evidencia 18_cierre_f4_inicio_f6.json.
+Los campos individuales históricos no se rellenan ni alteran. F6 en preparación,
+G3 pendiente, disponibilidad solicitada hasta 30-11-2026 (Chile). Ver PLAN_F6.md
+en docs/.

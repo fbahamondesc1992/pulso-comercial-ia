@@ -1,0 +1,13 @@
+{
+  "fecha_utc": "2026-11-13T02:35:11.837068+00:00",
+  "mensaje": "AUTORIZO DESPLIEGUE según PLAN_F6.md, usando la cuenta PF_Geocoding_Clientes",
+  "plan": "docs/PLAN_F6.md",
+  "sha256_plan_aprobado": "a7819a0a7ae53cc72200ee2e642a350a4559ccea013b459bd8aa8a766937a135",
+  "cloud_provision_usd": "5",
+  "disponibilidad_hasta": "2026-11-30",
+  "region": "southamerica-west1",
+  "public_validation_max_api_attempts": 2,
+  "public_validation_max_usd": "0.336",
+  "profesor_reserva_usd": "3",
+  "alcance": "Proyecto dedicado, facturación elegida, Artifact Registry, Cloud Run público, Secret Manager, IAM mínimo y límites según plan. No Cloud Build ni ampliaciones."
+}

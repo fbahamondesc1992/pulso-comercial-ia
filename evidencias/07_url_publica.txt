@@ -1,2 +1,1 @@
-PENDIENTE: no hay URL pública; requiere AUTORIZO DESPLIEGUE.
-Local solamente: http://127.0.0.1:8081
+https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app

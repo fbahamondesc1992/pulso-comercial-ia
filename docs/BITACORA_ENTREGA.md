@@ -296,3 +296,84 @@ Revisión asistida de 22 salidas vinculadas por hash y ubicación; humana nueva
 pendiente, sin trasladar la aprobación de fase 16. Informe EVALUACION_FINAL.md,
 resultados y conciliación en evidencias/17_*. Matriz actualizada en sus 27 requisitos.
 No se desplegó ni se reconstruyó Docker: código de aplicación y prompts sin cambios.
+
+## Fase 18: cierre F4 y preparación F6
+
+El usuario da por cerrado F4 y solicita comenzar F6. Se registra aprobación global
+vinculada por hash; se conservan observaciones y campos humanos individuales históricos.
+Indica que no tiene proyecto Google Cloud, que administra gasto OpenAI y que requiere
+disponibilidad hasta 30-11-2026. G3 aún no recibido.
+
+No hay gcloud en PATH ni configuraciones locales de proyectos. No hay conector Cloud.
+Docker 29.7.2 disponible; se verificó el contenedor existente amd64, usuario 10001,
+salud/demo HTTP 200 e IA deshabilitada 503. Evidencia 18_docker_preflight.json.
+No se ejecutó un nuevo build ni una llamada pagada. El alcance F6 se prepara en
+PLAN_F6.md; creación de proyecto, facturación, IAM, recursos y URL pública pendientes.
+
+El usuario confirma facturación habilitada. Lectura de consola: sesión autenticada y
+cuenta con estado «Cuenta pagada». El proyecto visible pertenece a otro trabajo; no
+se modificó ni se seleccionó como destino de Pulso. Identificadores privados solo en
+entrega/18_contexto_cloud_privado.json (ignorado, permisos 0600). La cuenta observada
+se propone para el proyecto nuevo, pendiente de G3; sin recursos ni cargos nuevos.
+
+## Fase 19: G3 y avance parcial F6
+
+G3 registrado con hash del plan aprobado. Consola confirmó proyecto dedicado, facturación
+habilitada, APIs, repositorio regional y cuenta runtime. Se transfirió imagen local tras
+bloqueos de clonación y descarga Docker; resultado de push no verificado. Presupuesto
+de alertas específico creado; moneda pendiente de comprobar. OpenAI mostró límite
+aplicado USD 5 y gasto USD 0,51, sin modificarlo ni ejecutar inferencias nuevas.
+
+Retoma 13-11-2026: herramienta del navegador no disponible; gcloud ausente. No se
+extraen credenciales del navegador ni se inventa éxito de comandos remotos. Registro
+19_avance_f6.json y matriz actualizados. Plan aprobado y presupuesto IA preservados.
+Pendientes: moneda del presupuesto cloud, push/digest, clave/proyecto/cupo, secreto,
+Cloud Run, URL y pruebas públicas. F6 permanece abierto.
+
+Verificación local de retoma: `.venv/bin/python -m pytest -q`, 152 passed en 0,67 s,
+sin red; diff sin errores. Hash del plan preservado, ledger idéntico al cierre F4 y
+27 filas de matriz conservadas. Sin nuevos commits/push en esta retoma.
+
+## Configuración local de gcloud · 13-11-2026
+
+SDK oficial 593.0.0 para macOS ARM64 instalado en `.venv/google-cloud-sdk`,
+SHA256 contrastado con documentación oficial. `gcloud version` ejecutado correctamente.
+Configuración aislada en `.venv/gcloud-config`, proyecto Pulso y región Santiago
+seleccionados; Python `.venv/bin/python`. Ambos directorios excluidos de Git.
+El bloqueo por ausencia del SDK está resuelto; falta que el usuario complete
+`gcloud auth login` tras cargar `.venv/activar-gcloud.sh`. No se han ejecutado
+aún las consultas cloud desde este SDK ni modificado recursos. Evidencia 20_gcloud_local.json.
+
+## Fase 21 · publicación real del 13-11-2026
+
+URL: https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app
+Primera revisión sin IA: `pulso-comercial-ia-00001-lmv`; revisión activa:
+`pulso-comercial-ia-00002-2gq`, 100% del tráfico. Imagen aprobada subida desde Docker
+local; digest `sha256:725063e85c319ce0473374f0fab18dea720fabed47386fcf8122daa3b93af7e8`.
+No se utilizó Cloud Build ni se reconstruyó la imagen.
+
+Cloud Run: Santiago, CPU 1, memoria 512 MiB, concurrencia 1, mínimos 0, máximos
+servicio/revisión 1, timeout 65 s, CPU por solicitud. Secreto `pulso-openai-key:1`,
+acceso solo de `pulso-runtime` mediante secretAccessor sobre ese secreto.
+Presupuesto verificado CLP 4900, exclusivo del proyecto, alertas 50/80/100%; no es
+corte de gasto. Límite OpenAI USD 5 aplicado, gasto USD 0,51 y pertenencia de clave
+confirmados por el usuario; autoriza al docente todo el cupo restante. No se cambió
+el límite global ni el de otros proyectos. Fuente: 21_confirmacion_cupo_docente.json.
+
+HTTP anónimo: inicio/health/demo/dashboard 200; protección de cabecera 403 y fuente
+inválida 400. La primera revisión devuelve IA deshabilitada 503. Segunda revisión:
+una solicitud pública real, HTTP 200, GPT-6.1-Sol, prompt v2, tres hallazgos,
+26,969 s; IDs y snapshot válidos. Revisión asistida del texto sin causas afirmadas
+ni suma de dimensiones superpuestas; conserva limitaciones. No equivale a aprobación humana.
+
+Se reservaron dos intentos potenciales por USD 0,336 antes de activar y probar.
+El endpoint no devuelve tokens ni número de intentos internos: reserva íntegra
+conservada, 50 intentos contabilizados conservadoramente (48 anteriores y 2
+potenciales), compromiso USD 1,1850625 de USD 2. No afirmar 50 llamadas observadas
+ni USD 0,336 de consumo real. Registro previo preservado; evidencia 21_presupuesto_*.
+Suite local: 152 passed en 0,62 s, sin red; no se modificó código de aplicación.
+
+**F6 sigue EN_PROCESO:** falta recorrido visual en navegador incógnito a 375/1440,
+capturas reales, expansión de evidencia y comprobación visual del error de cuota.
+Herramienta de navegador no disponible; las pruebas HTTP no sustituyen esa evidencia.
+F7: video real y actualización de ficha PDF aún pendientes.

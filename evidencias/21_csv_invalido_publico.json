@@ -1,0 +1,8 @@
+{
+  "status": 400,
+  "respuesta": {
+    "error": "Las columnas deben coincidir con el ejemplo descargable: ano, mes, canal, linea, familia, oficina, unidad_ump, facturacion_real_clp, facturacion_meta_clp, volumen_real_ump, volumen_meta_ump"
+  },
+  "modo": "HTTP_ANONIMO",
+  "api_ia_llamada": false
+}

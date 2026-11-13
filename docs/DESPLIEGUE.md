@@ -1,53 +1,45 @@
-# Preparación de publicación (NO EJECUTADA)
+# Despliegue vigente
 
-## G2 GitHub
+Plan aprobado conservado sin cambios en [PLAN_F6.md](PLAN_F6.md).
+El historial de preparación, bloqueos y cambios está en BITACORA_ENTREGA.md.
+## Fase 21 · publicación real del 13-11-2026
 
-G2 completado. Repositorio público: https://github.com/fbahamondesc1992/pulso-comercial-ia.
-Commit/push normal, acceso anónimo y auditoría de secretos comprobados en fase 12.
-Las actualizaciones mantienen el mismo alcance autorizado; no se usa force push.
+URL: https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app
+Primera revisión sin IA: `pulso-comercial-ia-00001-lmv`; revisión activa:
+`pulso-comercial-ia-00002-2gq`, 100% del tráfico. Imagen aprobada subida desde Docker
+local; digest `sha256:725063e85c319ce0473374f0fab18dea720fabed47386fcf8122daa3b93af7e8`.
+No se utilizó Cloud Build ni se reconstruyó la imagen.
 
-## G3 Cloud Run
+Cloud Run: Santiago, CPU 1, memoria 512 MiB, concurrencia 1, mínimos 0, máximos
+servicio/revisión 1, timeout 65 s, CPU por solicitud. Secreto `pulso-openai-key:1`,
+acceso solo de `pulso-runtime` mediante secretAccessor sobre ese secreto.
+Presupuesto verificado CLP 4900, exclusivo del proyecto, alertas 50/80/100%; no es
+corte de gasto. Límite OpenAI USD 5 aplicado, gasto USD 0,51 y pertenencia de clave
+confirmados por el usuario; autoriza al docente todo el cupo restante. No se cambió
+el límite global ni el de otros proyectos. Fuente: 21_confirmacion_cupo_docente.json.
 
-Región candidata `southamerica-west1`, verificada en la documentación de ubicaciones;
-capacidad, permisos y cuota de la cuenta todavía no comprobados. CLI `gcloud` no
-disponible en PATH durante F0. Resolver una herramienta adecuada o indicar pasos de consola.
+HTTP anónimo: inicio/health/demo/dashboard 200; protección de cabecera 403 y fuente
+inválida 400. La primera revisión devuelve IA deshabilitada 503. Segunda revisión:
+una solicitud pública real, HTTP 200, GPT-6.1-Sol, prompt v2, tres hallazgos,
+26,969 s; IDs y snapshot válidos. Revisión asistida del texto sin causas afirmadas
+ni suma de dimensiones superpuestas; conserva limitaciones. No equivale a aprobación humana.
 
-Antes de crear recursos: identificar proyecto y facturación autorizados; presentar
-tarifas por SKU, reserva de operación, alcance IAM y recursos concretos. Confirmar
-que presupuesto/alertas no se confunden con un límite duro. Verificar cuota real del
-proveedor y reservar cupo para el docente. No ampliar acceso o gasto automáticamente.
+Se reservaron dos intentos potenciales por USD 0,336 antes de activar y probar.
+El endpoint no devuelve tokens ni número de intentos internos: reserva íntegra
+conservada, 50 intentos contabilizados conservadoramente (48 anteriores y 2
+potenciales), compromiso USD 1,1850625 de USD 2. No afirmar 50 llamadas observadas
+ni USD 0,336 de consumo real. Registro previo preservado; evidencia 21_presupuesto_*.
+Suite local: 152 passed en 0,62 s, sin red; no se modificó código de aplicación.
 
-Configuración propuesta: contenedor Linux compatible con Cloud Run, puerto PORT,
-1 vCPU/512 MiB, concurrencia 4, min-instances 0, max-instances 1, timeout HTTP 65 s,
-Gunicorn un worker/cuatro threads. No asumir que max-instances garantiza gasto duro.
-Imagen local en Apple Silicon requiere verificar plataforma linux/amd64 para despliegue;
-el build local por sí solo no prueba compatibilidad con producción.
+**F6 sigue EN_PROCESO:** falta recorrido visual en navegador incógnito a 375/1440,
+capturas reales, expansión de evidencia y comprobación visual del error de cuota.
+Herramienta de navegador no disponible; las pruebas HTTP no sustituyen esa evidencia.
+F7: video real y actualización de ficha PDF aún pendientes.
 
-Cuenta de servicio exclusiva para la app. Acceso Secret Manager únicamente al secreto
-necesario, sin roles amplios de editor. API key mediante referencia a versión del
-secreto. Nunca pegar valor en comandos, historial, capturas o repositorio.
-Habilitar acceso público solo dentro de `AUTORIZO DESPLIEGUE` y sin permisos excesivos.
+## Operación
 
-No se incluye un comando aparentemente listo con IDs ficticios. Cuando se conozcan
-proyecto, imagen por digest, identidad y secreto, verificar sintaxis vigente y presentar
-el comando concreto sin valores secretos antes de G3.
-
-## Verificación pública
-
-Incógnito: HTTPS → demo → métricas → solicitud IA → referencias expandidas. Debe
-probarse IA real, no fallback. Verificar móvil/escritorio y /health. Guardar revisión,
-digest, URL, metadatos no sensibles y consumo. La llamada real requiere también saldo G1.
-Capturas de presupuestos/cuotas: ocultar números de cuenta y secretos, sin inventarlas.
-
-## Operación y retirada
-
-Registrar ventana de acceso durante corrección. Si se agota cupo, el dashboard sigue
-disponible y explica el error. No afirmar entrega completa si IA no está operativa.
-Tras autorización de cierre: deshabilitar IA, retirar servicio y recursos exclusivos;
-verificar imágenes/secretos/logs remanentes y gasto. No eliminar recursos compartidos.
-
-Fuentes consultadas 12-11-2026:
-- https://docs.cloud.google.com/run/docs/locations
-- https://docs.cloud.google.com/run/docs/configuring/services/secrets
-- https://docs.cloud.google.com/billing/docs/how-to/budgets
-- https://cloud.google.com/run/pricing
+Para usar gcloud local: `source .venv/activar-gcloud.sh`. La configuración y
+credenciales se conservan en .venv/gcloud-config, excluidas de Git.
+Ante un error del proveedor, conservar dashboard y mostrar error controlado.
+Para detener consumo IA, actualizar AI_ENABLED=false en el mismo servicio.
+No eliminar recursos antes del 30-11-2026; retirada posterior por autorización.

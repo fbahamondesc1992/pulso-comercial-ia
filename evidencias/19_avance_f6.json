@@ -1,0 +1,71 @@
+{
+  "fecha_registro_chile": "2026-11-13",
+  "fase": "F6",
+  "estado": "EN_PROCESO_BLOQUEADO_POR_HERRAMIENTA",
+  "origen": "Observaciones de consola en este chat, anteriores a la pérdida de la herramienta de navegador; no son una nueva consulta cloud.",
+  "proyecto": "pulso-comercial-ia-uai-2026",
+  "region": "southamerica-west1",
+  "confirmado_en_consola": {
+    "proyecto_creado": true,
+    "billingEnabled": true,
+    "apis_habilitadas": [
+      "run.googleapis.com",
+      "artifactregistry.googleapis.com",
+      "secretmanager.googleapis.com"
+    ],
+    "artifact_registry": "pulso",
+    "service_account": "pulso-runtime",
+    "imagen_local_transferida_a_cloud_shell": true,
+    "presupuesto_cloud": {
+      "nombre": "Pulso IA evaluacion noviembre 2026",
+      "importe_mostrado": "4900",
+      "moneda": "PENDIENTE_CONFIRMAR_EN_PRESUPUESTO",
+      "alcance": "solo proyecto Pulso Comercial IA",
+      "umbrales_porcentaje": [
+        50,
+        80,
+        100
+      ],
+      "tipo": "solo alertas"
+    },
+    "openai_proyecto": "Pulso-Comercial-IA",
+    "openai_gasto_mostrado_usd": "0.51",
+    "openai_limite_mostrado_usd": "5.00",
+    "openai_limite_aplicado": true
+  },
+  "tarifas_observadas": {
+    "cpu_tier2_usd_segundo": "0.0000336",
+    "memoria_tier2_usd_gib_segundo": "0.0000035",
+    "conversion_moneda_cuenta_a_usd": "0.001020012",
+    "nota": "El presupuesto de 4900 se introdujo como equivalente aproximado a USD 5. Verificar currencyCode del presupuesto antes de tratarlo como control validado; corregir a 5 si es USD."
+  },
+  "no_confirmado": [
+    "Resultado de docker load/tag/push enviado a Cloud Shell",
+    "Digest remoto",
+    "Correspondencia de la clave local con proyecto OpenAI",
+    "Límite OpenAI ajustado al cupo docente y validación",
+    "Secret Manager y versión",
+    "Cloud Run y URL pública",
+    "Pruebas públicas"
+  ],
+  "incidencias": [
+    "git clone solicitó autenticación; cancelado sin credenciales",
+    "Build en Cloud Shell sin progreso de descarga; no declarado exitoso; se transfirió imagen local",
+    "Control del navegador dejó de estar disponible; gcloud ausente en PATH local"
+  ],
+  "evaluacion": {
+    "intentos_acumulados": 48,
+    "compromiso_conservador_usd": "0.8490625",
+    "nuevas_llamadas_en_f6": 0,
+    "registro_preservado": true
+  },
+  "captura_nueva": "NO DISPONIBLE: herramienta retirada; no se fabricó captura",
+  "verificacion_local_2026_11_13": {
+    "pytest": "152 passed in 0.67s",
+    "red_en_tests": false,
+    "git_diff_check": "sin errores",
+    "plan_aprobado_hash_preservado": true,
+    "ledger_identico_cierre_f4": true,
+    "filas_matriz": 27
+  }
+}
