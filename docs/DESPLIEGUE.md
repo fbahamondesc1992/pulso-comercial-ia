@@ -98,3 +98,19 @@ Revisión `pulso-comercial-ia-00005-p4q`, 100% tráfico, digest
 Prueba pública con CSV ficticio: HTTP 200, valor negativo de 21 decimales conservado
 y advertencia visible. Sin llamadas IA. Evidencia `evidencias/24_netos_publico.json`.
 F6 sigue pendiente de recorrido visual/capturas.
+
+## Fase 25 · límite CSV ampliado · 13-11-2026
+
+Límite de filas aumentado a 30.000 y tamaño a 8 MiB en backend y frontend.
+El margen multipart y el procesamiento en memoria se conservan. Prueba con 30.000
+filas ficticias semicolon/coma decimal: 1.638.124 bytes, dashboard HTTP local 200,
+30.000 filas, 0,71 s en cliente Flask; el tiempo no representa latencia pública.
+Suite sin red: 166 passed en 1,11 s, incluidos límites 30.000/30.001 filas y
+petición >8 MiB. Pendiente despliegue y verificación pública al registrar este paso.
+Archivo aportado no enviado ni incluido en Git/imagen.
+
+Despliegue verificado: revisión `pulso-comercial-ia-00006-f4z`, 100% tráfico;
+digest `sha256:5c15a6f4a7700e4996c48af35c723257b16ca078ad6ddbb4443701920f6061cf`.
+CSV ficticio chileno de 30.000 filas y 1.638.124 bytes: HTTP público 200,
+4,38 s, 30.000 filas en respuesta. Sin IA. Evidencia `evidencias/25_limite_publico.json`.
+F6 visual sigue pendiente.

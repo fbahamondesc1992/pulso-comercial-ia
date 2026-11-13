@@ -1,5 +1,5 @@
 import pytest
-from validador_csv import leer_csv, ErrorCSV, MAX_BYTES, COLUMNAS
+from validador_csv import leer_csv, ErrorCSV, MAX_BYTES, MAX_ROWS, COLUMNAS
 from tests.conftest import fila, csv_bytes
 
 
@@ -44,9 +44,9 @@ def test_normalizacion_visible_colision_y_mayusculas():
 
 
 def test_limite_filas():
-    rows = [fila(familia=f"F{i}") for i in range(10_000)]
-    assert len(leer_csv(csv_bytes(rows)).filas) == 10_000
-    with pytest.raises(ErrorCSV, match="10.000"):
+    rows = [fila(familia=f"F{i}") for i in range(MAX_ROWS)]
+    assert len(leer_csv(csv_bytes(rows)).filas) == MAX_ROWS
+    with pytest.raises(ErrorCSV, match="30.000"):
         leer_csv(csv_bytes(rows + [fila(familia="Extra")]))
 
 

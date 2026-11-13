@@ -1,0 +1,11 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00006-f4z",
+  "http": 200,
+  "filas_ficticias": 30000,
+  "bytes_csv": 1638124,
+  "duracion_http_segundos": 4.38,
+  "ia_invocada": false,
+  "archivo_usuario_transmitido": false,
+  "limites": "30.000 filas; 8 MiB"
+}

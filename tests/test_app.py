@@ -55,7 +55,7 @@ def test_invalido_no_500(client, data):
 def test_csrf_y_limite_tamano(client):
     assert client.post("/api/dashboard", data={"fuente":"demo"}).status_code == 403
     assert client.post("/api/dashboard", data={"fuente":"demo"}, headers={**HEADERS,"Origin":"https://otro.test"}).status_code == 403
-    r = client.post("/api/dashboard", data={"fuente":"archivo","archivo":(io.BytesIO(b"x"*2_200_000),"x.csv")}, headers=HEADERS)
+    r = client.post("/api/dashboard", data={"fuente":"archivo","archivo":(io.BytesIO(b"x"*(9*1024*1024)),"x.csv")}, headers=HEADERS)
     assert r.status_code == 413
 
 

@@ -161,7 +161,7 @@ conciliado. Ver evidencias/12_github_publicado.json. Auditoría antes de cada pu
 
 ## Seguridad, actualización y límites
 
-CSV en memoria, máximo 2 MiB/10.000 filas; no se aceptan pickle/eval ni comandos.
+CSV en memoria, máximo 8 MiB/30.000 filas; no se aceptan pickle/eval ni comandos.
 Escaping por textContent/Jinja; CSP sin scripts externos/inline; cabeceras defensivas.
 Sin logs de archivos/prompts privados; errores no exponen stack traces ni credenciales.
 Auditar con `.venv/bin/python -m pip_audit -r requirements.txt` y revisión de secretos

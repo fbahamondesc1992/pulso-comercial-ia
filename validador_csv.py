@@ -6,8 +6,8 @@ import unicodedata
 from dataclasses import dataclass
 from decimal import Decimal
 
-MAX_BYTES = 2 * 1024 * 1024
-MAX_ROWS = 10_000
+MAX_BYTES = 8 * 1024 * 1024
+MAX_ROWS = 30_000
 DIMENSIONES = ("canal", "linea", "familia", "oficina")
 GRANO = ("ano", "mes", *DIMENSIONES, "unidad_ump")
 COLUMNAS = (*GRANO, "facturacion_real_clp", "facturacion_meta_clp", "volumen_real_ump", "volumen_meta_ump")
@@ -30,7 +30,7 @@ def leer_csv(contenido: bytes, nombre: str = "datos.csv") -> Dataset:
     if not contenido or not contenido.strip():
         raise ErrorCSV("El archivo está vacío.")
     if len(contenido) > MAX_BYTES:
-        raise ErrorCSV("El CSV supera el máximo de 2 MB.")
+        raise ErrorCSV("El CSV supera el máximo de 8 MiB.")
     try:
         texto = contenido.decode("utf-8-sig")
     except UnicodeDecodeError as exc:
@@ -51,7 +51,7 @@ def leer_csv(contenido: bytes, nombre: str = "datos.csv") -> Dataset:
         for values in reader:
             linea = reader.line_num
             if len(filas) >= MAX_ROWS:
-                raise ErrorCSV("El CSV supera el máximo de 10.000 filas.")
+                raise ErrorCSV("El CSV supera el máximo de 30.000 filas.")
             if len(values) != len(cabecera):
                 raise ErrorCSV(f"Línea {linea}: cantidad de columnas incorrecta.")
             row = dict(zip(cabecera, values))
