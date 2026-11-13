@@ -8,8 +8,9 @@ crecimiento vs. cumplimiento, brecha neta vs. negativa bruta, no sumar particion
 estados N/C, abstención y acciones explícitas de investigación.
 
 Ambas se cargan literalmente por `cargar_prompt`; no hay copia oculta en app.py.
-`ANALYST_PROMPT_VERSION=v1|v2` selecciona la versión; v2 es la candidata local,
-NO una ganadora medida. Rollback: seleccionar v1 y reiniciar el servicio.
+`ANALYST_PROMPT_VERSION=v1|v2` selecciona la versión; v2 es la selección técnica para el MVP tras la evaluación final: 10/10 frente
+a 9/10 de v1, con dos reintentos. Sin reintento, 8/10 frente a 9/10. No es superioridad
+estadística general; revisión humana de la nueva muestra pendiente. Rollback: seleccionar v1 y reiniciar el servicio.
 Se registra SHA256 del archivo en cada evaluación y versión en la respuesta web.
 Un reintento añade una instrucción fija de corrección y no incorpora salida inválida.
 

@@ -1,0 +1,93 @@
+{
+  "fecha_utc": "2026-11-12T22:17:40.018025+00:00",
+  "fuente": "evidencias/17_evaluacion_real_final.json",
+  "sha256_fuente": "56a8ce71ea550ab30342d1d7591faa527aa2a3d88377d139dc36a18184dab34e",
+  "comparacion": {
+    "v1": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 90.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "v2": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 100.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "delta_puntos_porcentuales": {
+      "pct_JSON_valido_por_intento": 0.0,
+      "pct_schema_valido_por_intento": 0.0,
+      "pct_casos_automaticos": 10.0,
+      "pct_hallazgos_con_referencias_validas": 0.0
+    }
+  },
+  "casos": 20,
+  "intentos_nuevos": 22,
+  "intentos_acumulados": 48,
+  "max_acumulados": 66,
+  "input_tokens": 58674,
+  "output_tokens": 11800,
+  "costo_standard_estimado_nuevo_usd": "0.235348",
+  "costo_superior_nuevo_usd": "0.2646850",
+  "compromiso_previo_usd": "0.5843775",
+  "compromiso_acumulado_usd": "0.8490625",
+  "margen_evaluacion_usd": "1.1509375",
+  "tope_acumulado_usd": "2",
+  "billing_consultado": false,
+  "por_version": {
+    "v1": {
+      "casos": 10,
+      "intentos": 10,
+      "casos_con_reintento": 0,
+      "casos_correctos_automaticos": 9,
+      "casos_correctos_al_primer_intento": 9,
+      "costo_superior_estimado_usd": "0.1107100",
+      "latencia_mediana_caso_ms": 8840.5,
+      "latencia_total_ms": 81920,
+      "rechazos_por_causalidad": 0,
+      "modelos_devueltos": [
+        "gpt-6.1-sol"
+      ]
+    },
+    "v2": {
+      "casos": 10,
+      "intentos": 12,
+      "casos_con_reintento": 2,
+      "casos_correctos_automaticos": 10,
+      "casos_correctos_al_primer_intento": 8,
+      "costo_superior_estimado_usd": "0.1539750",
+      "latencia_mediana_caso_ms": 11675.5,
+      "latencia_total_ms": 125431,
+      "rechazos_por_causalidad": 2,
+      "modelos_devueltos": [
+        "gpt-6.1-sol"
+      ]
+    }
+  },
+  "controles": {
+    "archivos_congelados_intactos": true,
+    "payloads_iguales_entre_versiones": true,
+    "historial_presupuesto_conservado": true,
+    "criterios_recalculados_identicos": true,
+    "dashboard_ia_deshabilitada": true,
+    "tests_sin_red": 152
+  },
+  "revision_humana_nueva": "PENDIENTE",
+  "limitaciones": [
+    "Una corrida de diez casos por versión no demuestra superioridad estadística general.",
+    "Mismos casos usados para depurar el validador; no es un conjunto de prueba independiente.",
+    "v1 se ejecutó antes de v2; latencia y caché pueden variar.",
+    "Dos rechazos de causalidad son falsos positivos según revisión asistida; se preservan y no se reetiquetan."
+  ]
+}

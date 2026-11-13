@@ -1,5 +1,12 @@
 # Brechas frente al prompt maestro y la pauta final
 
+**Estado vigente, fase 17:** comparación final real completada: v1 9/10 y v2 10/10
+con reintentos. Selección técnica v2; 152 pruebas sin red. Quedan revisión humana
+de las respuestas nuevas, dos falsos positivos residuales del filtro, G3 y protección
+del gasto público, validación HTTPS, video real y ficha PDF definitiva. Ver
+EVALUACION_FINAL.md. Los diagnósticos históricos que siguen no sustituyen este estado.
+
+
 Actualización fase 16: validador y criterios corregidos, 149 pruebas aprobadas;
 revisión asistida de 23 respuestas y aprobación humana global recibida. Se conservan
 las observaciones v1. Repetición real final, selección de prompt y G3 pendientes.

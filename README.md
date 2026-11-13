@@ -220,3 +220,13 @@ revalidación sin cambios y presupuesto intacto. Evidencias de fase 15.
 Aprobación humana global recibida el 12-11-2026; registro independiente con hashes en
 `evidencias/16_aprobacion_revision_humana.json`. Se conservan las observaciones v1
 y la evidencia original. La repetición real final y el despliegue siguen pendientes.
+
+## Evaluación final real
+
+[Informe final](docs/EVALUACION_FINAL.md): v1 9/10 y v2 10/10, +10 puntos porcentuales
+tras el reintento permitido. V2 requirió dos reintentos por falsos positivos del filtro;
+al primer intento fueron 9/10 y 8/10. Se selecciona técnicamente v2 para el MVP,
+sin afirmar superioridad estadística general. Revisión humana nueva pendiente.
+152 pruebas locales sin red. Costo superior nuevo USD 0,264685; compromiso acumulado
+USD 0,8490625 de USD 2, incluyendo reservas históricas. Billing no consultado.
+Evidencias `17_*`; 22 llamadas nuevas, 48 intentos acumulados de 66 autorizados.

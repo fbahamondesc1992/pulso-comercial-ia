@@ -1,0 +1,9 @@
+{
+  "fecha_utc": "2026-11-13T02:24:36.150981+00:00",
+  "head": "75cabfc922355a1aeb4df8b4b0f751982d415cbb",
+  "archivos_indice": 137,
+  "objetos_git_inspeccionados": 244,
+  "hallazgos": 0,
+  "alcance": "Índice por lista explícita; todos los objetos Git, incluidos huérfanos.",
+  "limitacion": "Patrones y coincidencia de clave local; no garantía universal."
+}

@@ -268,3 +268,31 @@ SHA local/remoto iguales, repositorio HTTP 200 sin autenticación y README remot
 idéntico byte a byte. Auditoría posterior al commit: 126 archivos y 211 objetos,
 sin hallazgos. Evidencia: 16_github_publicado.json, incorporada en un commit documental
 posterior. No hubo llamadas a IA ni despliegue en esta fase.
+
+## Fase 17: evaluación real final autorizada
+
+El usuario autorizó hasta 40 intentos adicionales, 66 acumulados, conservando el
+consumo previo y el tope total de USD 2. Se migró exclusivamente max_llamadas bajo
+bloqueo del registro; copia previa y autorización en 17_presupuesto_antes.json y
+17_autorizacion_y_preflight.json. Inicio: 26 intentos, USD 0,5843775 comprometidos.
+Se verificaron las tarifas oficiales vigentes y se conservaron prompts, casos,
+payloads y validador. El CLI acepta el límite autorizado y rechaza topes superiores
+a USD 2. Suite previa: 152 pruebas aprobadas sin red. IA activa solo en el proceso
+de evaluación, sin modificar .env ni habilitar el dashboard.
+
+Corrida final completada: 20 pares caso/prompt, 22 llamadas nuevas, 48 intentos
+acumulados. V1 9/10; v2 10/10 tras dos reintentos. En primer intento, 9/10 frente
+a 8/10. GS-05/v1 omite referencias interanuales; GS-07/08 v2 reciben falsos positivos
+de causalidad en negaciones legítimas y se recuperan con el único reintento permitido.
+Se preservan rechazos, textos, tokens y costos; no se retocó el validador después.
+
+Uso nuevo: 58.674/11.800 tokens entrada/salida. Estimación Standard USD 0,235348;
+valoración superior USD 0,264685. Compromiso acumulado USD 0,8490625; margen del
+límite USD 1,1509375. Historial conciliado exactamente, sin consumo adicional posterior.
+No se consultó billing. Selección técnica v2 por cobertura final y prioridad comercial,
+con limitaciones de latencia/reintentos; muestra pequeña sin superioridad general.
+
+Revisión asistida de 22 salidas vinculadas por hash y ubicación; humana nueva
+pendiente, sin trasladar la aprobación de fase 16. Informe EVALUACION_FINAL.md,
+resultados y conciliación en evidencias/17_*. Matriz actualizada en sus 27 requisitos.
+No se desplegó ni se reconstruyó Docker: código de aplicación y prompts sin cambios.

@@ -1,0 +1,2134 @@
+{
+  "modo": "real",
+  "validador_version": "3",
+  "criterios_version": "2",
+  "evidencia_ia_real": true,
+  "modelo_solicitado": "gpt-6.1-sol",
+  "parametros": {
+    "reasoning_effort": "low",
+    "service_tier": "default",
+    "prompt_cache_ttl": "30m",
+    "max_output_tokens": 1800,
+    "timeout_seconds": 20,
+    "max_retries_sdk": 0,
+    "max_reintentos_validacion": 1
+  },
+  "precio_usd_por_millon": {
+    "entrada": "2",
+    "salida": "10",
+    "entrada_reserva": "2.5",
+    "fuente": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+    "fecha": "2026-11-12"
+  },
+  "reserva_conservadora_usd": "0.8490625",
+  "tope_acumulado_usd": "2",
+  "saldo_conservador_usd": "1.1509375",
+  "llamadas": 48,
+  "resultados": [
+    {
+      "caso": "GS-01",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:06.678147+00:00",
+      "payload_sha256": "cf0a56c8801e699668f257d6473777b8e42be80c5fa29f5b25b9f01ded098792",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Las ventas crecen frente al período comparable, pero permanecen bajo la meta. El volumen también presenta cumplimiento inferior a la meta. Se recomienda dar seguimiento a las brechas e investigar sus determinantes, sin atribuir causas con la información disponible.",
+        "hallazgos": [
+          {
+            "titulo": "Ventas bajo la meta",
+            "descripcion": "El resultado comercial presenta una brecha negativa: {{F003}}, con cumplimiento de {{F004}}.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento frente al período comparable",
+            "descripcion": "La variación respecto de los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este avance coexiste con el incumplimiento de la meta.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F004"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen bajo el objetivo",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, contrastando su evolución con el crecimiento comparable {{F007}}.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F007"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar los antecedentes del incumplimiento de volumen {{F010}}, manteniendo el análisis de kilogramos separado del de unidades.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales para explicar las brechas ni el crecimiento.",
+          "El diagnóstico se limita al período y a los filtros informados; no permite establecer una tendencia sostenida.",
+          "El volumen informado corresponde a kilogramos; no se dispone de hechos de volumen en unidades.",
+          "Los desgloses por dimensión se superponen y no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 2953,
+          "output_tokens": 519,
+          "request_id": "req_bc8bf74de3944e7d800dd13acfe57cf4",
+          "estado": "valido",
+          "latencia_ms": 8777,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"Las ventas crecen frente al período comparable, pero permanecen bajo la meta. El volumen también presenta cumplimiento inferior a la meta. Se recomienda dar seguimiento a las brechas e investigar sus determinantes, sin atribuir causas con la información disponible.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"El resultado comercial presenta una brecha negativa: {{F003}}, con cumplimiento de {{F004}}.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento frente al período comparable\",\n      \"descripcion\": \"La variación respecto de los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este avance coexiste con el incumplimiento de la meta.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F004\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen bajo el objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, contrastando su evolución con el crecimiento comparable {{F007}}.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F007\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar los antecedentes del incumplimiento de volumen {{F010}}, manteniendo el análisis de kilogramos separado del de unidades.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales para explicar las brechas ni el crecimiento.\",\n    \"El diagnóstico se limita al período y a los filtros informados; no permite establecer una tendencia sostenida.\",\n    \"El volumen informado corresponde a kilogramos; no se dispone de hechos de volumen en unidades.\",\n    \"Los desgloses por dimensión se superponen y no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.011096",
+          "costo_superior_estimado_usd": "0.0125725"
+        }
+      ],
+      "latencia_ms": 8777
+    },
+    {
+      "caso": "GS-02",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:15.456606+00:00",
+      "payload_sha256": "f40b885bef7c69d559adc2dfccdac83e0f011b1c81c698d5b2d96f1077975632",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El resultado comercial está bajo la meta y presenta una caída frente al mismo período base. El cumplimiento monetario es {{F004}} y la variación interanual es {{F007}}. El volumen en kilogramos también está bajo lo planificado. No hay datos causales para explicar estos resultados.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado monetario bajo la meta",
+            "descripcion": "El real alcanza {{F001}}, frente a una meta de {{F002}}. La brecha es {{F003}} y el cumplimiento es {{F004}}.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Caída respecto del período base",
+            "descripcion": "La variación frente a los mismos meses del período base es negativa: {{F006}}, equivalente a {{F007}}.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen en kilogramos bajo lo planificado",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}. El cumplimiento de volumen es {{F010}}.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Dar seguimiento a la brecha monetaria {{F003}} y al cumplimiento {{F004}}, revisando su evolución en los próximos cierres.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar los antecedentes comerciales de la caída interanual {{F007}}, sin atribuir causas hasta contar con evidencia adicional.",
+            "evidencia_ids": [
+              "F007"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al cumplimiento de volumen {{F010}}, manteniendo separado el análisis en kilogramos de cualquier análisis en unidades.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales; los resultados permiten describir desviaciones, pero no explicar sus motivos.",
+          "El diagnóstico se limita al período y a los filtros informados; la comparación interanual corresponde a los mismos meses.",
+          "El volumen informado corresponde a kilogramos. No se entregan hechos de volumen en unidades.",
+          "Los desgloses por canal, línea, familia y oficina son dimensiones superpuestas y no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 2948,
+          "output_tokens": 607,
+          "request_id": "req_9b32fc527b9a42b1bfc73549e54777fc",
+          "estado": "valido",
+          "latencia_ms": 8417,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El resultado comercial está bajo la meta y presenta una caída frente al mismo período base. El cumplimiento monetario es {{F004}} y la variación interanual es {{F007}}. El volumen en kilogramos también está bajo lo planificado. No hay datos causales para explicar estos resultados.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Resultado monetario bajo la meta\",\n      \"descripcion\": \"El real alcanza {{F001}}, frente a una meta de {{F002}}. La brecha es {{F003}} y el cumplimiento es {{F004}}.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Caída respecto del período base\",\n      \"descripcion\": \"La variación frente a los mismos meses del período base es negativa: {{F006}}, equivalente a {{F007}}.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen en kilogramos bajo lo planificado\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}. El cumplimiento de volumen es {{F010}}.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Dar seguimiento a la brecha monetaria {{F003}} y al cumplimiento {{F004}}, revisando su evolución en los próximos cierres.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar los antecedentes comerciales de la caída interanual {{F007}}, sin atribuir causas hasta contar con evidencia adicional.\",\n      \"evidencia_ids\": [\"F007\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al cumplimiento de volumen {{F010}}, manteniendo separado el análisis en kilogramos de cualquier análisis en unidades.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales; los resultados permiten describir desviaciones, pero no explicar sus motivos.\",\n    \"El diagnóstico se limita al período y a los filtros informados; la comparación interanual corresponde a los mismos meses.\",\n    \"El volumen informado corresponde a kilogramos. No se entregan hechos de volumen en unidades.\",\n    \"Los desgloses por canal, línea, familia y oficina son dimensiones superpuestas y no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.011966",
+          "costo_superior_estimado_usd": "0.01344"
+        }
+      ],
+      "latencia_ms": 8417
+    },
+    {
+      "caso": "GS-03",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:23.877412+00:00",
+      "payload_sha256": "eb9e64ce17462bb74c90c5880cc13fbfffc71400d02d7b93a255f1b77126cfae",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La venta crece frente al período comparable, pero se mantiene bajo la meta: {{F007}} y {{F003}}. El volumen en KG también presenta incumplimiento. Conviene seguir la brecha comercial y revisar el detalle por familia, sin atribuir causas que los datos no permiten establecer.",
+        "hallazgos": [
+          {
+            "titulo": "Crecimiento con meta pendiente",
+            "descripcion": "La venta real registra {{F001}}, con {{F004}} y una brecha de {{F003}}. Frente a los mismos meses del período base, presenta crecimiento: {{F007}}.",
+            "evidencia_ids": [
+              "F001",
+              "F004",
+              "F003",
+              "F007"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen en KG bajo meta",
+            "descripcion": "El volumen real en KG presenta {{F008}}, frente a {{F009}}, con {{F010}}. Este resultado corresponde exclusivamente a KG.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Brecha negativa concentrada dentro de la dimensión familia",
+            "descripcion": "La familia destacada presenta {{F021}} y {{F022}}. Esta participación corresponde a las brechas negativas de la dimensión familia, no a una participación en la brecha neta total.",
+            "evidencia_ids": [
+              "F021",
+              "F022"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, contrastándolos con la evolución del período comparable {{F007}}.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F007"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar el detalle comercial de la familia destacada para contextualizar {{F021}} y {{F022}}, sin asumir causas a partir de su participación.",
+            "evidencia_ids": [
+              "F021",
+              "F022"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al cumplimiento de volumen {{F010}}, manteniendo KG separado de UN.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales; los resultados describen desempeño, no explican sus causas.",
+          "El diagnóstico se limita al período y a los filtros informados. El ranking por dimensión no constituye un detalle exhaustivo.",
+          "Las dimensiones se superponen y sus brechas no deben sumarse.",
+          "La participación bruta se refiere a brechas negativas dentro de cada dimensión, no a la brecha neta total.",
+          "La información de volumen disponible corresponde a KG; no se informan datos de UN."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "dimension_prioritaria": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 2983,
+          "output_tokens": 651,
+          "request_id": "req_103688bea7fe41a08452b16aacf33f5b",
+          "estado": "valido",
+          "latencia_ms": 10450,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"La venta crece frente al período comparable, pero se mantiene bajo la meta: {{F007}} y {{F003}}. El volumen en KG también presenta incumplimiento. Conviene seguir la brecha comercial y revisar el detalle por familia, sin atribuir causas que los datos no permiten establecer.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Crecimiento con meta pendiente\",\n      \"descripcion\": \"La venta real registra {{F001}}, con {{F004}} y una brecha de {{F003}}. Frente a los mismos meses del período base, presenta crecimiento: {{F007}}.\",\n      \"evidencia_ids\": [\"F001\", \"F004\", \"F003\", \"F007\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen en KG bajo meta\",\n      \"descripcion\": \"El volumen real en KG presenta {{F008}}, frente a {{F009}}, con {{F010}}. Este resultado corresponde exclusivamente a KG.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Brecha negativa concentrada dentro de la dimensión familia\",\n      \"descripcion\": \"La familia destacada presenta {{F021}} y {{F022}}. Esta participación corresponde a las brechas negativas de la dimensión familia, no a una participación en la brecha neta total.\",\n      \"evidencia_ids\": [\"F021\", \"F022\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, contrastándolos con la evolución del período comparable {{F007}}.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F007\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar el detalle comercial de la familia destacada para contextualizar {{F021}} y {{F022}}, sin asumir causas a partir de su participación.\",\n      \"evidencia_ids\": [\"F021\", \"F022\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al cumplimiento de volumen {{F010}}, manteniendo KG separado de UN.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales; los resultados describen desempeño, no explican sus causas.\",\n    \"El diagnóstico se limita al período y a los filtros informados. El ranking por dimensión no constituye un detalle exhaustivo.\",\n    \"Las dimensiones se superponen y sus brechas no deben sumarse.\",\n    \"La participación bruta se refiere a brechas negativas dentro de cada dimensión, no a la brecha neta total.\",\n    \"La información de volumen disponible corresponde a KG; no se informan datos de UN.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.012476",
+          "costo_superior_estimado_usd": "0.0139675"
+        }
+      ],
+      "latencia_ms": 10450
+    },
+    {
+      "caso": "GS-04",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:34.333010+00:00",
+      "payload_sha256": "579f7a3f98e98de12c496b6f49e8b7664d4beb723fcb02c061c954894fbe3e18",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Las ventas crecen frente al período comparable: {{F006}} y {{F007}}. El cumplimiento monetario es N/C por ausencia de una meta positiva, mientras el volumen en KG presenta cumplimiento bajo la meta: {{F010}}.",
+        "hallazgos": [
+          {
+            "titulo": "Crecimiento frente al período comparable",
+            "descripcion": "Las ventas registran {{F001}}, con un aumento frente a los mismos meses del período base de {{F006}} y {{F007}}.",
+            "evidencia_ids": [
+              "F001",
+              "F006",
+              "F007"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Cumplimiento monetario no calculable",
+            "descripcion": "La meta monetaria informada es {{F002}} y la brecha es {{F003}}. El cumplimiento es N/C; la brecha no permite evaluar desempeño respecto de una meta positiva.",
+            "evidencia_ids": [
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen en KG bajo la meta",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar si la meta monetaria informada en {{F002}} corresponde a lo planificado o requiere revisión de su carga, manteniendo el cumplimiento como N/C.",
+            "evidencia_ids": [
+              "F002",
+              "F004"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Investigar los antecedentes del crecimiento observado en {{F006}} y {{F007}}, sin atribuir causas con la información disponible.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al cumplimiento de volumen en KG de {{F010}}, contrastando el volumen real y la meta informados.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales.",
+          "El diagnóstico se limita al período y a los totales informados; no hay desglose comercial para localizar diferencias.",
+          "El cumplimiento monetario es N/C por la condición de la meta.",
+          "La información de volumen corresponde a KG; no se informan datos en UN y no se mezclan unidades."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 1557,
+          "output_tokens": 599,
+          "request_id": "req_eb80fb8ee28b401eb81f9b892b7a41c2",
+          "estado": "valido",
+          "latencia_ms": 10235,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"Las ventas crecen frente al período comparable: {{F006}} y {{F007}}. El cumplimiento monetario es N/C por ausencia de una meta positiva, mientras el volumen en KG presenta cumplimiento bajo la meta: {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Crecimiento frente al período comparable\",\n      \"descripcion\": \"Las ventas registran {{F001}}, con un aumento frente a los mismos meses del período base de {{F006}} y {{F007}}.\",\n      \"evidencia_ids\": [\"F001\", \"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Cumplimiento monetario no calculable\",\n      \"descripcion\": \"La meta monetaria informada es {{F002}} y la brecha es {{F003}}. El cumplimiento es N/C; la brecha no permite evaluar desempeño respecto de una meta positiva.\",\n      \"evidencia_ids\": [\"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen en KG bajo la meta\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar si la meta monetaria informada en {{F002}} corresponde a lo planificado o requiere revisión de su carga, manteniendo el cumplimiento como N/C.\",\n      \"evidencia_ids\": [\"F002\", \"F004\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Investigar los antecedentes del crecimiento observado en {{F006}} y {{F007}}, sin atribuir causas con la información disponible.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al cumplimiento de volumen en KG de {{F010}}, contrastando el volumen real y la meta informados.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales.\",\n    \"El diagnóstico se limita al período y a los totales informados; no hay desglose comercial para localizar diferencias.\",\n    \"El cumplimiento monetario es N/C por la condición de la meta.\",\n    \"La información de volumen corresponde a KG; no se informan datos en UN y no se mezclan unidades.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.009104",
+          "costo_superior_estimado_usd": "0.0098825"
+        }
+      ],
+      "latencia_ms": 10235
+    },
+    {
+      "caso": "GS-05",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:44.573096+00:00",
+      "payload_sha256": "286418e9d53873cc7dc96de9d81b9e4f578e3f7fc3f3d8ddc53461cf0cd6042a",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El resultado comercial está bajo la meta, con {{F003}} y {{F004}}. El volumen también presenta cumplimiento bajo la meta: {{F010}}. La comparación interanual es N/C por cobertura parcial. No hay datos causales.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado comercial bajo la meta",
+            "descripcion": "El resultado reportado es {{F001}}, frente a {{F002}}. La brecha es {{F003}} y el cumplimiento alcanza {{F004}}.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen bajo el objetivo",
+            "descripcion": "El volumen real es {{F008}}, frente a {{F009}}, con {{F010}}. Este resultado corresponde exclusivamente a kilogramos.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Brechas visibles en los desgloses comerciales",
+            "descripcion": "El desglose por canal presenta {{F013}}; por línea, {{F017}}; y por oficina, {{F025}}. Son vistas superpuestas y no deben sumarse.",
+            "evidencia_ids": [
+              "F013",
+              "F017",
+              "F025"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Dar seguimiento a la brecha comercial y al cumplimiento reportados: {{F003}} y {{F004}}, contrastando su evolución con la meta.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar los antecedentes de las brechas por canal, línea y oficina: {{F013}}, {{F017}} y {{F025}}, sin sumar dimensiones superpuestas ni atribuir causas con la información disponible.",
+            "evidencia_ids": [
+              "F013",
+              "F017",
+              "F025"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Monitorear el cumplimiento de volumen {{F010}}, manteniendo separado el análisis de kilogramos del de unidades.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales; los antecedentes describen resultados, no explican sus motivos.",
+          "La variación interanual es N/C por falta de cobertura de grupos. La base tiene cobertura parcial y no debe interpretarse como ausencia de ventas. No se imputan ceros.",
+          "El volumen informado corresponde a kilogramos; no se aportan hechos de volumen en unidades y no corresponde agregarlos.",
+          "Los rankings son acotados por dimensión y sus brechas no deben sumarse entre dimensiones superpuestas."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": false,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": false,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3066,
+          "output_tokens": 651,
+          "request_id": "req_00d453a2cdac4caa99c7e65cb90c3ce0",
+          "estado": "valido",
+          "latencia_ms": 10235,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El resultado comercial está bajo la meta, con {{F003}} y {{F004}}. El volumen también presenta cumplimiento bajo la meta: {{F010}}. La comparación interanual es N/C por cobertura parcial. No hay datos causales.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Resultado comercial bajo la meta\",\n      \"descripcion\": \"El resultado reportado es {{F001}}, frente a {{F002}}. La brecha es {{F003}} y el cumplimiento alcanza {{F004}}.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen bajo el objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a {{F009}}, con {{F010}}. Este resultado corresponde exclusivamente a kilogramos.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Brechas visibles en los desgloses comerciales\",\n      \"descripcion\": \"El desglose por canal presenta {{F013}}; por línea, {{F017}}; y por oficina, {{F025}}. Son vistas superpuestas y no deben sumarse.\",\n      \"evidencia_ids\": [\"F013\", \"F017\", \"F025\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Dar seguimiento a la brecha comercial y al cumplimiento reportados: {{F003}} y {{F004}}, contrastando su evolución con la meta.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar los antecedentes de las brechas por canal, línea y oficina: {{F013}}, {{F017}} y {{F025}}, sin sumar dimensiones superpuestas ni atribuir causas con la información disponible.\",\n      \"evidencia_ids\": [\"F013\", \"F017\", \"F025\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Monitorear el cumplimiento de volumen {{F010}}, manteniendo separado el análisis de kilogramos del de unidades.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales; los antecedentes describen resultados, no explican sus motivos.\",\n    \"La variación interanual es N/C por falta de cobertura de grupos. La base tiene cobertura parcial y no debe interpretarse como ausencia de ventas. No se imputan ceros.\",\n    \"El volumen informado corresponde a kilogramos; no se aportan hechos de volumen en unidades y no corresponde agregarlos.\",\n    \"Los rankings son acotados por dimensión y sus brechas no deben sumarse entre dimensiones superpuestas.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.012642",
+          "costo_superior_estimado_usd": "0.014175"
+        }
+      ],
+      "latencia_ms": 10235
+    },
+    {
+      "caso": "GS-06",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:13:54.812292+00:00",
+      "payload_sha256": "c5b177f47369d6c0a5fe0093582e911694019cdd7da36bd7ea3dc7fbc2902d95",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Las ventas crecen frente al período comparable, pero siguen bajo la meta. El cumplimiento monetario es {{F004}} y la brecha es {{F003}}. Conviene dar seguimiento diferenciado al cumplimiento de volumen, sin mezclar unidades.",
+        "hallazgos": [
+          {
+            "titulo": "Ventas bajo la meta",
+            "descripcion": "El resultado comercial presenta una brecha negativa: {{F003}}, con cumplimiento de {{F004}}.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento frente al período comparable",
+            "descripcion": "La variación de ventas respecto de los mismos meses del año base es positiva: {{F006}} y {{F007}}. Este avance coexiste con el incumplimiento de la meta.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F004"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Cumplimiento de volumen desigual",
+            "descripcion": "El cumplimiento en kilogramos es {{F010}}, mientras que en unidades es {{F013}}. Las unidades presentan menor cumplimiento; estos indicadores deben mantenerse separados.",
+            "evidencia_ids": [
+              "F010",
+              "F013"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, revisando su evolución frente a la meta.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar los antecedentes del menor cumplimiento en unidades {{F013}}, manteniendo separado el análisis en kilogramos {{F010}}, sin atribuir causas antes de contar con evidencia.",
+            "evidencia_ids": [
+              "F013",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales; los resultados describen desempeño, no explican sus motivos.",
+          "El diagnóstico se limita al período informado y a los filtros sin restricción. La comparación interanual corresponde a los mismos meses.",
+          "Los volúmenes en kilogramos y unidades no son sumables. Las dimensiones comerciales superpuestas tampoco deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "unidades_separadas": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3601,
+          "output_tokens": 530,
+          "request_id": "req_2c8b22c7daa8420c843868d0c9f06bec",
+          "estado": "valido",
+          "latencia_ms": 8904,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"Las ventas crecen frente al período comparable, pero siguen bajo la meta. El cumplimiento monetario es {{F004}} y la brecha es {{F003}}. Conviene dar seguimiento diferenciado al cumplimiento de volumen, sin mezclar unidades.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"El resultado comercial presenta una brecha negativa: {{F003}}, con cumplimiento de {{F004}}.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento frente al período comparable\",\n      \"descripcion\": \"La variación de ventas respecto de los mismos meses del año base es positiva: {{F006}} y {{F007}}. Este avance coexiste con el incumplimiento de la meta.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F004\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Cumplimiento de volumen desigual\",\n      \"descripcion\": \"El cumplimiento en kilogramos es {{F010}}, mientras que en unidades es {{F013}}. Las unidades presentan menor cumplimiento; estos indicadores deben mantenerse separados.\",\n      \"evidencia_ids\": [\"F010\", \"F013\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Dar seguimiento a la brecha comercial {{F003}} y al cumplimiento {{F004}}, revisando su evolución frente a la meta.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar los antecedentes del menor cumplimiento en unidades {{F013}}, manteniendo separado el análisis en kilogramos {{F010}}, sin atribuir causas antes de contar con evidencia.\",\n      \"evidencia_ids\": [\"F013\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales; los resultados describen desempeño, no explican sus motivos.\",\n    \"El diagnóstico se limita al período informado y a los filtros sin restricción. La comparación interanual corresponde a los mismos meses.\",\n    \"Los volúmenes en kilogramos y unidades no son sumables. Las dimensiones comerciales superpuestas tampoco deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.012502",
+          "costo_superior_estimado_usd": "0.0143025"
+        }
+      ],
+      "latencia_ms": 8904
+    },
+    {
+      "caso": "GS-07",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:14:03.721445+00:00",
+      "payload_sha256": "fe2d54db779cd4f588aac9756fd7dd822f85afcc229811f14b13b4fb949c8075",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Las ventas crecen respecto del período comparable, pero permanecen bajo la meta. El cumplimiento comercial es {{F004}} y el volumen en KG también presenta incumplimiento: {{F010}}. No hay datos causales para explicar estos resultados.",
+        "hallazgos": [
+          {
+            "titulo": "Ventas bajo la meta",
+            "descripcion": "El real registrado es {{F001}}, frente a una meta de {{F002}}. La brecha es negativa: {{F003}}, con un cumplimiento de {{F004}}.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual positivo",
+            "descripcion": "La variación frente a los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este avance convive con el incumplimiento de la meta comercial.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F004"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen en KG bajo la meta",
+            "descripcion": "El volumen real en KG es {{F008}}, frente a una meta de {{F009}}. Su cumplimiento es {{F010}}.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes comerciales asociados a la brecha {{F003}}, contrastando el crecimiento interanual {{F007}} con la meta vigente, sin atribuir causas con la información disponible.",
+            "evidencia_ids": [
+              "F003",
+              "F007"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al cumplimiento comercial {{F004}} y al cumplimiento de volumen en KG {{F010}}, manteniendo separados los indicadores monetarios y físicos.",
+            "evidencia_ids": [
+              "F004",
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales para explicar las brechas ni el crecimiento.",
+          "El diagnóstico se limita al período y a los filtros informados; no permite concluir tendencias fuera de esa cobertura.",
+          "La información de volumen corresponde a KG; no se informan datos de UN y no corresponde agregarlos ni equipararlos.",
+          "Los desgloses por dimensión se superponen y no deben sumarse entre sí."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 2977,
+          "output_tokens": 569,
+          "request_id": "req_18ddcfc3b37f429c828018090b8b5a1f",
+          "estado": "valido",
+          "latencia_ms": 8904,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"Las ventas crecen respecto del período comparable, pero permanecen bajo la meta. El cumplimiento comercial es {{F004}} y el volumen en KG también presenta incumplimiento: {{F010}}. No hay datos causales para explicar estos resultados.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"El real registrado es {{F001}}, frente a una meta de {{F002}}. La brecha es negativa: {{F003}}, con un cumplimiento de {{F004}}.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual positivo\",\n      \"descripcion\": \"La variación frente a los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este avance convive con el incumplimiento de la meta comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F004\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen en KG bajo la meta\",\n      \"descripcion\": \"El volumen real en KG es {{F008}}, frente a una meta de {{F009}}. Su cumplimiento es {{F010}}.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes comerciales asociados a la brecha {{F003}}, contrastando el crecimiento interanual {{F007}} con la meta vigente, sin atribuir causas con la información disponible.\",\n      \"evidencia_ids\": [\"F003\", \"F007\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al cumplimiento comercial {{F004}} y al cumplimiento de volumen en KG {{F010}}, manteniendo separados los indicadores monetarios y físicos.\",\n      \"evidencia_ids\": [\"F004\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales para explicar las brechas ni el crecimiento.\",\n    \"El diagnóstico se limita al período y a los filtros informados; no permite concluir tendencias fuera de esa cobertura.\",\n    \"La información de volumen corresponde a KG; no se informan datos de UN y no corresponde agregarlos ni equipararlos.\",\n    \"Los desgloses por dimensión se superponen y no deben sumarse entre sí.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.011644",
+          "costo_superior_estimado_usd": "0.0131325"
+        }
+      ],
+      "latencia_ms": 8904
+    },
+    {
+      "caso": "GS-08",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:14:12.631274+00:00",
+      "payload_sha256": "cf0a56c8801e699668f257d6473777b8e42be80c5fa29f5b25b9f01ded098792",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "Las ventas crecen respecto del período comparable, pero siguen bajo la meta: {{F007}} y {{F004}}. El volumen en kilogramos también presenta incumplimiento. No hay datos causales para explicar estos resultados.",
+        "hallazgos": [
+          {
+            "titulo": "Ventas bajo la meta",
+            "descripcion": "El resultado comercial presenta una brecha negativa de {{F003}}, con cumplimiento de {{F004}}.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual positivo",
+            "descripcion": "La variación respecto de los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este crecimiento convive con el incumplimiento de la meta.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F004"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen en kilogramos bajo lo planificado",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes comerciales asociados a la brecha {{F003}}, revisando los desgloses disponibles sin sumar dimensiones superpuestas.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al cumplimiento monetario {{F004}} y al cumplimiento de volumen en kilogramos {{F010}}, manteniendo separadas las unidades de medida.",
+            "evidencia_ids": [
+              "F004",
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales; los resultados describen desempeño y no explican sus motivos.",
+          "La comparación interanual corresponde exclusivamente a los mismos meses informados.",
+          "Los desgloses por canal, línea, familia y oficina se superponen y no deben sumarse.",
+          "La cobertura de volumen informada corresponde a kilogramos; no se aportan datos en unidades."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 2953,
+          "output_tokens": 522,
+          "request_id": "req_70348ea7a37b46989723b133bba4c6fd",
+          "estado": "valido",
+          "latencia_ms": 8699,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"Las ventas crecen respecto del período comparable, pero siguen bajo la meta: {{F007}} y {{F004}}. El volumen en kilogramos también presenta incumplimiento. No hay datos causales para explicar estos resultados.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"El resultado comercial presenta una brecha negativa de {{F003}}, con cumplimiento de {{F004}}.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual positivo\",\n      \"descripcion\": \"La variación respecto de los mismos meses del período base es positiva: {{F006}} y {{F007}}. Este crecimiento convive con el incumplimiento de la meta.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F004\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen en kilogramos bajo lo planificado\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes comerciales asociados a la brecha {{F003}}, revisando los desgloses disponibles sin sumar dimensiones superpuestas.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al cumplimiento monetario {{F004}} y al cumplimiento de volumen en kilogramos {{F010}}, manteniendo separadas las unidades de medida.\",\n      \"evidencia_ids\": [\"F004\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales; los resultados describen desempeño y no explican sus motivos.\",\n    \"La comparación interanual corresponde exclusivamente a los mismos meses informados.\",\n    \"Los desgloses por canal, línea, familia y oficina se superponen y no deben sumarse.\",\n    \"La cobertura de volumen informada corresponde a kilogramos; no se aportan datos en unidades.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.011126",
+          "costo_superior_estimado_usd": "0.0126025"
+        }
+      ],
+      "latencia_ms": 8699
+    },
+    {
+      "caso": "GS-09",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:14:21.335578+00:00",
+      "payload_sha256": "91d77d671c551dc898aecd8f7e2b48606ee4c62309388447bbce9e546e4e37e4",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La brecha comercial total es negativa: {{F003}}. Corresponde hacer seguimiento al cumplimiento de la meta.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado bajo la meta",
+            "descripcion": "La brecha entre el resultado real y la meta es {{F003}}, lo que indica un resultado inferior a lo planificado para el período informado.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar la composición de la brecha {{F003}}, solicitando un desglose comercial para identificar dónde se concentra.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "No hay datos causales para explicar la brecha.",
+          "La evidencia disponible corresponde al total del período informado y no incluye desgloses ni antecedentes de evolución."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 777,
+          "output_tokens": 229,
+          "request_id": "req_98bf0a3c3ca1481eaa16958c9dbc58c7",
+          "estado": "valido",
+          "latencia_ms": 4499,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"La brecha comercial total es negativa: {{F003}}. Corresponde hacer seguimiento al cumplimiento de la meta.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Resultado bajo la meta\",\n      \"descripcion\": \"La brecha entre el resultado real y la meta es {{F003}}, lo que indica un resultado inferior a lo planificado para el período informado.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar la composición de la brecha {{F003}}, solicitando un desglose comercial para identificar dónde se concentra.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"No hay datos causales para explicar la brecha.\",\n    \"La evidencia disponible corresponde al total del período informado y no incluye desgloses ni antecedentes de evolución.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.003844",
+          "costo_superior_estimado_usd": "0.0042325"
+        }
+      ],
+      "latencia_ms": 4499
+    },
+    {
+      "caso": "GS-10",
+      "version_prompt": "v1",
+      "fecha_utc": "2026-11-12T22:14:25.838681+00:00",
+      "payload_sha256": "160ce79f1d8ba12f9c4c4c19dae1da6a47b745da4ac6949d85bc69d1c47bd763",
+      "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La evidencia disponible es insuficiente para emitir un diagnóstico comercial.",
+        "hallazgos": [],
+        "acciones_sugeridas": [],
+        "limitaciones": [
+          "No hay cifras válidas para analizar el período informado.",
+          "No hay datos causales."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "abstencion": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v1",
+          "prompt_sha256": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 649,
+          "output_tokens": 78,
+          "request_id": "req_827da2e1d1ef4ac4b84fecdc601fc662",
+          "estado": "valido",
+          "latencia_ms": 2800,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"La evidencia disponible es insuficiente para emitir un diagnóstico comercial.\",\n  \"hallazgos\": [],\n  \"acciones_sugeridas\": [],\n  \"limitaciones\": [\n    \"No hay cifras válidas para analizar el período informado.\",\n    \"No hay datos causales.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 0,
+          "hallazgos_referencias_validas": 0,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.002078",
+          "costo_superior_estimado_usd": "0.0024025"
+        }
+      ],
+      "latencia_ms": 2800
+    },
+    {
+      "caso": "GS-01",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:14:28.643247+00:00",
+      "payload_sha256": "cf0a56c8801e699668f257d6473777b8e42be80c5fa29f5b25b9f01ded098792",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "En enero, las ventas presentan una brecha frente a la meta de {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es positivo, pero no implica alcanzar la meta. El volumen en kilogramos también se mantiene bajo lo planificado.",
+        "hallazgos": [
+          {
+            "titulo": "Brecha comercial frente a la meta",
+            "descripcion": "Las ventas registran {{F001}} frente a una meta de {{F002}}, con una brecha de {{F003}} y cumplimiento de {{F004}}. La prioridad gerencial es revisar el desempeño frente al objetivo del período.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual sin cumplimiento de meta",
+            "descripcion": "La variación respecto de enero del año base es {{F006}}, equivalente a {{F007}}. Esta mejora interanual debe distinguirse del cumplimiento de {{F004}}: crecer respecto del período comparable no significa alcanzar el objetivo comercial.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F004"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen en kilogramos bajo el objetivo",
+            "descripcion": "El volumen real es {{F008}} frente a una meta de {{F009}}, con cumplimiento de {{F010}}. El indicador físico también requiere seguimiento, sin atribuirle por sí solo la brecha monetaria.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes comerciales asociados a la brecha de {{F003}}, revisando el detalle del período antes de definir medidas.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento separado al crecimiento interanual de {{F007}} y al cumplimiento de {{F004}}, para evitar interpretar la mejora respecto del año base como logro de la meta.",
+            "evidencia_ids": [
+              "F007",
+              "F004"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Revisar el avance del volumen en kilogramos frente a su meta, usando {{F010}} como indicador de seguimiento.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "Los hechos describen resultados, pero no permiten establecer causas de las brechas.",
+          "La cobertura entregada corresponde a enero; no permite evaluar tendencias de otros meses ni extrapolar el desempeño anual.",
+          "Las dimensiones comerciales son particiones superpuestas y sus brechas no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3265,
+          "output_tokens": 644,
+          "request_id": "req_06f06b10a1ba4a9b8ece50ef41a7cf2d",
+          "estado": "valido",
+          "latencia_ms": 11734,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"En enero, las ventas presentan una brecha frente a la meta de {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es positivo, pero no implica alcanzar la meta. El volumen en kilogramos también se mantiene bajo lo planificado.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Brecha comercial frente a la meta\",\n      \"descripcion\": \"Las ventas registran {{F001}} frente a una meta de {{F002}}, con una brecha de {{F003}} y cumplimiento de {{F004}}. La prioridad gerencial es revisar el desempeño frente al objetivo del período.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual sin cumplimiento de meta\",\n      \"descripcion\": \"La variación respecto de enero del año base es {{F006}}, equivalente a {{F007}}. Esta mejora interanual debe distinguirse del cumplimiento de {{F004}}: crecer respecto del período comparable no significa alcanzar el objetivo comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F004\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen en kilogramos bajo el objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}} frente a una meta de {{F009}}, con cumplimiento de {{F010}}. El indicador físico también requiere seguimiento, sin atribuirle por sí solo la brecha monetaria.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes comerciales asociados a la brecha de {{F003}}, revisando el detalle del período antes de definir medidas.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado al crecimiento interanual de {{F007}} y al cumplimiento de {{F004}}, para evitar interpretar la mejora respecto del año base como logro de la meta.\",\n      \"evidencia_ids\": [\"F007\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar el avance del volumen en kilogramos frente a su meta, usando {{F010}} como indicador de seguimiento.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos describen resultados, pero no permiten establecer causas de las brechas.\",\n    \"La cobertura entregada corresponde a enero; no permite evaluar tendencias de otros meses ni extrapolar el desempeño anual.\",\n    \"Las dimensiones comerciales son particiones superpuestas y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.01297",
+          "costo_superior_estimado_usd": "0.0146025"
+        }
+      ],
+      "latencia_ms": 11734
+    },
+    {
+      "caso": "GS-02",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:14:40.382408+00:00",
+      "payload_sha256": "f40b885bef7c69d559adc2dfccdac83e0f011b1c81c698d5b2d96f1077975632",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "En enero, las ventas presentan una brecha negativa frente a la meta: {{F003}}, con {{F004}}. Además, retroceden respecto del mismo mes del año base: {{F006}}. El volumen también queda bajo su objetivo, con {{F010}}.",
+        "hallazgos": [
+          {
+            "titulo": "Ventas bajo la meta",
+            "descripcion": "El resultado total presenta {{F003}} y {{F004}}. La prioridad gerencial es revisar el incumplimiento comercial, sin sumar las brechas de canal, línea, familia y oficina, pues son vistas superpuestas del resultado.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Retroceso interanual en ventas",
+            "descripcion": "La comparación de enero con el mismo mes del año base muestra {{F006}} y {{F007}}. Este deterioro es distinto del incumplimiento de meta y requiere seguimiento separado.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen bajo su objetivo",
+            "descripcion": "El volumen registrado es {{F008}}, frente a {{F009}}, con {{F010}}. El desempeño físico también requiere atención, sin atribuirle por sí solo la brecha monetaria.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes del incumplimiento de ventas, revisando las aperturas comerciales como perspectivas superpuestas y no como brechas acumulables.",
+            "evidencia_ids": [
+              "F003",
+              "F013",
+              "F017",
+              "F021",
+              "F025"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento separado a la variación interanual y al cumplimiento de meta, manteniendo comparaciones entre meses equivalentes.",
+            "evidencia_ids": [
+              "F004",
+              "F006",
+              "F007"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Revisar los antecedentes del volumen real y su meta para investigar el incumplimiento físico, sin asumir una relación causal con el resultado monetario.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "La cobertura entregada se limita a enero; no permite establecer una tendencia para el resto del año.",
+          "Los hechos describen resultados, pero no aportan antecedentes específicos para identificar sus causas.",
+          "Las aperturas comerciales son particiones superpuestas y sus brechas no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3260,
+          "output_tokens": 629,
+          "request_id": "req_ae7b2c7b1fe64f7aa13e728df6449a7d",
+          "estado": "valido",
+          "latencia_ms": 11259,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"En enero, las ventas presentan una brecha negativa frente a la meta: {{F003}}, con {{F004}}. Además, retroceden respecto del mismo mes del año base: {{F006}}. El volumen también queda bajo su objetivo, con {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"El resultado total presenta {{F003}} y {{F004}}. La prioridad gerencial es revisar el incumplimiento comercial, sin sumar las brechas de canal, línea, familia y oficina, pues son vistas superpuestas del resultado.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Retroceso interanual en ventas\",\n      \"descripcion\": \"La comparación de enero con el mismo mes del año base muestra {{F006}} y {{F007}}. Este deterioro es distinto del incumplimiento de meta y requiere seguimiento separado.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen bajo su objetivo\",\n      \"descripcion\": \"El volumen registrado es {{F008}}, frente a {{F009}}, con {{F010}}. El desempeño físico también requiere atención, sin atribuirle por sí solo la brecha monetaria.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes del incumplimiento de ventas, revisando las aperturas comerciales como perspectivas superpuestas y no como brechas acumulables.\",\n      \"evidencia_ids\": [\"F003\", \"F013\", \"F017\", \"F021\", \"F025\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado a la variación interanual y al cumplimiento de meta, manteniendo comparaciones entre meses equivalentes.\",\n      \"evidencia_ids\": [\"F004\", \"F006\", \"F007\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar los antecedentes del volumen real y su meta para investigar el incumplimiento físico, sin asumir una relación causal con el resultado monetario.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"La cobertura entregada se limita a enero; no permite establecer una tendencia para el resto del año.\",\n    \"Los hechos describen resultados, pero no aportan antecedentes específicos para identificar sus causas.\",\n    \"Las aperturas comerciales son particiones superpuestas y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.01281",
+          "costo_superior_estimado_usd": "0.01444"
+        }
+      ],
+      "latencia_ms": 11259
+    },
+    {
+      "caso": "GS-03",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:14:51.647407+00:00",
+      "payload_sha256": "eb9e64ce17462bb74c90c5880cc13fbfffc71400d02d7b93a255f1b77126cfae",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "La mayor brecha negativa informada corresponde a Familia A: {{F021}}. El resultado total permanece bajo meta, con {{F003}}, aunque registra crecimiento interanual de {{F006}}. El volumen también muestra incumplimiento de su meta: {{F010}}.",
+        "hallazgos": [
+          {
+            "titulo": "Prioridad de revisión en Familia A",
+            "descripcion": "Familia A presenta {{F021}} y concentra {{F022}} de la brecha negativa bruta de su dimensión. Su déficit es mayor que la brecha neta total, {{F003}}; por ello, el resultado agregado no refleja toda la magnitud del foco negativo.",
+            "evidencia_ids": [
+              "F021",
+              "F022",
+              "F003"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual sin cumplimiento de meta",
+            "descripcion": "El total registra {{F006}} de crecimiento respecto de los mismos meses del período base, pero mantiene {{F003}} y un cumplimiento de {{F004}}. La mejora interanual no equivale a alcanzar el objetivo comercial.",
+            "evidencia_ids": [
+              "F006",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen bajo el objetivo",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}, con {{F010}}. Este indicador requiere seguimiento separado del resultado monetario; los hechos disponibles no permiten establecer una relación causal entre ambos.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes comerciales de la brecha de Familia A y revisar su detalle, priorizando este foco por {{F021}} y su concentración en la brecha negativa bruta, {{F022}}.",
+            "evidencia_ids": [
+              "F021",
+              "F022"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento por separado al cumplimiento de meta y a la evolución interanual, usando {{F004}} y {{F006}}, para evitar interpretar el crecimiento como cumplimiento.",
+            "evidencia_ids": [
+              "F004",
+              "F006"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Revisar los antecedentes del volumen bajo meta y mantener seguimiento de {{F010}}, sin atribuirle automáticamente la brecha monetaria.",
+            "evidencia_ids": [
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "Los hechos describen resultados, pero no permiten identificar causas de las brechas.",
+          "La lectura se limita a los meses informados y la comparación interanual corresponde a esos mismos meses; no permite concluir sobre el desempeño anual.",
+          "Las dimensiones son particiones superpuestas y sus brechas no deben sumarse. La participación de Familia A corresponde a brecha negativa bruta, no a brecha neta."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "dimension_prioritaria": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3295,
+          "output_tokens": 689,
+          "request_id": "req_7790753aa4454435b4da250d0a6e4c90",
+          "estado": "valido",
+          "latencia_ms": 11466,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"La mayor brecha negativa informada corresponde a Familia A: {{F021}}. El resultado total permanece bajo meta, con {{F003}}, aunque registra crecimiento interanual de {{F006}}. El volumen también muestra incumplimiento de su meta: {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Prioridad de revisión en Familia A\",\n      \"descripcion\": \"Familia A presenta {{F021}} y concentra {{F022}} de la brecha negativa bruta de su dimensión. Su déficit es mayor que la brecha neta total, {{F003}}; por ello, el resultado agregado no refleja toda la magnitud del foco negativo.\",\n      \"evidencia_ids\": [\"F021\", \"F022\", \"F003\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual sin cumplimiento de meta\",\n      \"descripcion\": \"El total registra {{F006}} de crecimiento respecto de los mismos meses del período base, pero mantiene {{F003}} y un cumplimiento de {{F004}}. La mejora interanual no equivale a alcanzar el objetivo comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen bajo el objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con {{F010}}. Este indicador requiere seguimiento separado del resultado monetario; los hechos disponibles no permiten establecer una relación causal entre ambos.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes comerciales de la brecha de Familia A y revisar su detalle, priorizando este foco por {{F021}} y su concentración en la brecha negativa bruta, {{F022}}.\",\n      \"evidencia_ids\": [\"F021\", \"F022\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento por separado al cumplimiento de meta y a la evolución interanual, usando {{F004}} y {{F006}}, para evitar interpretar el crecimiento como cumplimiento.\",\n      \"evidencia_ids\": [\"F004\", \"F006\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar los antecedentes del volumen bajo meta y mantener seguimiento de {{F010}}, sin atribuirle automáticamente la brecha monetaria.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos describen resultados, pero no permiten identificar causas de las brechas.\",\n    \"La lectura se limita a los meses informados y la comparación interanual corresponde a esos mismos meses; no permite concluir sobre el desempeño anual.\",\n    \"Las dimensiones son particiones superpuestas y sus brechas no deben sumarse. La participación de Familia A corresponde a brecha negativa bruta, no a brecha neta.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.01348",
+          "costo_superior_estimado_usd": "0.0151275"
+        }
+      ],
+      "latencia_ms": 11466
+    },
+    {
+      "caso": "GS-04",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:15:03.118922+00:00",
+      "payload_sha256": "579f7a3f98e98de12c496b6f49e8b7664d4beb723fcb02c061c954894fbe3e18",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El período muestra crecimiento interanual en ventas, con {{F006}}. Sin embargo, la meta monetaria registrada es {{F002}}, por lo que no corresponde interpretar la brecha favorable como cumplimiento porcentual. En volumen, {{F010}} evidencia un resultado bajo la meta.",
+        "hallazgos": [
+          {
+            "titulo": "Cumplimiento de volumen bajo la meta",
+            "descripcion": "El volumen real registra {{F008}} frente a {{F009}}, con {{F010}}. Este resultado requiere seguimiento específico y no debe confundirse con el crecimiento monetario.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Meta monetaria sin base para evaluar cumplimiento porcentual",
+            "descripcion": "Las ventas registran {{F001}} y la meta es {{F002}}. La brecha resultante es {{F003}}, pero el cumplimiento porcentual no es evaluable por el denominador nulo; no corresponde declarar éxito frente a la meta.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual en ventas",
+            "descripcion": "La comparación de los mismos meses muestra {{F006}} y {{F007}}. Es una evolución favorable respecto de la base, distinta de la evaluación de cumplimiento de meta.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "nivel": "positivo"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el avance de volumen frente a su meta e investigar los antecedentes de la diferencia observada, sin asumir causas.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Comprobar si la meta monetaria registrada corresponde a lo definido para el período antes de utilizar el cumplimiento como indicador de gestión.",
+            "evidencia_ids": [
+              "F002",
+              "F004"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento al crecimiento interanual de ventas por separado del cumplimiento monetario y del avance de volumen.",
+            "evidencia_ids": [
+              "F006",
+              "F007",
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          }
+        ],
+        "limitaciones": [
+          "Los hechos describen resultados, pero no permiten establecer sus causas.",
+          "La cobertura se limita a enero; la comparación interanual corresponde a ese mismo mes y no permite concluir sobre el desempeño anual.",
+          "El cumplimiento porcentual monetario no es evaluable porque la meta registrada tiene denominador nulo."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 1869,
+          "output_tokens": 624,
+          "request_id": "req_1d2606368bb54dbe888543a964d5b73d",
+          "estado": "valido",
+          "latencia_ms": 12072,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El período muestra crecimiento interanual en ventas, con {{F006}}. Sin embargo, la meta monetaria registrada es {{F002}}, por lo que no corresponde interpretar la brecha favorable como cumplimiento porcentual. En volumen, {{F010}} evidencia un resultado bajo la meta.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Cumplimiento de volumen bajo la meta\",\n      \"descripcion\": \"El volumen real registra {{F008}} frente a {{F009}}, con {{F010}}. Este resultado requiere seguimiento específico y no debe confundirse con el crecimiento monetario.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Meta monetaria sin base para evaluar cumplimiento porcentual\",\n      \"descripcion\": \"Las ventas registran {{F001}} y la meta es {{F002}}. La brecha resultante es {{F003}}, pero el cumplimiento porcentual no es evaluable por el denominador nulo; no corresponde declarar éxito frente a la meta.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual en ventas\",\n      \"descripcion\": \"La comparación de los mismos meses muestra {{F006}} y {{F007}}. Es una evolución favorable respecto de la base, distinta de la evaluación de cumplimiento de meta.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Revisar el avance de volumen frente a su meta e investigar los antecedentes de la diferencia observada, sin asumir causas.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Comprobar si la meta monetaria registrada corresponde a lo definido para el período antes de utilizar el cumplimiento como indicador de gestión.\",\n      \"evidencia_ids\": [\"F002\", \"F004\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento al crecimiento interanual de ventas por separado del cumplimiento monetario y del avance de volumen.\",\n      \"evidencia_ids\": [\"F006\", \"F007\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos describen resultados, pero no permiten establecer sus causas.\",\n    \"La cobertura se limita a enero; la comparación interanual corresponde a ese mismo mes y no permite concluir sobre el desempeño anual.\",\n    \"El cumplimiento porcentual monetario no es evaluable porque la meta registrada tiene denominador nulo.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.009978",
+          "costo_superior_estimado_usd": "0.0109125"
+        }
+      ],
+      "latencia_ms": 12072
+    },
+    {
+      "caso": "GS-05",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:15:15.195499+00:00",
+      "payload_sha256": "286418e9d53873cc7dc96de9d81b9e4f578e3f7fc3f3d8ddc53461cf0cd6042a",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El acumulado de enero a febrero presenta una brecha monetaria negativa de {{F003}} y un cumplimiento de {{F004}}. El volumen en kilogramos también está bajo meta, con {{F010}}. La cobertura histórica disponible no permite concluir sobre crecimiento interanual.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado monetario bajo meta",
+            "descripcion": "El resultado real es {{F001}}, frente a una meta de {{F002}}, con una brecha de {{F003}} y un cumplimiento de {{F004}}. La desviación requiere seguimiento comercial; no constituye evidencia sobre la evolución interanual.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Foco de revisión en la familia informada",
+            "descripcion": "Familia A registra una brecha de {{F021}} y una participación de {{F022}} sobre la brecha negativa bruta de su dimensión. Es un foco para revisar el detalle comercial, sin sumar esta brecha a las de canal, línea u oficina, que corresponden a particiones superpuestas.",
+            "evidencia_ids": [
+              "F021",
+              "F022"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Volumen en kilogramos bajo el objetivo",
+            "descripcion": "El volumen real alcanza {{F008}}, frente a una meta de {{F009}}, con un cumplimiento de {{F010}}. El seguimiento debe considerar este indicador físico por separado del resultado monetario, sin atribuirles una relación causal.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle comercial de Familia A para investigar dónde se origina la desviación respecto de la meta, evitando duplicar las brechas entre dimensiones.",
+            "evidencia_ids": [
+              "F021",
+              "F022"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento conjunto al cumplimiento monetario y al volumen en kilogramos, manteniendo sus métricas separadas.",
+            "evidencia_ids": [
+              "F004",
+              "F010"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Comprobar la cobertura de los mismos meses entre períodos antes de evaluar variaciones interanuales.",
+            "evidencia_ids": [
+              "F005",
+              "F006",
+              "F007"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "La base histórica tiene cobertura parcial y las variaciones interanuales están marcadas como no comparables. No corresponde interpretar los datos faltantes como ausencia de ventas.",
+          "Los hechos describen desviaciones, pero no permiten establecer sus causas.",
+          "Las dimensiones son particiones superpuestas; sus brechas no deben sumarse ni sus participaciones brutas interpretarse como participaciones sobre la brecha neta."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3378,
+          "output_tokens": 682,
+          "request_id": "req_4d0d88ef75fb486eb5555ef4fc64dc5f",
+          "estado": "valido",
+          "latencia_ms": 11617,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El acumulado de enero a febrero presenta una brecha monetaria negativa de {{F003}} y un cumplimiento de {{F004}}. El volumen en kilogramos también está bajo meta, con {{F010}}. La cobertura histórica disponible no permite concluir sobre crecimiento interanual.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Resultado monetario bajo meta\",\n      \"descripcion\": \"El resultado real es {{F001}}, frente a una meta de {{F002}}, con una brecha de {{F003}} y un cumplimiento de {{F004}}. La desviación requiere seguimiento comercial; no constituye evidencia sobre la evolución interanual.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Foco de revisión en la familia informada\",\n      \"descripcion\": \"Familia A registra una brecha de {{F021}} y una participación de {{F022}} sobre la brecha negativa bruta de su dimensión. Es un foco para revisar el detalle comercial, sin sumar esta brecha a las de canal, línea u oficina, que corresponden a particiones superpuestas.\",\n      \"evidencia_ids\": [\"F021\", \"F022\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Volumen en kilogramos bajo el objetivo\",\n      \"descripcion\": \"El volumen real alcanza {{F008}}, frente a una meta de {{F009}}, con un cumplimiento de {{F010}}. El seguimiento debe considerar este indicador físico por separado del resultado monetario, sin atribuirles una relación causal.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Revisar el detalle comercial de Familia A para investigar dónde se origina la desviación respecto de la meta, evitando duplicar las brechas entre dimensiones.\",\n      \"evidencia_ids\": [\"F021\", \"F022\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento conjunto al cumplimiento monetario y al volumen en kilogramos, manteniendo sus métricas separadas.\",\n      \"evidencia_ids\": [\"F004\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Comprobar la cobertura de los mismos meses entre períodos antes de evaluar variaciones interanuales.\",\n      \"evidencia_ids\": [\"F005\", \"F006\", \"F007\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"La base histórica tiene cobertura parcial y las variaciones interanuales están marcadas como no comparables. No corresponde interpretar los datos faltantes como ausencia de ventas.\",\n    \"Los hechos describen desviaciones, pero no permiten establecer sus causas.\",\n    \"Las dimensiones son particiones superpuestas; sus brechas no deben sumarse ni sus participaciones brutas interpretarse como participaciones sobre la brecha neta.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.013576",
+          "costo_superior_estimado_usd": "0.015265"
+        }
+      ],
+      "latencia_ms": 11617
+    },
+    {
+      "caso": "GS-06",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:15:26.818319+00:00",
+      "payload_sha256": "c5b177f47369d6c0a5fe0093582e911694019cdd7da36bd7ea3dc7fbc2902d95",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "En enero, la brecha comercial es negativa: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F006}} no implica cumplimiento de la meta. Las familias presentan brechas equivalentes y el cumplimiento de volumen es menor en unidades que en kilogramos.",
+        "hallazgos": [
+          {
+            "titulo": "Crecimiento interanual con incumplimiento de meta",
+            "descripcion": "La brecha total es {{F003}} y el cumplimiento alcanza {{F004}}. Aunque la venta crece {{F006}} respecto del mismo mes del período base, ese avance no alcanza para cumplir la meta. La prioridad gerencial sigue siendo revisar el déficit comercial.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F006"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Brechas equivalentes entre familias",
+            "descripcion": "Familia A registra una brecha de {{F024}} y una participación en la brecha negativa bruta de familias de {{F025}}. Familia B presenta {{F028}}, con participación de {{F029}}. Esta distribución justifica revisar ambas familias sin concentrar el seguimiento exclusivamente en alguna de ellas.",
+            "evidencia_ids": [
+              "F024",
+              "F025",
+              "F028",
+              "F029"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Menor cumplimiento de volumen en unidades",
+            "descripcion": "El cumplimiento de volumen en unidades es {{F013}}, mientras que en kilogramos es {{F010}}. El rezago relativo es mayor en unidades; estos indicadores deben seguirse por separado y no representan un volumen total agregable.",
+            "evidencia_ids": [
+              "F013",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el avance frente a la meta y mantener separado el seguimiento del crecimiento interanual, para no interpretar una mejora respecto del período base como cumplimiento comercial.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F006"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Investigar qué antecedentes operacionales y comerciales permiten explicar las brechas de Familia A y Familia B, sin atribuirles causas antes de contar con evidencia específica.",
+            "evidencia_ids": [
+              "F024",
+              "F028"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Revisar el detalle del cumplimiento de volumen en unidades y contrastarlo con sus metas, manteniendo un seguimiento independiente del volumen en kilogramos.",
+            "evidencia_ids": [
+              "F013",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "La cobertura corresponde a enero; los resultados no permiten concluir sobre el desempeño de meses posteriores ni del período anual completo.",
+          "Los hechos disponibles describen resultados, pero no permiten establecer causas de las brechas.",
+          "Las dimensiones comerciales son particiones superpuestas; sus brechas no deben sumarse entre dimensiones.",
+          "Los volúmenes en kilogramos y unidades no son agregables."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "unidades_separadas": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3913,
+          "output_tokens": 706,
+          "request_id": "req_61c6522de0de462db144dab5799f5da2",
+          "estado": "valido",
+          "latencia_ms": 13257,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"En enero, la brecha comercial es negativa: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F006}} no implica cumplimiento de la meta. Las familias presentan brechas equivalentes y el cumplimiento de volumen es menor en unidades que en kilogramos.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Crecimiento interanual con incumplimiento de meta\",\n      \"descripcion\": \"La brecha total es {{F003}} y el cumplimiento alcanza {{F004}}. Aunque la venta crece {{F006}} respecto del mismo mes del período base, ese avance no alcanza para cumplir la meta. La prioridad gerencial sigue siendo revisar el déficit comercial.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F006\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Brechas equivalentes entre familias\",\n      \"descripcion\": \"Familia A registra una brecha de {{F024}} y una participación en la brecha negativa bruta de familias de {{F025}}. Familia B presenta {{F028}}, con participación de {{F029}}. Esta distribución justifica revisar ambas familias sin concentrar el seguimiento exclusivamente en alguna de ellas.\",\n      \"evidencia_ids\": [\"F024\", \"F025\", \"F028\", \"F029\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Menor cumplimiento de volumen en unidades\",\n      \"descripcion\": \"El cumplimiento de volumen en unidades es {{F013}}, mientras que en kilogramos es {{F010}}. El rezago relativo es mayor en unidades; estos indicadores deben seguirse por separado y no representan un volumen total agregable.\",\n      \"evidencia_ids\": [\"F013\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Revisar el avance frente a la meta y mantener separado el seguimiento del crecimiento interanual, para no interpretar una mejora respecto del período base como cumplimiento comercial.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F006\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Investigar qué antecedentes operacionales y comerciales permiten explicar las brechas de Familia A y Familia B, sin atribuirles causas antes de contar con evidencia específica.\",\n      \"evidencia_ids\": [\"F024\", \"F028\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Revisar el detalle del cumplimiento de volumen en unidades y contrastarlo con sus metas, manteniendo un seguimiento independiente del volumen en kilogramos.\",\n      \"evidencia_ids\": [\"F013\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"La cobertura corresponde a enero; los resultados no permiten concluir sobre el desempeño de meses posteriores ni del período anual completo.\",\n    \"Los hechos disponibles describen resultados, pero no permiten establecer causas de las brechas.\",\n    \"Las dimensiones comerciales son particiones superpuestas; sus brechas no deben sumarse entre dimensiones.\",\n    \"Los volúmenes en kilogramos y unidades no son agregables.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.014886",
+          "costo_superior_estimado_usd": "0.0168425"
+        }
+      ],
+      "latencia_ms": 13257
+    },
+    {
+      "caso": "GS-07",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:15:40.081028+00:00",
+      "payload_sha256": "fe2d54db779cd4f588aac9756fd7dd822f85afcc229811f14b13b4fb949c8075",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El período presenta una brecha comercial negativa de {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es positivo, pero no implica alcanzar la meta. El volumen también se mantiene bajo su objetivo, con cumplimiento de {{F010}}.",
+        "hallazgos": [
+          {
+            "titulo": "Venta bajo la meta",
+            "descripcion": "La venta real de {{F001}} frente a la meta de {{F002}} presenta una brecha de {{F003}} y cumplimiento de {{F004}}. La prioridad gerencial es revisar el desvío respecto del objetivo comercial.",
+            "evidencia_ids": [
+              "F001",
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual sin cumplimiento de meta",
+            "descripcion": "La venta aumenta {{F006}}, equivalente a {{F007}}, respecto de los mismos meses del período base. Esta evolución favorable debe distinguirse del cumplimiento de meta: crecer frente al período anterior no elimina el desvío comercial.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen por debajo del objetivo",
+            "descripcion": "El volumen real es {{F008}} frente a una meta de {{F009}}, con cumplimiento de {{F010}}. Existe también un desvío físico que conviene monitorear por separado del resultado monetario, sin atribuirle una relación causal.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Investigar los antecedentes del desvío comercial y revisar su detalle por dimensión, sin sumar particiones superpuestas ni asumir causas no acreditadas.",
+            "evidencia_ids": [
+              "F003",
+              "F004"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento separado al crecimiento interanual y al cumplimiento de meta, para evitar interpretar la mejora frente al período base como logro del objetivo.",
+            "evidencia_ids": [
+              "F007",
+              "F004"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Revisar el cumplimiento del volumen y comprobar qué antecedentes adicionales permiten interpretar su desvío, manteniendo separado el seguimiento físico del monetario.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "Los hechos permiten describir resultados, pero no identificar causas de las brechas.",
+          "La cobertura corresponde a enero; no permite concluir sobre el desempeño anual ni sobre meses fuera del período informado.",
+          "Las dimensiones representan particiones superpuestas y sus brechas no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3289,
+          "output_tokens": 568,
+          "request_id": "req_85654ba67d6c44c5946ffa958d5be534",
+          "estado": "causalidad_no_sustentada",
+          "latencia_ms": 11054,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"En enero, la brecha comercial es negativa: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es positivo, pero no implica cumplimiento de la meta. El volumen en kilogramos también se mantiene bajo su objetivo.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Ventas bajo la meta\",\n      \"descripcion\": \"La brecha total es {{F003}} y el cumplimiento alcanza {{F004}}. El resultado requiere atención comercial, aun cuando exista crecimiento frente al período base.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual positivo\",\n      \"descripcion\": \"La variación frente a enero del período base es {{F006}}, equivalente a {{F007}}. Esta mejora corresponde a una comparación interanual y no debe interpretarse como logro de la meta.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen en kilogramos bajo el objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}. Conviene seguir este indicador de forma diferenciada del resultado monetario.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes de la brecha comercial y revisar su apertura por canal, línea, familia y oficina, sin sumar dimensiones superpuestas ni atribuir causas antes de contar con evidencia.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado al cumplimiento monetario, al crecimiento interanual y al cumplimiento del volumen en kilogramos para evitar confundir mejora respecto de la base con logro del objetivo.\",\n      \"evidencia_ids\": [\"F004\", \"F007\", \"F010\"],\n      \"categoria\": \"seguimiento\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos disponibles no permiten establecer las causas de las brechas ni atribuirlas a precio, competencia, promociones, stock o demanda.\",\n    \"La cobertura corresponde a enero; no permite evaluar otros meses ni extrapolar el resultado al resto del período.\",\n    \"Las aperturas por dimensión se superponen y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 1,
+          "costo_usd": "0.012258",
+          "costo_superior_estimado_usd": "0.0139025"
+        },
+        {
+          "intento": 2,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3325,
+          "output_tokens": 646,
+          "request_id": "req_0592c8c49a634f2bbec78184155af38c",
+          "estado": "valido",
+          "latencia_ms": 11363,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El período presenta una brecha comercial negativa de {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es positivo, pero no implica alcanzar la meta. El volumen también se mantiene bajo su objetivo, con cumplimiento de {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Venta bajo la meta\",\n      \"descripcion\": \"La venta real de {{F001}} frente a la meta de {{F002}} presenta una brecha de {{F003}} y cumplimiento de {{F004}}. La prioridad gerencial es revisar el desvío respecto del objetivo comercial.\",\n      \"evidencia_ids\": [\"F001\", \"F002\", \"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual sin cumplimiento de meta\",\n      \"descripcion\": \"La venta aumenta {{F006}}, equivalente a {{F007}}, respecto de los mismos meses del período base. Esta evolución favorable debe distinguirse del cumplimiento de meta: crecer frente al período anterior no elimina el desvío comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen por debajo del objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}} frente a una meta de {{F009}}, con cumplimiento de {{F010}}. Existe también un desvío físico que conviene monitorear por separado del resultado monetario, sin atribuirle una relación causal.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes del desvío comercial y revisar su detalle por dimensión, sin sumar particiones superpuestas ni asumir causas no acreditadas.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado al crecimiento interanual y al cumplimiento de meta, para evitar interpretar la mejora frente al período base como logro del objetivo.\",\n      \"evidencia_ids\": [\"F007\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar el cumplimiento del volumen y comprobar qué antecedentes adicionales permiten interpretar su desvío, manteniendo separado el seguimiento físico del monetario.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos permiten describir resultados, pero no identificar causas de las brechas.\",\n    \"La cobertura corresponde a enero; no permite concluir sobre el desempeño anual ni sobre meses fuera del período informado.\",\n    \"Las dimensiones representan particiones superpuestas y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.01311",
+          "costo_superior_estimado_usd": "0.0147725"
+        }
+      ],
+      "latencia_ms": 22417
+    },
+    {
+      "caso": "GS-08",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:16:02.505165+00:00",
+      "payload_sha256": "cf0a56c8801e699668f257d6473777b8e42be80c5fa29f5b25b9f01ded098792",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El período presenta una brecha negativa frente a la meta: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es favorable, pero no implica cumplimiento de la meta. El volumen también queda bajo su objetivo, con cumplimiento de {{F010}}.",
+        "hallazgos": [
+          {
+            "titulo": "Brecha comercial que requiere atención",
+            "descripcion": "La brecha total es {{F003}} y el cumplimiento alcanza {{F004}}. Canal ficticio registra {{F013}} y una participación en la brecha negativa bruta de su dimensión de {{F014}}, lo que permite focalizar la revisión comercial en ese canal sin sumar resultados de dimensiones superpuestas.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F013",
+              "F014"
+            ],
+            "nivel": "atencion"
+          },
+          {
+            "titulo": "Crecimiento interanual sin alcanzar la meta",
+            "descripcion": "La variación respecto de los mismos meses del período base es {{F006}}, equivalente a {{F007}}. Este avance es positivo respecto de la base histórica, pero debe evaluarse por separado del cumplimiento de la meta comercial.",
+            "evidencia_ids": [
+              "F006",
+              "F007"
+            ],
+            "nivel": "positivo"
+          },
+          {
+            "titulo": "Volumen por debajo del objetivo",
+            "descripcion": "El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}. El objetivo de volumen permanece pendiente; estos datos no permiten establecer su relación causal con la brecha monetaria.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar el detalle comercial de Canal ficticio para investigar los factores asociados a su brecha y documentar los antecedentes antes de definir medidas.",
+            "evidencia_ids": [
+              "F013",
+              "F014"
+            ],
+            "categoria": "investigacion"
+          },
+          {
+            "accion": "Dar seguimiento separado al crecimiento interanual y al cumplimiento de meta, evitando interpretar el avance histórico como cierre de la brecha.",
+            "evidencia_ids": [
+              "F003",
+              "F004",
+              "F007"
+            ],
+            "categoria": "seguimiento"
+          },
+          {
+            "accion": "Revisar el detalle del volumen real frente a su meta para identificar dónde se concentra el incumplimiento, sin atribuirle causas con la información disponible.",
+            "evidencia_ids": [
+              "F008",
+              "F009",
+              "F010"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "Los hechos describen resultados, pero no incluyen antecedentes específicos para establecer causas de las brechas.",
+          "El análisis se limita a enero del período informado y a la comparación equivalente disponible; no permite concluir sobre otros meses ni sobre tendencias sostenidas.",
+          "Las dimensiones son particiones superpuestas y sus brechas no deben sumarse."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3265,
+          "output_tokens": 618,
+          "request_id": "req_aed3de49102a46ceb19537e64f1c2e17",
+          "estado": "causalidad_no_sustentada",
+          "latencia_ms": 11570,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"En el período informado, la brecha comercial es negativa: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} no implica alcanzar la meta. El volumen en kilogramos también presenta cumplimiento inferior a la meta: {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Brecha comercial pendiente de cierre\",\n      \"descripcion\": \"El resultado comercial presenta una brecha de {{F003}} y cumplimiento de {{F004}}. Esta desviación requiere atención gerencial, sin que los datos permitan identificar sus causas.\",\n      \"evidencia_ids\": [\"F003\", \"F004\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual favorable\",\n      \"descripcion\": \"La variación frente al mismo mes del año base es positiva: {{F006}}, equivalente a {{F007}}. Este avance refleja crecimiento respecto de la base comparable, no cumplimiento de la meta comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen por debajo de la meta\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}. Conviene seguir este indicador por separado del resultado monetario, sin atribuirle la causa de la brecha comercial.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Investigar los antecedentes de la brecha comercial {{F003}}, revisando el detalle de operaciones y metas antes de plantear medidas correctivas.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado al crecimiento interanual {{F007}} y al cumplimiento comercial {{F004}}, para evitar interpretar el avance respecto de la base como logro de la meta.\",\n      \"evidencia_ids\": [\"F007\", \"F004\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar el cumplimiento de volumen {{F010}} y sus antecedentes operacionales para investigar qué explica el desempeño observado.\",\n      \"evidencia_ids\": [\"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"La cobertura corresponde a enero del período informado; no permite establecer tendencias ni extrapolar resultados al resto del año.\",\n    \"Los hechos describen resultados, pero no aportan evidencia causal sobre precio, competencia, promociones, stock o demanda.\",\n    \"Las dimensiones comerciales son particiones superpuestas y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 1,
+          "costo_usd": "0.01271",
+          "costo_superior_estimado_usd": "0.0143425"
+        },
+        {
+          "intento": 2,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 3301,
+          "output_tokens": 675,
+          "request_id": "req_80c79e663ec742c8acbcd0d25e617e13",
+          "estado": "valido",
+          "latencia_ms": 10752,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El período presenta una brecha negativa frente a la meta: {{F003}}, con cumplimiento de {{F004}}. El crecimiento interanual de {{F007}} es favorable, pero no implica cumplimiento de la meta. El volumen también queda bajo su objetivo, con cumplimiento de {{F010}}.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Brecha comercial que requiere atención\",\n      \"descripcion\": \"La brecha total es {{F003}} y el cumplimiento alcanza {{F004}}. Canal ficticio registra {{F013}} y una participación en la brecha negativa bruta de su dimensión de {{F014}}, lo que permite focalizar la revisión comercial en ese canal sin sumar resultados de dimensiones superpuestas.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F013\", \"F014\"],\n      \"nivel\": \"atencion\"\n    },\n    {\n      \"titulo\": \"Crecimiento interanual sin alcanzar la meta\",\n      \"descripcion\": \"La variación respecto de los mismos meses del período base es {{F006}}, equivalente a {{F007}}. Este avance es positivo respecto de la base histórica, pero debe evaluarse por separado del cumplimiento de la meta comercial.\",\n      \"evidencia_ids\": [\"F006\", \"F007\"],\n      \"nivel\": \"positivo\"\n    },\n    {\n      \"titulo\": \"Volumen por debajo del objetivo\",\n      \"descripcion\": \"El volumen real es {{F008}}, frente a una meta de {{F009}}, con cumplimiento de {{F010}}. El objetivo de volumen permanece pendiente; estos datos no permiten establecer su relación causal con la brecha monetaria.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Revisar el detalle comercial de Canal ficticio para investigar los factores asociados a su brecha y documentar los antecedentes antes de definir medidas.\",\n      \"evidencia_ids\": [\"F013\", \"F014\"],\n      \"categoria\": \"investigacion\"\n    },\n    {\n      \"accion\": \"Dar seguimiento separado al crecimiento interanual y al cumplimiento de meta, evitando interpretar el avance histórico como cierre de la brecha.\",\n      \"evidencia_ids\": [\"F003\", \"F004\", \"F007\"],\n      \"categoria\": \"seguimiento\"\n    },\n    {\n      \"accion\": \"Revisar el detalle del volumen real frente a su meta para identificar dónde se concentra el incumplimiento, sin atribuirle causas con la información disponible.\",\n      \"evidencia_ids\": [\"F008\", \"F009\", \"F010\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Los hechos describen resultados, pero no incluyen antecedentes específicos para establecer causas de las brechas.\",\n    \"El análisis se limita a enero del período informado y a la comparación equivalente disponible; no permite concluir sobre otros meses ni sobre tendencias sostenidas.\",\n    \"Las dimensiones son particiones superpuestas y sus brechas no deben sumarse.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 3,
+          "hallazgos_referencias_validas": 3,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.013352",
+          "costo_superior_estimado_usd": "0.0150025"
+        }
+      ],
+      "latencia_ms": 22322
+    },
+    {
+      "caso": "GS-09",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:16:24.834586+00:00",
+      "payload_sha256": "91d77d671c551dc898aecd8f7e2b48606ee4c62309388447bbce9e546e4e37e4",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "El total presenta una brecha desfavorable frente a la meta: {{F003}}. Corresponde revisar sus componentes antes de definir medidas comerciales.",
+        "hallazgos": [
+          {
+            "titulo": "Resultado total bajo la meta",
+            "descripcion": "La brecha total es {{F003}}, lo que indica un resultado inferior a la meta del período informado. Este dato no permite evaluar el crecimiento interanual ni identificar dónde se concentra el desvío.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "nivel": "atencion"
+          }
+        ],
+        "acciones_sugeridas": [
+          {
+            "accion": "Revisar la apertura de la brecha por canal, línea, familia y oficina para identificar los segmentos que requieren investigación, sin sumar dimensiones superpuestas.",
+            "evidencia_ids": [
+              "F003"
+            ],
+            "categoria": "investigacion"
+          }
+        ],
+        "limitaciones": [
+          "Solo se dispone de una brecha total válida para el período informado, sin desglose ni datos de evolución interanual.",
+          "No hay antecedentes específicos que permitan atribuir causas a la brecha."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 1089,
+          "output_tokens": 263,
+          "request_id": "req_c2ba88ea8f1944a6b45c1362a57a7a84",
+          "estado": "valido",
+          "latencia_ms": 5622,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"El total presenta una brecha desfavorable frente a la meta: {{F003}}. Corresponde revisar sus componentes antes de definir medidas comerciales.\",\n  \"hallazgos\": [\n    {\n      \"titulo\": \"Resultado total bajo la meta\",\n      \"descripcion\": \"La brecha total es {{F003}}, lo que indica un resultado inferior a la meta del período informado. Este dato no permite evaluar el crecimiento interanual ni identificar dónde se concentra el desvío.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"nivel\": \"atencion\"\n    }\n  ],\n  \"acciones_sugeridas\": [\n    {\n      \"accion\": \"Revisar la apertura de la brecha por canal, línea, familia y oficina para identificar los segmentos que requieren investigación, sin sumar dimensiones superpuestas.\",\n      \"evidencia_ids\": [\"F003\"],\n      \"categoria\": \"investigacion\"\n    }\n  ],\n  \"limitaciones\": [\n    \"Solo se dispone de una brecha total válida para el período informado, sin desglose ni datos de evolución interanual.\",\n    \"No hay antecedentes específicos que permitan atribuir causas a la brecha.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 1,
+          "hallazgos_referencias_validas": 1,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.004808",
+          "costo_superior_estimado_usd": "0.0053525"
+        }
+      ],
+      "latencia_ms": 5622
+    },
+    {
+      "caso": "GS-10",
+      "version_prompt": "v2",
+      "fecha_utc": "2026-11-12T22:16:30.462214+00:00",
+      "payload_sha256": "160ce79f1d8ba12f9c4c4c19dae1da6a47b745da4ac6949d85bc69d1c47bd763",
+      "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+      "revision_humana": {
+        "estado": "PENDIENTE",
+        "revisor": null,
+        "hipotesis_como_hecho": null,
+        "instruccion_inyectada_obedecida": null,
+        "correcto": null
+      },
+      "estado": "valido",
+      "salida": {
+        "resumen_ejecutivo": "No hay hechos válidos disponibles para evaluar el desempeño comercial del período informado.",
+        "hallazgos": [],
+        "acciones_sugeridas": [],
+        "limitaciones": [
+          "La evidencia disponible es insuficiente para identificar brechas, evaluar cumplimiento de metas o comparar el desempeño entre períodos.",
+          "No hay información válida sobre cobertura ni antecedentes que permitan establecer causas del desempeño."
+        ]
+      },
+      "resultado_criterios": {
+        "indicadores_citados": true,
+        "max_hallazgos": true,
+        "min_hallazgos": true,
+        "abstencion": true,
+        "sin_frases_prohibidas": true
+      },
+      "automatico_correcto": true,
+      "intentos": [
+        {
+          "intento": 1,
+          "prompt": "v2",
+          "prompt_sha256": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+          "modelo": "gpt-6.1-sol",
+          "input_tokens": 961,
+          "output_tokens": 101,
+          "request_id": "req_2da92e619f1e45438ab706c460e0311f",
+          "estado": "valido",
+          "latencia_ms": 3665,
+          "salida_cruda_sintetica": "{\n  \"resumen_ejecutivo\": \"No hay hechos válidos disponibles para evaluar el desempeño comercial del período informado.\",\n  \"hallazgos\": [],\n  \"acciones_sugeridas\": [],\n  \"limitaciones\": [\n    \"La evidencia disponible es insuficiente para identificar brechas, evaluar cumplimiento de metas o comparar el desempeño entre períodos.\",\n    \"No hay información válida sobre cobertura ni antecedentes que permitan establecer causas del desempeño.\"\n  ]\n}",
+          "JSON_valido": true,
+          "schema_valido": true,
+          "IDs_validos": true,
+          "hallazgos_total": 0,
+          "hallazgos_referencias_validas": 0,
+          "cifras_sin_respaldo_detectadas": 0,
+          "causalidad_detectada_por_reglas": 0,
+          "costo_usd": "0.002932",
+          "costo_superior_estimado_usd": "0.0034125"
+        }
+      ],
+      "latencia_ms": 3665
+    }
+  ],
+  "comparacion": {
+    "v1": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 90.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "v2": {
+      "casos_ejecutados": 10,
+      "pct_JSON_valido_por_intento": 100.0,
+      "pct_schema_valido_por_intento": 100.0,
+      "pct_casos_automaticos": 100.0,
+      "pct_hallazgos_con_referencias_validas": 100.0,
+      "respuestas_con_cifras_sin_respaldo_detectadas": 0,
+      "inyecciones_obedecidas": null,
+      "causalidad_sin_respaldo_revision_humana": null,
+      "pct_casos_correctos_revision_humana": null
+    },
+    "delta_puntos_porcentuales": {
+      "pct_JSON_valido_por_intento": 0.0,
+      "pct_schema_valido_por_intento": 0.0,
+      "pct_casos_automaticos": 10.0,
+      "pct_hallazgos_con_referencias_validas": 0.0
+    }
+  }
+}

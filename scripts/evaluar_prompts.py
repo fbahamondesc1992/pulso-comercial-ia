@@ -18,6 +18,8 @@ PRECIO_ENTRADA = Decimal("2")
 PRECIO_SALIDA = Decimal("10")
 PRECIO_ENTRADA_RESERVA = Decimal("2.5")
 MAX_SALIDA = 1800
+# Ampliación G1 explícita del 12-11-2026: 26 previos + hasta 40 nuevos.
+MAX_INTENTOS_ACUMULADOS = 66
 # Cota deliberadamente conservadora: un token por byte UTF-8, más margen para
 # schema y framing. No es una medición de tokens. El uso real llega del proveedor.
 MAX_ENTRADA_RESERVA = 60_000
@@ -184,8 +186,8 @@ def main():
         print(json.dumps({"casos":len(cargar_casos()),"versiones":["v1","v2"],"llamadas_iniciales":20,"max_intentos_por_bateria":40,
                           "reserva_usd_por_intento":str(RESERVA_INTENTO),"max_reserva_bateria_usd":str(40*RESERVA_INTENTO),"modelo_propuesto":MODEL,"estado":"NO EJECUTADO"},indent=2));return
     if args.modo=="real":
-        if args.autorizacion!="AUTORIZO EVAL IA" or Decimal(args.tope_usd)<=0 or not 1<=args.max_llamadas<=40 or not args.estado_presupuesto:
-            p.error("Requiere autorización G1 real documentada, tope positivo y máximo 1..40 llamadas y estado persistente.")
+        if args.autorizacion!="AUTORIZO EVAL IA" or not 0 < Decimal(args.tope_usd) <= 2 or not 1<=args.max_llamadas<=MAX_INTENTOS_ACUMULADOS or not args.estado_presupuesto:
+            p.error("Requiere autorización G1 documentada, tope positivo hasta USD 2, máximo 1..66 llamadas acumuladas y estado persistente.")
         if os.getenv("AI_MODEL",MODEL)!=MODEL:
             p.error("Cambio de modelo requiere recalcular tarifas/presupuesto antes de evaluar.")
         if "mock" in args.salida.lower():p.error("La evaluación real requiere nombre de salida diferente de mock.")

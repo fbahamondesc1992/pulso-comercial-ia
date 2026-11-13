@@ -58,8 +58,9 @@ estimación, no factura; el compromiso conservador del registro controla el lím
 
 Registro persistente: entrega/13_presupuesto_ia.json, exclusivo mediante bloqueo de
 archivo, escrito antes de la llamada y tras liquidar. Un reinicio no reinicia saldo;
-una reserva interrumpida se conserva. Copia final publicable en evidencias/13_presupuesto_final.json.
-El contador incluye intentos previos y limita el total a 40. Si no alcanza para la
+una reserva interrumpida se conserva. Copia vigente publicable en evidencias/17_presupuesto_final.json; la copia de fase 13 se conserva.
+El contador incluye intentos previos y limita el total a 66, según la ampliación G1
+expresa para hasta 40 intentos adicionales a los 26 anteriores. Si no alcanza para la
 siguiente reserva, se detiene. No se reintentan automáticamente errores del proveedor.
 La batería se detiene si el proveedor no está disponible, evitando repetir fallos de
 configuración. La validación de contenido permite como máximo un reintento por caso.
@@ -70,8 +71,11 @@ y USD 0,0000775 como valoración superior de la conexión válida (11 entrada/5 
 La documentación detectó que in_memory no era compatible con este modelo; se usó
 prompt_cache_options.ttl=30m. La conexión válida respondió OK. Ningún fallo se oculta.
 
-La autorización cubre esta comparación inicial, no una repetición final ni tráfico
-público. El saldo real del proveedor puede diferir por otros usos de la misma cuenta.
+La ampliación autorizó la comparación final completa de fase 17, ya ejecutada: 22
+intentos nuevos, 48 acumulados. Valoración superior nueva USD 0,264685; compromiso
+acumulado USD 0,8490625 y margen USD 1,1509375 del límite de USD 2. No habilita
+tráfico público ni gastar el margen automáticamente. El saldo real del proveedor
+puede diferir por otros usos de la misma cuenta; billing no consultado.
 
 ## Límites de operación y privacidad
 

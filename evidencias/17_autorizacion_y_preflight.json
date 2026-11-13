@@ -1,0 +1,45 @@
+{
+  "fecha_utc": "2026-11-12T22:12:44.254241+00:00",
+  "mensaje_usuario": "AUTORIZO EVALUACIÓN FINAL con GPT-6.1-SOL: hasta 40 intentos adicionales, 66 acumulados, manteniendo el tope total de USD 2 y preservando el consumo registrado.",
+  "modelo": "gpt-6.1-sol",
+  "max_intentos_nuevos": 40,
+  "max_intentos_acumulados": 66,
+  "intentos_previos": 26,
+  "tope_acumulado_usd": "2",
+  "compromiso_previo_usd": "0.5843775",
+  "margen_previo_usd": "1.4156225",
+  "profesor_reserva_declarada_usd": "3",
+  "billing_consultado": false,
+  "casos_por_prompt": 10,
+  "prompts": [
+    "v1",
+    "v2"
+  ],
+  "precios_usd_por_millon": {
+    "entrada": "2",
+    "cache_write_30m": "2.5",
+    "salida": "10"
+  },
+  "fuente_tarifas": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+  "precios_verificados_fecha": "2026-11-12",
+  "estimacion_orientativa_por_corrida_usd": "0.2747",
+  "origen_estimacion": "Valoración conservadora de los 23 intentos de evaluación de fase 13; no garantiza costo de nueva corrida",
+  "reserva_por_intento_usd": "0.168",
+  "corte": "Antes de llamar si no caben reserva o intentos; sin aumentar tope ni borrar historial",
+  "registro_presupuesto": "entrega/13_presupuesto_ia.json",
+  "sha256_presupuesto_previo": "11a9d38fdbb410b0fba752b35ce74eb7f000f48645f9f0b6365982034c865cc2",
+  "migracion": "Solo max_llamadas: 40 -> 66; todos los otros campos conservados",
+  "sha256_archivos_congelados": {
+    "prompts/analista_v1.md": "192f1369f8110b453c8790f20ae9d94ca84c5a5b11e162792f33ebec33ef8208",
+    "prompts/analista_v2.md": "7606b390d6875c0bb3dd6f2aec5ca307861c05d810a5bc80b4e509553aefd109",
+    "golden_set/casos_analista.json": "f5d728173ee254b4fe08fd96a11f255c860203db12ada40b14ec571414f92c7b",
+    "indicadores.py": "7afedfe9b085ae3bc5b97f615be1fa89d5c4b6a0e08a2a313acf7e597dc65f9a",
+    "analista_ia.py": "819bf4604be89ecdf8697d8b25022ee3fd05e587e11da87984ea6d012b1fb36c",
+    "scripts/golden.py": "34666b2ace0f9f89e96aa2133eab740ad6e3dcf0fa96367ca12dedebafb22fc8",
+    "evidencias/13_evaluacion_real.json": "116de7c01d12cc7ddd17bf2b9ed3f18aae32e879baebe76abd76b3d83a4c0ab7",
+    "evidencias/15_revision_semantica_asistente.json": "519e90d9c578492e029ac33af5b03b3114093fa8c7a47da5ced79e1a69aacead"
+  },
+  "commit_base": "75cabfc922355a1aeb4df8b4b0f751982d415cbb",
+  "salida": "evidencias/17_evaluacion_real_final.json",
+  "despliegue_autorizado": false
+}

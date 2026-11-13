@@ -1,14 +1,13 @@
 # Matriz de cumplimiento · 12-11-2026
 
-Alcance actual: G0/G2 completos; G1 vigente hasta USD 2 acumulados.
-Conexión real GPT-6.1 Sol HTTP 200 y veinte casos evaluados (diez por prompt).
-Evaluación real original: v1 80%, v2 70%; sin mejora positiva.
-Revisión local vigente: 149 tests, revalidación offline 9/10 y 10/10.
-Revisión cualitativa del asistente sobre 23 respuestas documentada en fase 15.
-Aprobación humana global recibida; evidencia 16_aprobacion_revision_humana.json.
-No sustituye una nueva comparación real ni aporta dictámenes individuales nuevos.
-Compromiso conservador total USD 0,5843775; billing no consultado.
-GitHub público; despliegue G3, comparación real final, video y ficha final pendientes.
+Alcance actual: G0/G2 recibidos; G1 vigente hasta USD 2 y 66 intentos acumulados.
+Evaluación final real completa: v1 9/10, v2 10/10; +10 pp después de reintentos.
+V1 usó 10 llamadas y v2 12; al primer intento, 9/10 y 8/10 respectivamente.
+Revisión asistida de las 22 respuestas; dos falsos positivos residuales del filtro.
+Selección técnica v2; revisión humana de esta muestra pendiente. La aprobación global
+previa se conserva y no se traslada a respuestas nuevas. Suite: 152 pruebas sin red.
+Compromiso conservador acumulado USD 0,8490625; billing no consultado.
+GitHub público; G3, revisión humana nueva, video y ficha final pendientes.
 No asigna puntaje ni aprobación comercial/académica.
 VERIFICADO significa evidencia concreta dentro del alcance señalado, no una promesa.
 Se preservan las 27 filas de la sección 14 del prompt.
@@ -25,12 +24,12 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | SW-04 | KPIs exactos y unidades | tests/test_indicadores.py; datos/DICCIONARIO_DATOS.md | VERIFICADO | Seis oráculos, cobertura, Decimal, ponderación y KG/UN |
 | SW-05 | IA real activa en URL pública | evidencias/13_conexion_ia_corregida.json | BLOQUEADO | Conexión local verificada; falta autorización y despliegue G3 con IA activa |
 | PE-01 | PROMPT_MAESTRO.md raíz | Archivo íntegro; hash en evidencias/01_plan_aprobado.md; 12_github_publicado.json | VERIFICADO | Igual al original y versionado en repositorio público |
-| PE-02 | Reglas del agente | AGENTS.md; evidencias/10_autorizacion_g1.md | VERIFICADO | G0/G1/G2 documentados; G1 ajustado a USD 2 acumulados; G3 pendiente |
+| PE-02 | Reglas del agente | AGENTS.md; evidencias/10_autorizacion_g1.md | VERIFICADO | G0/G1/G2 documentados; G1 ajustado a USD 2 y 66 intentos acumulados; evidencia 17_autorizacion_y_preflight.json; G3 pendiente |
 | PE-03 | Prompts de sistema versionados | prompts/analista_v1.md; analista_v2.md; 12_github_publicado.json | VERIFICADO | Dos versiones y carga literal comprobadas; ambas versionadas en Git |
 | PE-04 | Golden set 5+, objetivo 8–10 | golden_set/casos_analista.json; tests/test_golden_set.py | VERIFICADO | Diez casos reproducibles; evaluación real es PE-05 |
-| PE-05 | Mejora medida v1/v2 | docs/MEJORA_PROMPTS.md; evidencias/13_evaluacion_real.json | EN_PROCESO | Comparación real: 80% v1 vs 70% v2; regresión de 10 pp. Falsos positivos corregidos localmente (fase 14); revisión asistida completada en fase 15; aprobación humana global recibida en fase 16; repetición real pendiente |
-| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; validador revisión 3 y 149 tests; verificación semántica no exhaustiva |
-| PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; suite local | EN_PROCESO | GS-07/10 cumplen criterios automáticos reales; revisión asistida de inyección/abstención completada; aprobación humana global recibida; cobertura/unidad revalidadas offline |
+| PE-05 | Mejora medida v1/v2 | docs/EVALUACION_FINAL.md; evidencias/17_evaluacion_real_final.json | VERIFICADO | 90% v1 vs 100% v2 con reintentos; +10 pp en esta muestra. Primer intento: 90% vs 80%. Revisión humana nueva pendiente; no superioridad estadística general |
+| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; validador revisión 3 y 152 tests; verificación semántica no exhaustiva |
+| PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; evidencias/17_revision_semantica_asistente.json | EN_PROCESO | Casos reales repetidos; revisión asistida sin inyección obedecida ni mezcla observadas. Humana nueva pendiente; dos falsos positivos de causalidad recuperados con reintento |
 | DEV-01 | README completo | README.md | EN_PROCESO | Uso, arquitectura, negocio y controles completos; URLs reales pendientes |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
 | DEV-03 | Repositorio accesible al profesor | evidencias/16_github_publicado.json; 06_github_url.txt | VERIFICADO | Correcciones 98199c0 publicadas; HTTP 200 sin autenticación, README íntegro y SHA local/remoto iguales |
@@ -44,6 +43,6 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | COM-03 | Evidencias honestas y bitácora | evidencias/; docs/BITACORA_ENTREGA.md | VERIFICADO | Distingue mock, local, pendiente y producción no ejecutada |
 
 Pauta: negocio 20, software 25, prompt engineering 25, despliegue 20 y comunicación 10.
-No se declara PROYECTO COMPLETO: faltan IA pública, mejora positiva/revisión final,
+No se declara PROYECTO COMPLETO: faltan IA pública y revisión humana final,
 control de gasto público, video y ficha final. La pauta PDF requiere cuatro entregables
 y aplica nota máxima 4,0 si falta un requisito mínimo; no se otorga una nota aquí.

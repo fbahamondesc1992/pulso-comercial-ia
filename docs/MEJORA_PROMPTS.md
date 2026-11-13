@@ -1,3 +1,20 @@
+# Evaluación de prompts · estado vigente 12-11-2026
+
+**Evaluación final real completada (fase 17): v1 9/10 y v2 10/10**, +10 puntos
+porcentuales con el mismo evaluador corregido. V2 necesitó dos reintentos por falsos
+positivos del filtro; al primer intento v1 obtiene 9/10 y v2 8/10. No se oculta ese
+costo operativo. [Informe final](EVALUACION_FINAL.md) y evidencias `17_*`.
+
+Selección técnica para el MVP: v2; no cambió el archivo ni el valor por defecto.
+Revisión asistida de las 22 respuestas completada; humana de esta nueva muestra
+pendiente. La aprobación de fase 16 corresponde a la corrida anterior. No se hereda.
+Una corrida sintética pequeña no establece superioridad estadística general.
+
+## Registro histórico preservado de fases 13–15
+
+Los pendientes y métricas que siguen describen esas fases; para el estado actual,
+consultar el informe final y MATRIZ_CUMPLIMIENTO.md.
+
 # Evaluación real v1 vs. v2 · 12-11-2026
 
 Actualización de revisión (fase 15): 23 respuestas examinadas por el asistente,
