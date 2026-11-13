@@ -512,3 +512,11 @@ Tras auditoría del índice e historial sin hallazgos, se hizo público el repos
 bajo G2. `gh repo view` informa PUBLIC; acceso HEAD anónimo HTTP 200. Evidencia
 `evidencias/30_github_publico_f7.json`. La ficha final está publicada. F7 NO está
 completa: faltan capturas públicas reales y video real de hasta 3 minutos.
+
+## Fase 31 · capturas y grabación de navegador · 13-11-2026
+
+Playwright/Chromium abrió la URL HTTPS pública, cargó la demo sintética de 360 filas
+y guardó capturas reales a 1440/375 px. Sin desborde ni errores JS. Video WebM real
+de 11,12 s a 1440x900: demo, KPI, ranking y filtro. Se bloqueó /api/analisis, sin
+llamadas pagadas ni datos reales. Evidencia `31_capturas_video.json`, PNG y WebM.
+Video final narrado con IA real sigue pendiente; no presentar esta toma como tal.

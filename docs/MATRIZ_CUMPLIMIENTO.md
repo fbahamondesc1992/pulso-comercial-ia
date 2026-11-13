@@ -19,8 +19,8 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | NEG-02 | IA central y genuina | evidencias/21_ia_real_publica.json | VERIFICADO | LLM real en endpoint público, tres hallazgos; prueba visual pendiente |
 | NEG-03 | Modelo de ingresos | README.md; ficha PDF | VERIFICADO | Hipótesis SaaS B2B; no declara ventas |
 | NEG-04 | Costos mensuales sustentados | docs/COSTOS_Y_LIMITACIONES.md; docs/FICHA_NEGOCIO.pdf | VERIFICADO | Ficha final de una página con escenarios 100/1.000 y fuentes oficiales consultadas 13-11-2026 |
-| SW-01 | App funcional y responsive | evidencias/11_demo_local_1440.png; 11_demo_local_375.png; 11_revision_navegador.json | EN_PROCESO | Local verificado; HTTPS público pendiente |
-| SW-02 | Flujo principal sin login | scripts/verificar_ui.cjs; evidencias/11_revision_navegador.json | EN_PROCESO | Contextos limpios sin login; falta incógnito en URL pública |
+| SW-01 | App funcional y responsive | evidencias/31_app_publica_demo_1440.png; 31_app_publica_demo_375.png | VERIFICADO | Capturas de navegador público a 1440/375 px, sin desborde ni errores JS |
+| SW-02 | Flujo principal sin login | evidencias/31_capturas_video.json | EN_PROCESO | Demo pública en contexto nuevo sin login; incógnito explícito y nueva respuesta IA desde botón pendientes |
 | SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; evidencias/25_limite_publico.json | VERIFICADO | 30.000 filas sintéticas, HTTP público 200; regresión de cobertura verificada en URL pública con datos ficticios; evidencias/26_cobertura_publica.json |
 | SW-04 | KPIs exactos y unidades | tests/test_indicadores.py; datos/DICCIONARIO_DATOS.md | VERIFICADO | Seis oráculos, cobertura, Decimal, ponderación y KG/UN |
 | SW-05 | IA real activa en URL pública | evidencias/21_ia_real_publica.json; 21_cloud_run_ia_activa.json | VERIFICADO | GPT-6.1-Sol v2 HTTP 200, origen ia_real; falta recorrido desde botón en navegador |
@@ -34,12 +34,12 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | DEV-01 | README completo | README.md; docs/DESPLIEGUE.md | VERIFICADO | URL real, uso y límites actualizados; publicación documental pendiente |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
 | DEV-03 | Repositorio accesible al profesor | evidencias/30_github_publico_f7.json | VERIFICADO | GitHub PUBLIC y HEAD anónimo 200; índice e historial auditados sin hallazgos |
-| DEV-04 | URL HTTPS pública | evidencias/07_url_publica.txt; 21_http_publico_sin_ia.json | EN_PROCESO | HTTPS sin autenticación verificado por HTTP; incógnito visual pendiente |
+| DEV-04 | URL HTTPS pública | evidencias/31_capturas_video.json | VERIFICADO | Chromium abrió URL HTTPS pública sin login a 1440 y 375 px |
 | DEV-05 | Secretos fuera repo/historial/imagen | evidencias/16_auditoria_indice.json; 16_github_publicado.json; 15_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
 | DEV-06 | Secreto en plataforma | evidencias/21_secreto_iam.json; 21_cloud_run_ia_activa.json | VERIFICADO | Versión 1 fijada, secretAccessor exclusivo de runtime sobre el secreto |
 | DEV-07 | Control de gasto cloud y API | evidencias/21_presupuesto_cloud.json; 21_confirmacion_cupo_docente.json; 21_presupuesto_validacion.json | VERIFICADO | CLP 4900 alertas 50/80/100, no corte; OpenAI USD 5 aplicado confirmado, demora posible; contadores volátiles |
-| DEV-08 | Health y flujo posdespliegue | evidencias/21_http_publico_sin_ia.json; 21_ia_real_publica.json | EN_PROCESO | Health/demo/IA reales por HTTP aprobados; capturas y flujo visual público pendientes |
-| COM-01 | Video real máximo 3 min | docs/VIDEO_GUION.md | EN_PROCESO | Guion 180 s; VIDEO NO GRABADO |
+| DEV-08 | Health y flujo posdespliegue | evidencias/29_f7_http_demo.json; 31_capturas_video.json | EN_PROCESO | Health/demo/dashboard y capturas públicas verificados; IA desde botón pendiente |
+| COM-01 | Video real máximo 3 min | docs/VIDEO_GUION.md; evidencias/31_app_publica_demo_sin_ia.webm | EN_PROCESO | Toma real de 11,12 s sin IA; falta video final narrado con respuesta IA real |
 | COM-02 | Ficha PDF una página | docs/FICHA_NEGOCIO.pdf; evidencias/29_ficha_pdf_final.png | VERIFICADO | Una página, GPT-6.1 Sol, costos, fuentes y URLs reales; render revisado |
 | COM-03 | Evidencias honestas y bitácora | evidencias/21_*; docs/BITACORA_ENTREGA.md | VERIFICADO | Distingue HTTP de navegador, reserva de consumo, e historial de avances |
 
@@ -57,3 +57,5 @@ Estado actual fase 28: F6 **CERRADA POR APROBACIÓN HUMANA** (evidencias/28_apro
 F7 13-11-2026: ficha COM-02 y costos NEG-04 verificados; HTTP público sintético 200. Capturas, incógnito y video COM-01 pendientes. GitHub reportó PRIVATE en auditoría; visibilidad en corrección, no afirmar acceso anónimo aún. Evidencia: 29_f7_estado.json y 29_f7_http_demo.json.
 
 Auditoría F7 posterior: repositorio PUBLIC, acceso anónimo 200; DEV-03 verificado. Los estados históricos PRIVATE documentan el hallazgo ya resuelto. Capturas públicas y video real siguen EN_PROCESO.
+
+F7 fase 31: capturas públicas reales 1440/375 y video de apoyo WebM 11,12 s con demo ficticia. SW-01 y DEV-04 verificados; video final COM-01 y recorrido IA desde botón siguen EN_PROCESO.

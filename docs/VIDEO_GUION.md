@@ -31,3 +31,12 @@ final y conservar enlace o video accesible al docente.
 
 Estado 13-11-2026: no existe archivo de video final ni captura pública de 375/1440
 producida en esta sesión. Las pruebas HTTP no acreditan navegación visual.
+
+## Toma pública de apoyo · 13-11-2026
+
+Existe un video real WebM de 11,12 s, `evidencias/31_app_publica_demo_sin_ia.webm`,
+con demo ficticia, KPIs, ranking, sección IA y filtro de línea. Se bloqueó el endpoint
+de IA para preservar el cupo docente. Capturas reales de la URL pública a 1440 y
+375 px: `evidencias/31_app_publica_demo_1440.png` y
+`evidencias/31_app_publica_demo_375.png`. Revisadas visualmente, sin desborde ni
+errores JS. Esta toma no sustituye el video final narrado con respuesta IA real.

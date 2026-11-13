@@ -1,0 +1,35 @@
+{
+  "fecha_utc": "2026-11-13T20:03:18.370Z",
+  "modo": "NAVEGADOR_PUBLICO_REAL_DEMO_FICTICIA",
+  "video": "31_app_publica_demo_sin_ia.webm",
+  "analisis_ia": "NO EJECUTADO",
+  "resultados": [
+    {
+      "width": 1440,
+      "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app/",
+      "demo_rows": 360,
+      "kpi_cards": 5,
+      "volume_cards": 2,
+      "overflow": false,
+      "js_errors": [],
+      "screenshot": "31_app_publica_demo_1440.png"
+    },
+    {
+      "width": 375,
+      "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app/",
+      "demo_rows": 360,
+      "kpi_cards": 5,
+      "volume_cards": 2,
+      "overflow": false,
+      "js_errors": [],
+      "screenshot": "31_app_publica_demo_375.png"
+    }
+  ],
+  "duracion_video_segundos": 11.12,
+  "resolucion_video": "1440x900",
+  "formato_video": "WebM VP8",
+  "video_sha256": "235aaec9fbd588b2fce652e476c6ee5664df6116982c5d17251e76a5c2bcfffc",
+  "capturas_revisadas_visualmente": true,
+  "video_frames_6s_10s_revisados": true,
+  "video_final_con_ia": "PENDIENTE: esta toma no invoca el proveedor"
+}
