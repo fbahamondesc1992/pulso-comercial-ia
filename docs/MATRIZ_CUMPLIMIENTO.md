@@ -39,7 +39,7 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | DEV-06 | Secreto en plataforma | evidencias/21_secreto_iam.json; 21_cloud_run_ia_activa.json | VERIFICADO | Versión 1 fijada, secretAccessor exclusivo de runtime sobre el secreto |
 | DEV-07 | Control de gasto cloud y API | evidencias/21_presupuesto_cloud.json; 21_confirmacion_cupo_docente.json; 21_presupuesto_validacion.json | VERIFICADO | CLP 4900 alertas 50/80/100, no corte; OpenAI USD 5 aplicado confirmado, demora posible; contadores volátiles |
 | DEV-08 | Health y flujo posdespliegue | evidencias/29_f7_http_demo.json; 31_capturas_video.json | EN_PROCESO | Health/demo/dashboard y capturas públicas verificados; IA desde botón pendiente |
-| COM-01 | Video real máximo 3 min | docs/VIDEO_GUION.md; evidencias/31_app_publica_demo_sin_ia.webm | EN_PROCESO | Toma real de 11,12 s sin IA; falta video final narrado con respuesta IA real |
+| COM-01 | Video real máximo 3 min | docs/VIDEO_GUION.md; evidencias/31_app_publica_demo_sin_ia.webm | EN_PROCESO | Recorrido real de 163,4 s dentro de 180 s; falta narración y respuesta IA real en vivo |
 | COM-02 | Ficha PDF una página | docs/FICHA_NEGOCIO.pdf; evidencias/29_ficha_pdf_final.png | VERIFICADO | Una página, GPT-6.1 Sol, costos, fuentes y URLs reales; render revisado |
 | COM-03 | Evidencias honestas y bitácora | evidencias/21_*; docs/BITACORA_ENTREGA.md | VERIFICADO | Distingue HTTP de navegador, reserva de consumo, e historial de avances |
 
@@ -59,3 +59,5 @@ F7 13-11-2026: ficha COM-02 y costos NEG-04 verificados; HTTP público sintétic
 Auditoría F7 posterior: repositorio PUBLIC, acceso anónimo 200; DEV-03 verificado. Los estados históricos PRIVATE documentan el hallazgo ya resuelto. Capturas públicas y video real siguen EN_PROCESO.
 
 F7 fase 31: capturas públicas reales 1440/375 y video de apoyo WebM 11,12 s con demo ficticia. SW-01 y DEV-04 verificados; video final COM-01 y recorrido IA desde botón siguen EN_PROCESO.
+
+F7 fase 32: video real 163,4 s, límite temporal cumplido. COM-01 permanece EN_PROCESO por narración e IA real en vivo ausentes. Evidencia: 32_video_duracion.json.

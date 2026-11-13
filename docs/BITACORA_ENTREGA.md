@@ -520,3 +520,10 @@ y guardó capturas reales a 1440/375 px. Sin desborde ni errores JS. Video WebM 
 de 11,12 s a 1440x900: demo, KPI, ranking y filtro. Se bloqueó /api/analisis, sin
 llamadas pagadas ni datos reales. Evidencia `31_capturas_video.json`, PNG y WebM.
 Video final narrado con IA real sigue pendiente; no presentar esta toma como tal.
+
+## Fase 32 · grabación extendida · 13-11-2026
+
+Recorrido de navegador público de 163,4 s, medido por metadatos WebM, bajo el
+máximo 180 s. Captura demo ficticia con KPI, ranking, volumen y filtros; fotogramas
+45/100/145 s inspeccionados. Sin narración ni llamada IA; COM-01 sigue EN_PROCESO.
+`evidencias/32_video_duracion.json` documenta alcance y hash.

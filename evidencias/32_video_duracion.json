@@ -1,0 +1,27 @@
+{
+  "fecha_local": "2026-11-13",
+  "archivo": "32_recorrido_publico_duracion_pauta_sin_ia.webm",
+  "formato": "WebM VP8",
+  "resolucion": "1440x900",
+  "duracion_segundos_verificada": 163.4,
+  "maximo_pauta_segundos": 180,
+  "dentro_limite": true,
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app/",
+  "datos": "demo ficticia",
+  "recorrido": [
+    "inicio",
+    "carga demo",
+    "KPIs",
+    "grafico",
+    "ranking",
+    "volumenes",
+    "seccion IA sin invocacion",
+    "hechos calculados",
+    "filtro linea",
+    "KPIs filtrados"
+  ],
+  "narracion": "NO INCLUIDA",
+  "analisis_ia_real_nuevo": "NO EJECUTADO: cupo G3 de validacion publica ya utilizado",
+  "video_final_pauta": "PENDIENTE: narracion e IA real en vivo",
+  "sha256": "761e33dd173be9999b9717136284d02c6152414526a862377ecbd73cd0003218"
+}

@@ -40,3 +40,12 @@ de IA para preservar el cupo docente. Capturas reales de la URL pública a 1440 
 375 px: `evidencias/31_app_publica_demo_1440.png` y
 `evidencias/31_app_publica_demo_375.png`. Revisadas visualmente, sin desborde ni
 errores JS. Esta toma no sustituye el video final narrado con respuesta IA real.
+
+## Recorrido de duración de pauta · 13-11-2026
+
+Video real de navegador público `evidencias/32_recorrido_publico_duracion_pauta_sin_ia.webm`,
+duración verificada 163,4 s (2:43,4), resolución 1440x900. Recorre demo ficticia,
+KPIs, gráfico, ranking, volúmenes, sección IA, hechos y filtro de línea. Fotogramas
+45/100/145 s revisados. La ruta IA se bloqueó: no hay respuesta nueva ni narración.
+Cumple el máximo temporal, pero no el contenido completo COM-01; no presentarlo
+como video final con IA real. Evidencia `evidencias/32_video_duracion.json`.
