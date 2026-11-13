@@ -377,3 +377,24 @@ Suite local: 152 passed en 0,62 s, sin red; no se modificó código de aplicaci�
 capturas reales, expansión de evidencia y comprobación visual del error de cuota.
 Herramienta de navegador no disponible; las pruebas HTTP no sustituyen esa evidencia.
 F7: video real y actualización de ficha PDF aún pendientes.
+
+## Fase 22 · corrección de carga multipart · 13-11-2026
+
+El límite interno de formulario de 64 KiB rechazaba archivos válidos antes del
+validador CSV. Se amplió a 128 KiB para admitir el bloque de lectura multipart y
+su frontera; se conservan 2 MiB por archivo, 10.000 filas y el límite HTTP total.
+Tres regresiones nuevas: cargas de 1.000/5.088 filas ficticias y campo de formulario
+excesivo. Suite sin red: 155 passed en 0,87 s. Docker build linux/amd64 y carga
+local de 441.670 bytes/5.088 filas: HTTP 200.
+
+Revisión vigente `pulso-comercial-ia-00003-zjg`, 100% del tráfico. Digest:
+`sha256:34edb0ba851c1fe5a0527f654d4629a20f838999aa607b0d909ebfb9ce2745ea`.
+URL conservada. Pruebas públicas: health 200, CSV sintético 200, CSV 2 MiB+1
+rechazado con 400 por el validador, petición 3 MiB rechazada con 413. La primera
+comprobación esperaba 413 para ambos excesos y se corrigió esa expectativa;
+no fue necesario otro cambio del producto. Evidencias: 22_upload_local.json y
+22_upload_publico.json. Sin llamadas IA ni cambios en su ledger.
+
+Archivo aportado preservado y excluido de Docker/Git; no enviado a nube ni IA.
+El contrato CSV sigue exigiendo separador coma y punto decimal. F6 continúa
+EN_PROCESO: recorrido visual público y capturas pendientes.

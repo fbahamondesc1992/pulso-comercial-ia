@@ -1,0 +1,23 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "revision": "pulso-comercial-ia-00003-zjg",
+  "image_digest": "sha256:34edb0ba851c1fe5a0527f654d4629a20f838999aa607b0d909ebfb9ce2745ea",
+  "http_health": 200,
+  "filas_sinteticas": 5088,
+  "bytes_csv": 441670,
+  "csv_valido": {
+    "http": 200
+  },
+  "csv_mayor_2mib": {
+    "http": 400,
+    "error": "El CSV supera el máximo de 2 MB."
+  },
+  "request_mayor_limite": {
+    "http": 413,
+    "error": "El archivo supera el tamaño permitido de la demo."
+  },
+  "ia_invocada": false,
+  "datos_usuario_transmitidos": false,
+  "verificacion_visual": "PENDIENTE",
+  "nota": "La primera comprobación esperaba erróneamente 413 para 2 MiB+1; el validador devuelve 400. 413 corresponde al límite total HTTP."
+}

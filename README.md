@@ -8,7 +8,7 @@ Estado al 13-11-2026: **aplicación pública con IA real** verificada mediante H
 - Repositorio: https://github.com/fbahamondesc1992/pulso-comercial-ia
 - Modelo `gpt-6.1-sol`, prompt `v2`, revisión `pulso-comercial-ia-00002-2gq`.
 - Demo y salud HTTP 200; análisis real con tres hallazgos y referencias válidas.
-- Suite local: 152 pruebas sin red. Falta validación visual pública y video final.
+- Suite local: 155 pruebas sin red. Falta validación visual pública y video final.
 
 Evaluación G1: tope USD 2 y 66 intentos; compromiso conservador USD 1,1850625,
 incluyendo reserva íntegra de validación pública. El usuario confirmó límite OpenAI

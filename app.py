@@ -52,7 +52,9 @@ class LimiteDemo:
 def create_app(config=None, proveedor=None):
     app = Flask(__name__)
     app.request_class = PeticionEnMemoria
-    app.config.update(MAX_CONTENT_LENGTH=MAX_BYTES + 64 * 1024, MAX_FORM_MEMORY_SIZE=64 * 1024,
+    # El parser multipart lee bloques de 64 KiB y conserva el límite entre bloques.
+    # Necesita margen adicional aunque el contenido del archivo vaya a su stream.
+    app.config.update(MAX_CONTENT_LENGTH=MAX_BYTES + 64 * 1024, MAX_FORM_MEMORY_SIZE=128 * 1024,
                       MAX_FORM_PARTS=10, TESTING=False, JSON_SORT_KEYS=False)
     if config:
         app.config.update(config)

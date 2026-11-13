@@ -91,6 +91,22 @@ def test_archivo_grande_sigue_en_memoria():
     assert isinstance(stream, io.BytesIO)
 
 
+@pytest.mark.parametrize("filas", [1000, 5088])
+def test_csv_multipart_mayor_64k_dentro_del_limite(client, filas):
+    from tests.conftest import fila, csv_bytes
+    contenido = csv_bytes([fila(familia=f"Familia sintetica {i}") for i in range(filas)])
+    assert 64 * 1024 < len(contenido) < 2 * 1024 * 1024
+    r = client.post("/api/dashboard", data={"fuente": "archivo", "archivo":
+        (io.BytesIO(contenido), "sintetico.csv")}, headers=HEADERS)
+    assert r.status_code == 200
+
+
+def test_campo_formulario_excesivo_rechazado(client):
+    r = client.post("/api/dashboard", data={"fuente": "demo", "filtros": "x" * (128 * 1024 + 1)},
+                    content_type="multipart/form-data", headers=HEADERS)
+    assert r.status_code == 413
+
+
 def test_limite_global():
     limit = LimiteDemo(por_ip=5,global_hora=2)
     assert limit.admitir("a") and limit.admitir("b")

@@ -1,0 +1,8 @@
+{
+  "tipo": "docker_local",
+  "http_dashboard": 200,
+  "filas_sinteticas": 5088,
+  "bytes_csv": 441670,
+  "ia_invocada": false,
+  "pytest": "155 passed in 0.87s"
+}

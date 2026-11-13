@@ -5,7 +5,7 @@ Evaluación final real completa: v1 9/10, v2 10/10; +10 pp después de reintento
 V1 usó 10 llamadas y v2 12; al primer intento, 9/10 y 8/10 respectivamente.
 Revisión asistida de las 22 respuestas; dos falsos positivos residuales del filtro.
 Selección técnica v2; cierre humano global recibido en fase 18. La aprobación global
-previa se conserva y no se traslada a respuestas nuevas. Suite: 152 pruebas sin red.
+previa se conserva y no se traslada a respuestas nuevas. Suite: 155 pruebas sin red.
 Compromiso conservador acumulado USD 1,1850625 (incluye reserva pública USD 0,336). Consola OpenAI mostró USD 0,51;
 no equivale al registro conservador ni acredita saldo disponible.
 G3 ejecutado: URL e IA pública comprobadas por HTTP. Validación visual, video y ficha final pendientes.
@@ -21,7 +21,7 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | NEG-04 | Costos mensuales sustentados | docs/COSTOS_Y_LIMITACIONES.md; evidencias/13_resumen_evaluacion.json | EN_PROCESO | Escenarios 100/1.000 actualizados a GPT-6.1 Sol; falta trasladarlos a ficha PDF final |
 | SW-01 | App funcional y responsive | evidencias/11_demo_local_1440.png; 11_demo_local_375.png; 11_revision_navegador.json | EN_PROCESO | Local verificado; HTTPS público pendiente |
 | SW-02 | Flujo principal sin login | scripts/verificar_ui.cjs; evidencias/11_revision_navegador.json | EN_PROCESO | Contextos limpios sin login; falta incógnito en URL pública |
-| SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; 11_revision_navegador.json | VERIFICADO | 2 MiB/10.000 filas, filtros, error controlado; no exige API real |
+| SW-03 | CSV, filtros y errores | tests/test_csv.py; test_app.py; evidencias/22_upload_publico.json | VERIFICADO | 2 MiB/10.000 filas; regresión multipart corregida; 5.088 filas ficticias HTTP 200 público y excesos rechazados |
 | SW-04 | KPIs exactos y unidades | tests/test_indicadores.py; datos/DICCIONARIO_DATOS.md | VERIFICADO | Seis oráculos, cobertura, Decimal, ponderación y KG/UN |
 | SW-05 | IA real activa en URL pública | evidencias/21_ia_real_publica.json; 21_cloud_run_ia_activa.json | VERIFICADO | GPT-6.1-Sol v2 HTTP 200, origen ia_real; falta recorrido desde botón en navegador |
 | PE-01 | PROMPT_MAESTRO.md raíz | Archivo íntegro; hash en evidencias/01_plan_aprobado.md; 12_github_publicado.json | VERIFICADO | Igual al original y versionado en repositorio público |
@@ -29,7 +29,7 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | PE-03 | Prompts de sistema versionados | prompts/analista_v1.md; analista_v2.md; 12_github_publicado.json | VERIFICADO | Dos versiones y carga literal comprobadas; ambas versionadas en Git |
 | PE-04 | Golden set 5+, objetivo 8–10 | golden_set/casos_analista.json; tests/test_golden_set.py | VERIFICADO | Diez casos reproducibles; evaluación real es PE-05 |
 | PE-05 | Mejora medida v1/v2 | docs/EVALUACION_FINAL.md; evidencias/17_evaluacion_real_final.json | VERIFICADO | 90% v1 vs 100% v2 con reintentos; +10 pp en esta muestra. Primer intento: 90% vs 80%. Cierre humano global aprobado; no superioridad estadística general |
-| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; validador revisión 3 y 152 tests; verificación semántica no exhaustiva |
+| PE-06 | Cálculo y validación fuera LLM | indicadores.py; schemas.py; test_analista_ia.py | VERIFICADO | Contratos/IDs/marcadores; validador revisión 3 y 155 tests; verificación semántica no exhaustiva |
 | PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; evidencias/17_revision_semantica_asistente.json; 18_cierre_f4_inicio_f6.json | VERIFICADO | Casos reales repetidos; revisión asistida sin inyección obedecida ni mezcla observadas. Cierre humano global aprobado; dos falsos positivos de causalidad recuperados con reintento |
 | DEV-01 | README completo | README.md; docs/DESPLIEGUE.md | VERIFICADO | URL real, uso y límites actualizados; publicación documental pendiente |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
