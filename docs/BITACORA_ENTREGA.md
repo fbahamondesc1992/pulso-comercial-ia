@@ -484,3 +484,15 @@ Revisión pública `pulso-comercial-ia-00008-zzt`, 100% tráfico, digest
 `sha256:b10f2cc79710446910289173bdf3afdc0e015b78894b6a6cd2a64adf1c0853ff`.
 Health público HTTP 200. Evidencia `evidencias/27_validacion_publica.json`.
 No se generó otro informe IA real: el cupo G3 de validación pública ya se contabilizó.
+
+## Fase 28 · cierre humano F6 y apertura F7 · 13-11-2026
+
+El usuario declara «Apruebo F6 que sigue». F6 queda cerrada por aprobación humana
+con evidencia HTTP de URL/IA ya registrada y revisión vigente 00008-zzt. Este cierre
+no certifica recorrido visual público en incógnito 375/1440, capturas públicas ni
+un nuevo informe real tras la corrección del validador N/C. No se hizo nueva llamada
+pagada. Evidencia de la decisión: `evidencias/28_aprobacion_f6.json`.
+
+F7 queda abierta: actualizar ficha PDF de una página con modelo/costos/URL vigentes,
+revisar guion y grabar video real de hasta 3 minutos, completar evidencias visuales
+solo con demo ficticia y hacer auditoría final de repositorio, matriz y gasto.

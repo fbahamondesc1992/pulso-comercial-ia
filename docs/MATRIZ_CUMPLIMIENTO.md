@@ -51,3 +51,5 @@ Estado vigente fase 21: F4 cerrado. F6 desplegado con IA activa y HTTP verificad
 Herramienta de navegador no disponible: faltan 375/1440 px, incógnito, capturas y
 flujo visual de evidencia/errores. Se conservan 27 requisitos. Disponibilidad
 autorizada hasta 30-11-2026. No se atribuye aprobación académica ni puntaje.
+
+Estado actual fase 28: F6 **CERRADA POR APROBACIÓN HUMANA** (evidencias/28_aprobacion_f6.json); criterios visuales SW-01, SW-02, DEV-04 y DEV-08 permanecen EN_PROCESO hasta evidencia propia. F7 abierta; COM-01 y COM-02 pendientes.

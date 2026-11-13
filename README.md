@@ -248,3 +248,9 @@ del navegador no disponible; ver `docs/DESPLIEGUE.md` y `evidencias/19_avance_f6
 
 Estado vigente: fase 21 desplegada y validada por HTTP; las notas anteriores de
 fases 13–20 son históricas. F6 espera validación visual; F7 espera video/ficha finales.
+
+## Estado tras aprobación F6 (13-11-2026)
+
+F6 cerrada por aprobación humana; ver `evidencias/28_aprobacion_f6.json`.
+F7 abierta: ficha PDF vigente, video real y revisión final de evidencia visual.
+La aprobación no reemplaza las verificaciones visuales pendientes.

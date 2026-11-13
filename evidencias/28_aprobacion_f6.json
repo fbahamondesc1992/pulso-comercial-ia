@@ -1,0 +1,19 @@
+{
+  "fecha_local": "2026-11-13",
+  "fase": "F6",
+  "autorizacion_usuario": "Apruebo F6 que sigue",
+  "estado": "CERRADA_POR_APROBACION_HUMANA",
+  "alcance_verificado": [
+    "URL HTTPS pública por HTTP",
+    "revisión Cloud Run con IA activa",
+    "respuesta real de IA en validación previa",
+    "health y dashboard públicos",
+    "suite local sin red"
+  ],
+  "pendientes_no_certificados": [
+    "recorrido visual público en incógnito 375/1440",
+    "capturas públicas sin datos reales",
+    "informe real tras corrección del validador N/C"
+  ],
+  "fase_siguiente": "F7"
+}
