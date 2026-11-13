@@ -19,8 +19,10 @@ Packs ficticios en UN. No contiene datos personales ni precios internos.
 | volumen_real_ump | Volumen no negativo, en la unidad de la fila |
 | volumen_meta_ump | Meta en la misma unidad; vacío significa ausente |
 
-UTF-8 con BOM opcional, comas como delimitador, punto decimal, sin separador de
-miles ni notación científica. Máximo 15 dígitos enteros y 6 decimales, 2 MiB por
+UTF-8 con BOM opcional. Se admiten dos formatos: punto y coma como delimitador
+y coma decimal (Chile), o coma como delimitador y punto decimal (ejemplo descargable).
+El delimitador se detecta por la cabecera; las etiquetas no se modifican por esta
+conversión. No se permiten mezclas de formatos, separadores de miles ni notación científica. Máximo 15 dígitos enteros y 6 decimales, 2 MiB por
 archivo y 10.000 filas. El límite HTTP incluye 64 KiB adicionales para el multipart.
 Se acepta el mismo conjunto exacto de columnas en otro orden. Columnas adicionales
 o duplicadas, filas vacías/mal formadas, NaN, infinito y negativos se rechazan.

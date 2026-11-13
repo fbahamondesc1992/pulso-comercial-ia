@@ -111,3 +111,14 @@ def test_limite_global():
     limit = LimiteDemo(por_ip=5,global_hora=2)
     assert limit.admitir("a") and limit.admitir("b")
     assert not limit.admitir("c")
+
+
+def test_dashboard_csv_chileno_equivale_canonico(client):
+    from tests.test_csv import csv_chileno
+    from tests.conftest import fila, csv_bytes
+    filas = [fila(real="1234.56", meta="1500.00")]
+    ch = [dict(filas[0], facturacion_real_clp="1234,56", facturacion_meta_clp="1500,00")]
+    respuestas = [client.post("/api/dashboard", data={"fuente": "archivo", "archivo":
+        (io.BytesIO(raw), "sintetico.csv")}, headers=HEADERS) for raw in (csv_bytes(filas), csv_chileno(ch))]
+    assert [r.status_code for r in respuestas] == [200, 200]
+    assert respuestas[0].get_json() == respuestas[1].get_json()

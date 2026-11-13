@@ -398,3 +398,21 @@ no fue necesario otro cambio del producto. Evidencias: 22_upload_local.json y
 Archivo aportado preservado y excluido de Docker/Git; no enviado a nube ni IA.
 El contrato CSV sigue exigiendo separador coma y punto decimal. F6 continúa
 EN_PROCESO: recorrido visual público y capturas pendientes.
+
+## Fase 23 · CSV chileno · 13-11-2026
+
+Se admite delimitador `;` con coma decimal y se mantiene delimitador `,` con punto
+decimal. El dialecto se detecta por la cabecera; se conserva Decimal sin redondeo.
+Se rechazan mezclas de dialectos, miles, negativos y más de 6 decimales conforme
+al contrato vigente. Tests de equivalencia, textos con delimitadores entre comillas,
+valores inválidos, duplicados y flujo HTTP: 167 passed en 0,90 s, sin red.
+
+Build Docker linux/amd64 correcto. Revisión pública `pulso-comercial-ia-00004-fxk`,
+100% tráfico, digest `sha256:4fe292b27809cbc2067ef283a34620f98ac3488b9de608d41b9cccc23175777a`.
+Ambos formatos ficticios de 5.088 filas devolvieron HTTP 200 y respuestas iguales
+localmente y en URL pública. Sin uso IA ni datos del usuario enviados. Evidencias
+23_csv_chile_local.json y 23_csv_chile_publico.json.
+
+El archivo del usuario, examinado solo localmente, aún falla en línea 5 por 7
+decimales en facturacion_meta_clp; se observaron también 5 negativos en real CLP
+y volumen real. No se redondeó ni alteró el archivo. F6 visual pendiente.

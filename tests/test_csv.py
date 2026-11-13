@@ -47,3 +47,34 @@ def test_limite_filas():
     assert len(leer_csv(csv_bytes(rows)).filas) == 10_000
     with pytest.raises(ErrorCSV, match="10.000"):
         leer_csv(csv_bytes(rows + [fila(familia="Extra")]))
+
+
+def csv_chileno(rows):
+    import csv
+    import io
+    out = io.StringIO(newline="")
+    writer = csv.DictWriter(out, fieldnames=COLUMNAS, delimiter=";")
+    writer.writeheader()
+    writer.writerows(rows)
+    return out.getvalue().encode("utf-8-sig")
+
+
+def test_chileno_equivalencia_exacta_y_textos():
+    from decimal import Decimal
+    normal = fila(real="1234.560001", meta=None, canal='Canal, "A"; Sur',
+                  volumen_real_ump=Decimal("0.000001"), volumen_meta_ump=Decimal("0"))
+    chileno = {k: str(v).replace('.', ',') if isinstance(v, Decimal) else v for k, v in normal.items()}
+    assert leer_csv(csv_chileno([chileno])).filas == leer_csv(csv_bytes([normal])).filas
+
+
+@pytest.mark.parametrize("valor", ["1.234,56", "1.23", "1,2,3", "NaN", "Infinity", "-1,2", "1e4", "0,1234567", "1"*16])
+def test_chileno_no_admite_ambiguos_ni_invalidos(valor):
+    with pytest.raises(ErrorCSV, match="coma decimal"):
+        leer_csv(csv_chileno([fila(facturacion_real_clp=valor)]))
+
+
+def test_chileno_duplicados_y_filas_malformadas():
+    with pytest.raises(ErrorCSV, match="duplicado"):
+        leer_csv(csv_chileno([fila(), fila()]))
+    with pytest.raises(ErrorCSV, match="cantidad de columnas"):
+        leer_csv(csv_chileno([fila()]) + b"1;2;3\n")

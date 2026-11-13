@@ -1,0 +1,9 @@
+{
+  "url": "https://pulso-comercial-ia-njsqy6x3ka-tl.a.run.app",
+  "filas_sinteticas_por_csv": 5088,
+  "http_ambos_formatos": 200,
+  "respuestas_exactamente_iguales": true,
+  "ia_invocada": false,
+  "datos_usuario_enviados": false,
+  "pytest": "167 passed in 0.90s"
+}

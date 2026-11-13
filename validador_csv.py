@@ -34,11 +34,14 @@ def leer_csv(contenido: bytes, nombre: str = "datos.csv") -> Dataset:
     try:
         texto = contenido.decode("utf-8-sig")
     except UnicodeDecodeError as exc:
-        raise ErrorCSV("Usa un CSV UTF-8, separado por comas.") from exc
+        raise ErrorCSV("Usa un CSV UTF-8, separado por comas o punto y coma.") from exc
     if "\x00" in texto:
         raise ErrorCSV("El archivo contiene caracteres nulos.")
-    reader = csv.reader(io.StringIO(texto, newline=""), strict=True)
     try:
+        # Elegir por la cabecera, nunca por valores o etiquetas de las filas.
+        cabecera_coma = next(csv.reader(io.StringIO(texto, newline=""), strict=True))
+        separador = ";" if len(cabecera_coma) == 1 else ","
+        reader = csv.reader(io.StringIO(texto, newline=""), delimiter=separador, strict=True)
         cabecera = next(reader)
         if len(set(cabecera)) != len(cabecera):
             raise ErrorCSV("Hay columnas duplicadas en la cabecera.")
@@ -70,12 +73,16 @@ def leer_csv(contenido: bytes, nombre: str = "datos.csv") -> Dataset:
                 raise ErrorCSV(f"Línea {linea}: unidad_ump debe ser KG o UN.")
             for campo in COLUMNAS[7:]:
                 valor = row[campo]
+                # Cada dialecto tiene una sola convención decimal, sin miles.
+                canonico = valor.replace(",", ".") if separador == ";" else valor
+                decimal_incorrecto = "." in valor if separador == ";" else "," in valor
                 if valor == "" and "meta" in campo:
                     row[campo] = None
-                elif not NUMERO.fullmatch(valor):
-                    raise ErrorCSV(f"Línea {linea}: {campo} requiere decimal positivo o cero, punto decimal, máximo 15 enteros y 6 decimales. No se admiten negativos ni NaN/infinitos.")
+                elif decimal_incorrecto or not NUMERO.fullmatch(canonico):
+                    decimal = "coma decimal" if separador == ";" else "punto decimal"
+                    raise ErrorCSV(f"Línea {linea}: {campo} requiere decimal positivo o cero, {decimal}, máximo 15 enteros y 6 decimales. No se admiten separadores de miles, negativos ni NaN/infinitos.")
                 else:
-                    row[campo] = Decimal(valor)
+                    row[campo] = Decimal(canonico)
             clave = tuple(row[k] for k in GRANO)
             if clave in vistos:
                 raise ErrorCSV(f"Grano duplicado en líneas {vistos[clave]} y {linea}, incluida la normalización de espacios/Unicode.")
