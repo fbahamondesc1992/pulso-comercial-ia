@@ -33,7 +33,7 @@ Se preservan las 27 filas de la sección 14 del prompt.
 | PE-07 | Inyección, abstención e incertidumbre | GS-05/06/07/09/10; evidencias/17_revision_semantica_asistente.json; 18_cierre_f4_inicio_f6.json | VERIFICADO | Casos reales repetidos; revisión asistida sin inyección obedecida ni mezcla observadas. Cierre humano global aprobado; dos falsos positivos de causalidad recuperados con reintento |
 | DEV-01 | README completo | README.md; docs/DESPLIEGUE.md | VERIFICADO | URL real, uso y límites actualizados; publicación documental pendiente |
 | DEV-02 | Docker reproducible | Dockerfile con digest; requirements.txt; evidencias/15_docker_build.txt; 15_docker_verificacion.json | VERIFICADO | Imagen Linux amd64 con validador corregido; salud/demo 200 y usuario 10001; .env excluido |
-| DEV-03 | Repositorio accesible al profesor | auditoría 29: gh repo view | EN_PROCESO | GitHub informa PRIVATE; acceso anónimo no verificado, corregir visibilidad bajo G2 |
+| DEV-03 | Repositorio accesible al profesor | evidencias/30_github_publico_f7.json | VERIFICADO | GitHub PUBLIC y HEAD anónimo 200; índice e historial auditados sin hallazgos |
 | DEV-04 | URL HTTPS pública | evidencias/07_url_publica.txt; 21_http_publico_sin_ia.json | EN_PROCESO | HTTPS sin autenticación verificado por HTTP; incógnito visual pendiente |
 | DEV-05 | Secretos fuera repo/historial/imagen | evidencias/16_auditoria_indice.json; 16_github_publicado.json; 15_docker_verificacion.json | VERIFICADO | Índice e historial completo auditados antes de push; imagen sin clave; revisión por patrones y coincidencia local, no garantía universal |
 | DEV-06 | Secreto en plataforma | evidencias/21_secreto_iam.json; 21_cloud_run_ia_activa.json | VERIFICADO | Versión 1 fijada, secretAccessor exclusivo de runtime sobre el secreto |
@@ -55,3 +55,5 @@ autorizada hasta 30-11-2026. No se atribuye aprobación académica ni puntaje.
 Estado actual fase 28: F6 **CERRADA POR APROBACIÓN HUMANA** (evidencias/28_aprobacion_f6.json); criterios visuales SW-01, SW-02, DEV-04 y DEV-08 permanecen EN_PROCESO hasta evidencia propia. F7 abierta; COM-01 y COM-02 pendientes.
 
 F7 13-11-2026: ficha COM-02 y costos NEG-04 verificados; HTTP público sintético 200. Capturas, incógnito y video COM-01 pendientes. GitHub reportó PRIVATE en auditoría; visibilidad en corrección, no afirmar acceso anónimo aún. Evidencia: 29_f7_estado.json y 29_f7_http_demo.json.
+
+Auditoría F7 posterior: repositorio PUBLIC, acceso anónimo 200; DEV-03 verificado. Los estados históricos PRIVATE documentan el hallazgo ya resuelto. Capturas públicas y video real siguen EN_PROCESO.

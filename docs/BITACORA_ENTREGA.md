@@ -505,3 +505,10 @@ fuentes oficiales; render PNG inspeccionado. HTTP público inicio/health/demo/da
 incógnito y video real NO REALIZADOS. Guion final preparado. Auditoría GitHub
 detectó repositorio PRIVATE; acceso anónimo pendiente de corregir bajo G2 público.
 Evidencia 29_f7_estado.json. No se invocó IA pagada.
+
+## Fase 30 · acceso GitHub corregido · 13-11-2026
+
+Tras auditoría del índice e historial sin hallazgos, se hizo público el repositorio
+bajo G2. `gh repo view` informa PUBLIC; acceso HEAD anónimo HTTP 200. Evidencia
+`evidencias/30_github_publico_f7.json`. La ficha final está publicada. F7 NO está
+completa: faltan capturas públicas reales y video real de hasta 3 minutos.

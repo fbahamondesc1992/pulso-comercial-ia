@@ -1,0 +1,11 @@
+{
+  "fecha_local": "2026-11-13",
+  "repo": "https://github.com/fbahamondesc1992/pulso-comercial-ia",
+  "visibilidad": "PUBLIC",
+  "acceso_anonimo_head": 200,
+  "rama": "main",
+  "commit_ficha": "0643152",
+  "auditoria_indice_historial": "evidencias/29_auditoria_git_final.json",
+  "hallazgos_secretos": 0,
+  "csv_usuario_publicado": false
+}
