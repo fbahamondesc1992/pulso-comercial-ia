@@ -527,3 +527,11 @@ Recorrido de navegador público de 163,4 s, medido por metadatos WebM, bajo el
 máximo 180 s. Captura demo ficticia con KPI, ranking, volumen y filtros; fotogramas
 45/100/145 s inspeccionados. Sin narración ni llamada IA; COM-01 sigue EN_PROCESO.
 `evidencias/32_video_duracion.json` documenta alcance y hash.
+
+## Fase 33 · narración de video · 13-11-2026
+
+Voz local en español añadida al recorrido real mediante pistas AIFF y mezcla AAC.
+MP4 H.264/AAC de 163,4 s, 1440x900, verificación de ambas pistas y nivel de
+audio. La narración aborda problema, demo y arquitectura. Ninguna llamada nueva
+a OpenAI. COM-01 permanece EN_PROCESO por IA real en vivo ausente. Evidencia
+`evidencias/33_video_narrado.json`.

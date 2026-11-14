@@ -49,3 +49,12 @@ KPIs, gráfico, ranking, volúmenes, sección IA, hechos y filtro de línea. Fot
 45/100/145 s revisados. La ruta IA se bloqueó: no hay respuesta nueva ni narración.
 Cumple el máximo temporal, pero no el contenido completo COM-01; no presentarlo
 como video final con IA real. Evidencia `evidencias/32_video_duracion.json`.
+
+## Video narrado · 13-11-2026
+
+`evidencias/33_recorrido_publico_narrado.mp4`: 2:43,4, H.264/AAC,
+1440x900. Voz sintética local en español. Explica problema comercial, demo pública
+ficticia, KPIs, ranking y construcción Flask, Python/Decimal, prompts y validador.
+La locución aclara que el botón de IA no se ejecuta en esta toma. Duración, audio
+y hash en `evidencias/33_video_narrado.json`. COM-01 sigue EN_PROCESO porque no
+contiene una respuesta IA nueva en vivo; no se debe presentar como prueba de ello.

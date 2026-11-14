@@ -1,0 +1,17 @@
+{
+  "fecha_local": "2026-11-13",
+  "archivo": "33_recorrido_publico_narrado.mp4",
+  "fuente_visual": "evidencias/32_recorrido_publico_duracion_pauta_sin_ia.webm",
+  "video_real_url_publica": true,
+  "narracion": "voz sintética local macOS Paulina, español; guion en scripts/narrar_video_f7.py",
+  "duracion_segundos": 163.4,
+  "maximo_pauta_segundos": 180,
+  "dentro_limite": true,
+  "video": "H.264 1440x900 25fps",
+  "audio": "AAC mono 44100 Hz, media -25.6 dB, pico -4.6 dB",
+  "modelo_ia_en_esta_toma": "NO INVOCADO, cupo docente preservado",
+  "datos": "demo ficticia, CSV comercial excluido",
+  "alcance": "problema, demo pública, KPIs, brechas, construcción Flask/Python/LLM, limitaciones",
+  "pendiente_pauta": "no muestra respuesta nueva IA en vivo",
+  "sha256": "161869fbe524b6ae2ac2389a2cc405be728f7f11da2be50dcf96f27e54a8695e"
+}
