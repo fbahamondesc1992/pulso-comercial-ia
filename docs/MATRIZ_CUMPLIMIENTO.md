@@ -63,3 +63,8 @@ F7 fase 31: capturas públicas reales 1440/375 y video de apoyo WebM 11,12 s con
 F7 fase 32: video real 163,4 s, límite temporal cumplido. COM-01 permanece EN_PROCESO por narración e IA real en vivo ausentes. Evidencia: 32_video_duracion.json.
 
 F7 fase 33: MP4 H.264/AAC con voz local y duración 163,4 s. COM-01 sigue EN_PROCESO: el video explica la IA pero no la invoca en vivo. Evidencia 33_video_narrado.json.
+
+F7 fase 34: carpeta de entrega subida a plataforma, **declarado por el usuario**
+(`evidencias/34_entrega_plataforma_declarada.json`); recepción no verificada desde
+esta sesión. COM-01, SW-02 y DEV-08 permanecen EN_PROCESO por la demostración IA
+en vivo pendiente.

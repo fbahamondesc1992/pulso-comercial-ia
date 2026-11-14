@@ -535,3 +535,12 @@ MP4 H.264/AAC de 163,4 s, 1440x900, verificación de ambas pistas y nivel de
 audio. La narración aborda problema, demo y arquitectura. Ninguna llamada nueva
 a OpenAI. COM-01 permanece EN_PROCESO por IA real en vivo ausente. Evidencia
 `evidencias/33_video_narrado.json`.
+
+## Fase 34 · entrega en plataforma declarada · 13-11-2026
+
+El usuario confirmó «Carpeta subida a la plataforma». Carpeta local comprobada con
+ENLACES.txt, video MP4 y ficha PDF. No se dispone de acceso a la plataforma para
+verificar recepción, permisos, reproducción o lista exacta de archivos allí.
+Evidencia `evidencias/34_entrega_plataforma_declarada.json`. La confirmación no
+resuelve la ausencia de respuesta IA nueva dentro del video ni la prueba visual
+del botón tras la última corrección.

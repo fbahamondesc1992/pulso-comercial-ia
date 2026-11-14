@@ -1,0 +1,16 @@
+{
+  "fecha_local": "2026-11-13",
+  "declaracion_usuario": "Carpeta subida a la plataforma",
+  "carpeta_local": "ENTREGA_FINAL_PULSO_COMERCIAL_IA",
+  "contenido_local_verificado": [
+    "ENLACES.txt",
+    "video_demo_pulso_comercial_ia.mp4",
+    "ficha_negocio_pulso_comercial_ia.pdf"
+  ],
+  "estado_envio": "DECLARADO_POR_USUARIO",
+  "verificacion_independiente_plataforma": "NO DISPONIBLE",
+  "limites_pendientes": [
+    "Video narrado sin respuesta IA nueva en vivo",
+    "Recorrido IA desde botón en navegador no revalidado tras último cambio"
+  ]
+}
